@@ -1,7 +1,36 @@
 @extends('layout')
 
-@section('head')
-@stop
+@section('styles')
+    <style>
+        .client_single img{
+            width: 100%;
+            display: block;
+            -webkit-filter: grayscale(100%);
+            filter: grayscale(100%);
+            transition: 0.3s filter, 0.3s opacity;
+            opacity: 0.5;
+        }
+        .client_single:hover img{
+            -webkit-filter: grayscale(0%);
+            filter: grayscale(0%);
+            opacity: 1;
+            transition: 0.3s filter, 0.3s opacity;
+        }
+        .client_single {
+            display: inline-block;
+            vertical-align: top;
+            cursor: pointer;
+            transition: all .2s ease-in-out;
+            -webkit-transition: all .2s ease-in-out;
+            -moz-transition: all .2s ease-in-out;
+            -ms-transition: all .2s ease-in-out;
+            -o-transition: all .2s ease-in-out;
+            -webkit-transform: translateZ(0);
+        }
+
+    </style>
+
+@endsection
 
 
 @section('content')
@@ -388,38 +417,44 @@
 
             <!-- contact form -->
             <div class="col-md-12">
-                <form class="contact-form">
+                <form id="contact-form">
                     <div class="row">
                         <div class="col-md-6">
-                            <label for="nombre">Nombre</label><br>
-                            <input type="text" class="input">
+                            <label for="name">Nombre</label><br>
+                            <input type="text" name="name" class="input">
                         </div>
                         <div class="col-md-6">
                             <label for="email">Correo</label><br>
-                            <input type="email" class="input">
+                            <input type="email" name="email" class="input">
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-md-4">
-                            <label for="empresa">empresa</label><br>
-                            <input type="text" class="input">
+                            <label for="company">Empresa</label><br>
+                            <input type="text" name="company" class="input">
 
                         </div>
                         <div class="col-md-4">
-                            <label for="">teléfono</label><br>
-                            <input type="tel" class="input">
+                            <label for="phone">teléfono</label><br>
+                            <input type="tel" name="phone" class="input">
 
                         </div>
                         <div class="col-md-4">
-                            <label for="quien_eres">¿Quién eres?</label><br>
-                            <input type="text" class="input">
-
+                            <label for="company_type">¿Quién eres?</label><br>
+                            <select class="input" name="company_type">
+                                <option value="1">Nuevo Emprendedor</option>
+                                <option value="2">Representante de Marca</option>
+                                <option value="3">Due&ntilde;o de Negocio</option>
+                            </select>
+                        </div>
+                        <div class="col-md-12">
+                            <label for="message">Asunto</label> <br>
+                            <textarea class="input" name="message" rows="30"></textarea>
                         </div>
                     </div>
-
-                    <label for="">Asunto</label> <br>
-                    <textarea class="input" rows="30"></textarea>
-                    <button class="main-btn">Enviar Mensaje</button>
+                    <div class="col-md-12" style="text-align: center; padding-top: 30px">
+                        <button class="main-btn">Enviar Mensaje</button>
+                    </div>
                 </form>
             </div>
             <!-- /contact form -->
@@ -433,39 +468,82 @@
 </div>
 <!-- /Contact -->
 
-<section class="py-5">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-3 col-sm-6">
-                <a href="#">
-                    <img class="img-fluid d-block mx-auto" src="https://i0.wp.com/www.themonitordaily.com/wp-content/uploads/2015/11/Morph-and-Designer-for-PowerPoint-2016.png?resize=1024%2C328&ssl=1"
-                        width="200px" alt="">
-                </a>
-            </div>
-            <div class="col-md-3 col-sm-6">
-                <a href="#">
-                    <img class="img-fluid d-block mx-auto" src="https://i0.wp.com/www.themonitordaily.com/wp-content/uploads/2015/11/Morph-and-Designer-for-PowerPoint-2016.png?resize=1024%2C328&ssl=1"
-                        width="200px" alt="">
-                </a>
-            </div>
-            <div class="col-md-3 col-sm-6">
-                <a href="#">
-                    <img class="img-fluid d-block mx-auto" src="https://i0.wp.com/www.themonitordaily.com/wp-content/uploads/2015/11/Morph-and-Designer-for-PowerPoint-2016.png?resize=1024%2C328&ssl=1"
-                        width="200px" alt="">
-                </a>
-            </div>
-            <div class="col-md-3 col-sm-6">
-                <a href="#">
-                    <img class="img-fluid d-block mx-auto" src="https://i0.wp.com/www.themonitordaily.com/wp-content/uploads/2015/11/Morph-and-Designer-for-PowerPoint-2016.png?resize=1024%2C328&ssl=1"
-                        width="200px" alt="">
-                </a>
+<div class="container" style="padding:25px 30px 100px;">
+    <div class="row">
+        <div class="col-md-12" style="text-align: center; padding-top: 25px; padding-bottom: 45px;">
+            <div class="section-header text-center">
+                <h2 class="title">Nuestros Clientes</h2>
             </div>
         </div>
     </div>
-</section>
+    <div class="row">
+        <div class="col-md-3 col-sm-6 client_single">
+            <a href="#">
+                <img class="img-fluid d-block mx-auto" src="https://i0.wp.com/www.themonitordaily.com/wp-content/uploads/2015/11/Morph-and-Designer-for-PowerPoint-2016.png?resize=1024%2C328&ssl=1"
+                     width="200px" alt="">
+            </a>
+        </div>
+        <div class="col-md-3 col-sm-6 client_single">
+            <a href="#">
+                <img class="img-fluid d-block mx-auto" src="https://i0.wp.com/www.themonitordaily.com/wp-content/uploads/2015/11/Morph-and-Designer-for-PowerPoint-2016.png?resize=1024%2C328&ssl=1"
+                     width="200px" alt="">
+            </a>
+        </div>
+        <div class="col-md-3 col-sm-6 client_single">
+            <a href="#">
+                <img class="img-fluid d-block mx-auto" src="https://i0.wp.com/www.themonitordaily.com/wp-content/uploads/2015/11/Morph-and-Designer-for-PowerPoint-2016.png?resize=1024%2C328&ssl=1"
+                     width="200px" alt="">
+            </a>
+        </div>
+        <div class="col-md-3 col-sm-6 client_single">
+            <a href="#">
+                <img class="img-fluid d-block mx-auto" src="https://i0.wp.com/www.themonitordaily.com/wp-content/uploads/2015/11/Morph-and-Designer-for-PowerPoint-2016.png?resize=1024%2C328&ssl=1"
+                     width="200px" alt="">
+            </a>
+        </div>
+    </div>
+</div>
 
 
-@stop
+@endsection
 
 @section('scripts')
-@stop
+    <script src="//cdnjs.cloudflare.com/ajax/libs/validate.js/0.12.0/validate.min.js"></script>
+    <script class="text/javascript">
+        $("#contact-form").validate({
+            errorPlacement: function errorPlacement(error, element) {
+                element.after(error);
+            },
+            rules: {
+                name: "required",
+                company: "required",
+                email: "required",
+                phone: "required",
+                company_type: "required",
+                message: "required"
+            },
+            messages: {
+                name: "Campo requerido",
+                company: "Campo requerido",
+                email: "Campo requerido",
+                phone: "Campo requerido",
+                company_type: "Campo Requerido",
+                message: "message"
+            },
+            submitHandler: function (form) {
+                    $.ajax({
+                        type: "POST",
+                        dataType: "json",
+                        url: "{{ url('/contact_us/save') }}",
+                        data: new FormData($("#contact-form")[0]),
+                        contentType: false,
+                        processData: false,
+                        beforeSend: function () {
+                        },
+                        success: function (data) {
+                        }
+                        });
+                }
+        });
+    </script>
+@endsection

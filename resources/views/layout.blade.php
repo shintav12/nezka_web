@@ -38,7 +38,7 @@
     <![endif]-->
     <link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
 
-    @yield('head')
+    @yield('styles')
 </head>
 
 <body>
@@ -125,69 +125,68 @@
 
     <!-- Footer -->
     <footer id="footer" class="sm-padding bg-dark">
-
-        <!-- Container -->
         <div class="container">
-
-            <!-- Row -->
             <div class="row">
-
-                <div class="col-md-1 ">
-
-                    <!-- footer logo -->
-                    <div class=>
-                        <span class="footer-logo">
-                        <a href="index.html"><img src="img/logo-alt.png" alt="logo" style="margin-bottom:-20px;">
-                            <br><span style="color:#fff;margin-top:-10px">Studio</span></a>
-                        </span>
+                <div class="col-md-12">
+                    <div class="col-md-6">
+                        <div>
+                            <span class="footer-logo">
+                            <a href="index.html"><img src="img/logo-alt.png" alt="logo" style="margin-bottom:-20px;">
+                                <br><span style="color:#fff;margin-top:-10px">Studio</span></a>
+                            </span>
+                        </div>
                     </div>
-                    <!-- /footer logo -->
-
-                </div>
-
-                <div class="col-md-6 col-md-offset-4">
-                    <div class="footer-title">Síguenos aquí</div>
-                    <ul class="footer-follow">
-                        <li><i class="fa fa-facebook"></i></a></li>
-                        <li><i class="fa fa-twitter"></i></a></li>
-                        <li><i class="fa fa-flickr"></i></a></li>
-                        <li><i class="fa fa-linkedin"></i></a></li>
-                        <li><i class="fa fa-vimeo"></i></a></li>
-                    </ul>
-
-
-                </div>
-
-            </div>
-
-
-
-            <!-- Row -->
-            <div class="row">
-
-                <div class="container">
-                        <div class="col-md-4">
-        
-                                <div class="footer-title">estudio digital</div>
-        
-                            <!-- footer follow -->
-                            <ul class="">
-                                <li><i class="fa fa-phone"></i> (+51) 982 087 547 <span style="color:#00FFDD">|</span> 986 352
-                                    816</li>
-                                <li><i class="fa fa-envelope"></i> nezkastudio@gmail.com</li>
+                    <div class="col-md-6">
+                        <div class="footer-title col-md-12" style="text-align: right">Síguenos aquí</div>
+                        <div class="col-md-12">
+                            <ul class="footer-follow" style="text-align: right!important;">
+                                <li><i class="fa fa-facebook"></i></a></li>
+                                <li><i class="fa fa-twitter"></i></a></li>
+                                <li><i class="fa fa-flickr"></i></a></li>
+                                <li><i class="fa fa-linkedin"></i></a></li>
+                                <li><i class="fa fa-vimeo"></i></a></li>
                             </ul>
-                            <!-- /footer follow -->
                         </div>
-        
-                        <div class="col-md-4">
-        
-                                <div class="footer-title">nuestros aliados</div>
-                            <img src="https://i0.wp.com/www.themonitordaily.com/wp-content/uploads/2015/11/Morph-and-Designer-for-PowerPoint-2016.png?resize=1024%2C328&ssl=1" alt="logo" style="margin-bottom:-20px;" width="70%">
-                            
-                        </div>
-
+                    </div>
                 </div>
+            </div>
+            <div class="container" style="padding: 0px">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="col-md-4">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="footer-title">estudio digital</div>
+                                    <ul class="">
+                                        <li><i class="fa fa-phone"></i> (+51) 982 087 547 <span style="color:#00FFDD">|</span> 986 352
+                                            816</li>
+                                        <li><i class="fa fa-envelope"></i> nezkastudio@gmail.com</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12" style="padding-right: 0px; padding-top: 25px">
+                                    <div class="col-md-6 white-text" style="padding-left: 0px;padding-right: 5px; padding-bottom: 10px"><span style="font-weight: bolder; font-size: large">Portafolio</span></div>
+                                    <div class="col-md-6 white-text" style="padding-left: 0px;padding-right: 5px; padding-bottom: 10px"><span style="font-weight: bolder; font-size: large">Cotizar</span></div>
+                                    <div class="col-md-6 white-text" style="padding-left: 0px;padding-right: 5px; padding-bottom: 10px"><span style="font-weight: bolder; font-size: large">Quien Eres?</span></div>
+                                    <div class="col-md-6 white-text" style="padding-left: 0px;padding-right: 5px; padding-bottom: 10px"><span style="font-weight: bolder; font-size: large">Servicios</span></div>
+                                </div>
+                            </div>
 
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="footer-title">nuestros aliados</div>
+                            <img src="https://i0.wp.com/www.themonitordaily.com/wp-content/uploads/2015/11/Morph-and-Designer-for-PowerPoint-2016.png?resize=1024%2C328&ssl=1" alt="logo" style="margin-bottom:-20px;" width="70%">
+                        </div>
+                        <div class="col-md-4" style="border-left-color: black; border-left-width: 2px;">
+                            <span>"At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint  occaecati cupiditate non provident, similique sunt in culpa qui officia"</span>
+                            </br>
+                            </br>
+                            <span>"deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil."</span></span>
+                        </div>
+                    </div>
+                </div>
             </div>
             <!-- /Row -->
             <br>
@@ -228,7 +227,10 @@
     <script type="text/javascript" src="js/owl.carousel.min.js"></script>
     <script type="text/javascript" src="js/jquery.magnific-popup.js"></script>
     <script type="text/javascript" src="js/main.js"></script>
+    <script src="{{asset("assets/jquery-validation/js/jquery.validate.js")}}" type="text/javascript"></script>
+    <script src="{{asset("assets/jquery-validation/js/additional-methods.js")}}" type="text/javascript"></script>
     @yield('scripts')
+
 </body>
 
 </html>
