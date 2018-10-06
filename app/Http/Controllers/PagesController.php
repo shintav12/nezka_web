@@ -3,14 +3,22 @@
 namespace App\Http\Controllers;
 
 use App\Models\Contact;
+use App\Models\SliderBanner;
+use App\Services;
+use App\Slider;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Input;
 
 class PagesController extends Controller
 {
     public function home()
     {
-        return view('pages.landing');
+        $sliders = Slider::where("status",1)->get(["title",DB::raw('concat("'.config("app.path_url").'",slider_banner.image) as image'),"subtitle"]);
+        $services = Services::where("status",1)->get(["name",DB::raw('concat("'.config("app.path_url").'",services.image) as image'),"description"]);
+        $data["sliders"] = $sliders;
+        $data["services"] = $services;
+        return view('pages.landing',$data);
     }
 
     public function SaveContact(Request $request)

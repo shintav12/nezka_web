@@ -13,6 +13,7 @@ return [
     |
     */
 
+    'path_url' => "http://18.222.199.10/web_data/",
     'name' => env('APP_NAME', 'Laravel'),
 
     /*

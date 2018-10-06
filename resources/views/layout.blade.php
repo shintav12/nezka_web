@@ -37,45 +37,51 @@
         
     <![endif]-->
     <link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
+    <style>
+    </style>
 
     @yield('styles')
 </head>
 
 <body>
-    <!-- Header -->
     <header id="home">
-        <!-- Background Image -->
-        <div class="bg-img" style="background-image: url('./img/background4.jpg');">
-            <!--image source: https://www.pexels.com/photo/adult-business-computer-contemporary-380769/ -->
-            <div class="overlay"></div>
+        <div class="bg-img">
+            <div id="slider" class="owl-carousel owl-theme bg-img">
+                @foreach($sliders as $slider)
+                    <div class="">
+                        <img class="" data-src="https://placehold.it/1920x1080&text=123123123123123" src="{{$slider->image}}" >
+                        <div class="overlay"></div>
+                        <div class="home-wrapper">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-md-10 col-md-offset-1">
+                                        <div class="home-content">
+                                            <h1 class="white-text" style="letter-spacing: 7px;">{{$slider->title}}</h1>
+                                            <p class="white-text" style="font-size:30px">{{$slider->subtitle}}</p>
+                                            <button class=" outline-btn">Nuestros proyectos</button>
+                                            <button class="white-btn">¿Quién eres?</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                @endforeach
+            </div>
         </div>
-        <!-- /Background Image -->
-
-        <!-- Nav -->
         <nav id="nav" class="navbar nav-transparent">
             <div class="container">
-
                 <div class="navbar-header">
-                    <!-- Logo -->
                     <div class="navbar-brand">
                         <a href="index.html">
                             <img class="logo" src="img/logo.png" alt="logo">
                             <img class="logo-alt" src="img/logo-alt.png" alt="logo">
-                            <!--div style="max-height: 50px;" class="logo">
-                                <span style="color:#fff; font-weight:bold; font-size: 2.5em">Nez</span><span style="color: #00FFDD;font-weight:bold; font-size: 2.5em">ka</span>
-                            </div-->
                         </a>
                     </div>
-                    <!-- /Logo -->
-
-                    <!-- Collapse nav button -->
                     <div class="nav-collapse">
                         <span></span>
                     </div>
-                    <!-- /Collapse nav button -->
                 </div>
-
-                <!--  Main navigation  -->
                 <ul class="main-nav nav navbar-nav navbar-right">
                     <li><a href="#nosotros">Nosotros</a></li>
                     <li><a href="#servicios">Servicios</a></li>
@@ -85,45 +91,20 @@
                     <li><a href="#contacto">Contacto</a></li>
                     <li><a href="#blog">Nuestro Blog</a></li>
                 </ul>
-                <!-- /Main navigation -->
-
             </div>
         </nav>
-        <!-- /Nav -->
-
-        <!-- home wrapper -->
         <div class="home-wrapper">
             <div class="container">
                 <div class="row">
-
-                    <!-- home content -->
                     <div class="col-md-10 col-md-offset-1">
                         <div class="home-content">
-                            <h1 class="white-text" style="letter-spacing: 7px;">CONEXIÓN & USUARIOS</h1>
-                            <p class="white-text" style="font-size:30px">Creamos un vínculo más cercano entre la marca
-                                y usuarios</p>
-                            <button class=" outline-btn">Nuestros proyectos</button>
-                            <button class="white-btn">¿Quién eres?</button>
                         </div>
                     </div>
-                    <!-- /home content -->
-
                 </div>
             </div>
         </div>
-        <!-- /home wrapper -->
-
     </header>
-    <!-- /Header -->
-
-
     @yield('content')
-
-
-
-
-
-    <!-- Footer -->
     <footer id="footer" class="sm-padding bg-dark">
         <div class="container">
             <div class="row">
@@ -229,6 +210,19 @@
     <script type="text/javascript" src="js/main.js"></script>
     <script src="{{asset("assets/jquery-validation/js/jquery.validate.js")}}" type="text/javascript"></script>
     <script src="{{asset("assets/jquery-validation/js/additional-methods.js")}}" type="text/javascript"></script>
+    <script type="text/javascript">
+        $('#slider').owlCarousel({
+            items:1,
+            lazyLoad:true,
+            loop:true,
+            margin:0,
+            autoHeight: false,
+            autoWidth: false,
+            autoHeightClass: 'owl-height',
+            autoplay:true,
+            dots: false,
+        });
+    </script>
     @yield('scripts')
 
 </body>
