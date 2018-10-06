@@ -33,6 +33,13 @@
         .services_img {
             width: 150px !important;
         }
+
+        .center {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 50%;
+        }
     </style>
 @endsection
 
@@ -80,12 +87,14 @@
             items:3,
             lazyLoad:true,
             loop:true,
-            margin:0,
+            margin:20,
             autoHeight: false,
             autoWidth: false,
             autoHeightClass: 'owl-height',
             autoplay:true,
-            dots: false,
+            dots: true,
+            nav: true,
+            navText : ["<i class='fa fa-chevron-left'></i>","<i class='fa fa-chevron-right'></i>"]
         });
     </script>
 @endsection
@@ -103,7 +112,7 @@
                         <div class="">
                             <div class="servicios">
                                 <div style="text-align: center; padding-bottom: 25px">
-                                    <img class="services_img" src="{{$service->image}}">
+                                    <img class="services_img center" src="{{$service->image}}">
                                 </div>
 
                                 <h3>{{$service->name}}</h3>
