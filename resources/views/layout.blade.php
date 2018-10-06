@@ -27,6 +27,7 @@
     <link rel="stylesheet" href="css/font-awesome.min.css">
 
     <!-- Custom stlylesheet -->
+    <link rel="shortcut icon" href="http://18.222.199.10/nezka_web/public/favicon.ico" />
     <link type="text/css" rel="stylesheet" href="css/style.css" />
     <link rel="shortcut icon" href="http://18.222.199.10/nezka_web/public/favicon.ico" />
 
