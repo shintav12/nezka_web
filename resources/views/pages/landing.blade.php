@@ -150,14 +150,13 @@
             items:3,
             lazyLoad:true,
             loop:true,
-            margin:20,
+            margin:30,
             autoHeight: false,
             autoWidth: false,
             autoHeightClass: 'owl-height',
             autoplay:true,
             dots: true,
-            nav: true,
-            navText : ["<i class='fa fa-chevron-left'></i>","<i class='fa fa-chevron-right'></i>"]
+            nav: false
         });
         $('#clients').owlCarousel({
             items:5,
@@ -169,8 +168,7 @@
             autoHeightClass: 'owl-height',
             autoplay:true,
             dots: true,
-            nav: true,
-            navText : ["<i class='fa fa-chevron-left'></i>","<i class='fa fa-chevron-right'></i>"]
+            nav: false
         });
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
