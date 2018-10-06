@@ -41,7 +41,7 @@
             margin-right: auto;
             width: 50%;
         }
-
+        /* PORTAFOLIO FILTRO */
         /*a:focus {
         outline: none;
         }*/
@@ -102,7 +102,30 @@
         -moz-transition-property: -moz-transform, opacity;
         transition-property: transform, opacity;
         }
-        
+
+        /* FORMULARIO DE CONTACTO*/
+        .styled-select {
+        background: url(http://i62.tinypic.com/15xvbd5.png) no-repeat 96% 0;
+        height: 40px;
+        overflow: hidden;
+        width: 100%;
+        border: 3px solid #868F9B;
+        }
+
+        .styled-select select {
+        background: transparent;
+        border: 1px solid grey;
+        font-size: 14px;
+        height: 33px;
+        padding: 10px; /* If you add too much padding here, the options won't show in IE */
+        width: 100%;
+        }
+        /* -------------------- Rounded Corners */
+        .rounded {
+        -webkit-border-radius: 20px;
+        -moz-border-radius: 20px;
+        border-radius: 20px;
+        } 
     </style>
 @endsection
 
@@ -141,6 +164,7 @@
                     beforeSend: function () {
                     },
                     success: function (data) {
+                        
                     }
                 });
             }
@@ -414,6 +438,41 @@
         {{--</div>--}}
     {{--</div>--}}
 {{--</div>--}}
+<div id ="clientes" class="container" style="padding:25px 30px 100px;">
+    <div class="row">
+        <div class="col-md-12" style="text-align: center; padding-top: 25px; padding-bottom: 45px;">
+            <div class="section-header text-center">
+                <h2 class="title">Nuestros Clientes</h2>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-3 col-sm-6 client_single">
+            <a href="#">
+                <img class="img-fluid d-block mx-auto" src="https://i0.wp.com/www.themonitordaily.com/wp-content/uploads/2015/11/Morph-and-Designer-for-PowerPoint-2016.png?resize=1024%2C328&ssl=1"
+                     width="200px" alt="">
+            </a>
+        </div>
+        <div class="col-md-3 col-sm-6 client_single">
+            <a href="#">
+                <img class="img-fluid d-block mx-auto" src="https://i0.wp.com/www.themonitordaily.com/wp-content/uploads/2015/11/Morph-and-Designer-for-PowerPoint-2016.png?resize=1024%2C328&ssl=1"
+                     width="200px" alt="">
+            </a>
+        </div>
+        <div class="col-md-3 col-sm-6 client_single">
+            <a href="#">
+                <img class="img-fluid d-block mx-auto" src="https://i0.wp.com/www.themonitordaily.com/wp-content/uploads/2015/11/Morph-and-Designer-for-PowerPoint-2016.png?resize=1024%2C328&ssl=1"
+                     width="200px" alt="">
+            </a>
+        </div>
+        <div class="col-md-3 col-sm-6 client_single">
+            <a href="#">
+                <img class="img-fluid d-block mx-auto" src="https://i0.wp.com/www.themonitordaily.com/wp-content/uploads/2015/11/Morph-and-Designer-for-PowerPoint-2016.png?resize=1024%2C328&ssl=1"
+                     width="200px" alt="">
+            </a>
+        </div>
+    </div>
+</div>
 <div id="contacto" class="section md-padding">
     <div class="container">
         <div class="row">
@@ -442,9 +501,10 @@
                             <label for="phone">teléfono</label><br>
                             <input type="tel" name="phone" class="input">
                         </div>
-                        <div class="col-md-4">
+                        <div class="col-md-4" >
                             <label for="company_type">¿Quién eres?</label><br>
-                            <select class="input" name="company_type">
+                            <select class="input styled-select rounded" name="company_type" >
+                                <option value=" ">Escoge una opción</option>
                                 <option value="1">Nuevo Emprendedor</option>
                                 <option value="2">Representante de Marca</option>
                                 <option value="3">Due&ntilde;o de Negocio</option>
@@ -463,6 +523,8 @@
         </div>
     </div>
 </div>
+<<<<<<< HEAD
+=======
 <div class="container" style="padding:25px 30px 100px;">
     <div class="row">
         <div class="col-md-12" style="text-align: center; padding-top: 25px; padding-bottom: 45px;">
@@ -487,5 +549,6 @@
         </div>
     </div>
 </div>
+>>>>>>> 57d1f7c85c8451809d61e08f252742012efeed58
 @endsection
 
