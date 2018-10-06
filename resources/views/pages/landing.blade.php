@@ -3,6 +3,7 @@
 @section('styles')
     <link rel="stylesheet" href="owlcarousel/owl.carousel.min.css">
     <link rel="stylesheet" href="owlcarousel/owl.theme.default.min.css">
+    <link rel="stylesheet" href="https://codepen.io/pramodkumarboda/pen/XdgxmQ.css">
     <style>
         .client_single img{
             width: 100%;
@@ -40,6 +41,68 @@
             margin-right: auto;
             width: 50%;
         }
+
+        /*a:focus {
+        outline: none;
+        }*/
+
+        .portfolioFilter {
+        padding: 15px 0;
+        }
+
+        .portfolioFilter a {
+        margin-right: 6px;
+        color: #666;
+        text-decoration: none;
+        border: 1px solid #ccc;
+        padding: 4px 15px;
+        border-radius: 50px;
+        display: inline-block;
+        }
+
+        .portfolioFilter a.current {
+        background: #00FFDD;
+        border: 1px solid #1e1e1e;
+        color: black;
+        }
+        .portfolioContainer{
+        border: 1px solid #eee;
+        border-radius: 3px;
+        }
+        /*img {
+        margin: 5px;
+        max-width:100%;
+        }*/
+
+        .isotope-item {
+        z-index: 2;
+        }
+
+        .isotope-hidden.isotope-item {
+        pointer-events: none;
+        z-index: 1;
+        }
+
+        .isotope,
+        .isotope .isotope-item {
+        /* change duration value to whatever you like */
+        -webkit-transition-duration: 0.8s;
+        -moz-transition-duration: 0.8s;
+        transition-duration: 0.8s;
+        }
+
+        .isotope {
+        -webkit-transition-property: height, width;
+        -moz-transition-property: height, width;
+        transition-property: height, width;
+        }
+
+        .isotope .isotope-item {
+        -webkit-transition-property: -webkit-transform, opacity;
+        -moz-transition-property: -moz-transform, opacity;
+        transition-property: transform, opacity;
+        }
+        
     </style>
 @endsection
 
@@ -110,6 +173,37 @@
             navText : ["<i class='fa fa-chevron-left'></i>","<i class='fa fa-chevron-right'></i>"]
         });
     </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+    <script src="https://isotope.metafizzy.co/v1/jquery.isotope.min.js"></script>
+    <script class="text/javascript">
+            $(window).load(function(){
+                var $container = $('.portfolioContainer');
+                $container.isotope({
+                    filter: '*',
+                    animationOptions: {
+                        duration: 750,
+                        easing: 'linear',
+                        queue: false
+                    }
+                });
+             
+                $('.portfolioFilter a').click(function(){
+                    $('.portfolioFilter .current').removeClass('current');
+                    $(this).addClass('current');
+             
+                    var selector = $(this).attr('data-filter');
+                    $container.isotope({
+                        filter: selector,
+                        animationOptions: {
+                            duration: 750,
+                            easing: 'linear',
+                            queue: false
+                        }
+                     });
+                     return false;
+                }); 
+            });
+    </script>
 @endsection
 
 @section('content')
@@ -169,75 +263,86 @@
             <div class="section-header text-center">
                 <h2 class="title">portafolio de proyectos<span class="punto">.</span> </h2>
             </div>
-            <div class="col-md-4 col-xs-6 work">
-                <img class="img-responsive" src="./img/work1.jpg" alt="">
-                <div class="overlay"></div>
-                <div class="work-content">
-                    <span>Category</span>
-                    <h3>Lorem ipsum dolor</h3>
-                    <div class="work-link">
-                        <a href="#"><i class="fa fa-external-link"></i></a>
-                        <a class="lightbox" href="./img/work1.jpg"><i class="fa fa-search"></i></a>
-                    </div>
+            <div class="col-lg-12">
+                <div class="portfolioFilter clearfix text-center">
+                    <a href="#" data-filter="*" class="current">All Categories</a>
+                    <a href="#" data-filter=".webTemplates">Web Templates</a>
+                    <a href="#" data-filter=".logos">Logos</a>
+                    <a href="#" data-filter=".drawings">Drawings</a>
+                    <a href="#" data-filter=".ui">UI Elements</a>
                 </div>
             </div>
-            <div class="col-md-4 col-xs-6 work">
-                <img class="img-responsive" src="./img/work2.jpg" alt="">
-                <div class="overlay"></div>
-                <div class="work-content">
-                    <span>Category</span>
-                    <h3>Lorem ipsum dolor</h3>
-                    <div class="work-link">
-                        <a href="#"><i class="fa fa-external-link"></i></a>
-                        <a class="lightbox" href="./img/work2.jpg"><i class="fa fa-search"></i></a>
+            <div class="portfolioContainer">
+                <div class="col-md-4 col-xs-6 work webTemplates objects">
+                    <img class="img-responsive" src="./img/work1.jpg" alt="">
+                    <div class="overlay"></div>
+                    <div class="work-content">
+                        <span>Category</span>
+                        <h3>Lorem ipsum dolor</h3>
+                        <div class="work-link">
+                            <a href="#"><i class="fa fa-external-link"></i></a>
+                            <a class="lightbox" href="./img/work1.jpg"><i class="fa fa-search"></i></a>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-md-4 col-xs-6 work">
-                <img class="img-responsive" src="./img/work3.jpg" alt="">
-                <div class="overlay"></div>
-                <div class="work-content">
-                    <span>Category</span>
-                    <h3>Lorem ipsum dolor</h3>
-                    <div class="work-link">
-                        <a href="#"><i class="fa fa-external-link"></i></a>
-                        <a class="lightbox" href="./img/work3.jpg"><i class="fa fa-search"></i></a>
+                <div class="col-md-4 col-xs-6 work logos">
+                    <img class="img-responsive" src="./img/work2.jpg" alt="">
+                    <div class="overlay"></div>
+                    <div class="work-content">
+                        <span>Category</span>
+                        <h3>Lorem ipsum dolor</h3>
+                        <div class="work-link">
+                            <a href="#"><i class="fa fa-external-link"></i></a>
+                            <a class="lightbox" href="./img/work2.jpg"><i class="fa fa-search"></i></a>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-md-4 col-xs-6 work">
-                <img class="img-responsive" src="./img/work4.jpg" alt="">
-                <div class="overlay"></div>
-                <div class="work-content">
-                    <span>Category</span>
-                    <h3>Lorem ipsum dolor</h3>
-                    <div class="work-link">
-                        <a href="#"><i class="fa fa-external-link"></i></a>
-                        <a class="lightbox" href="./img/work4.jpg"><i class="fa fa-search"></i></a>
+                <div class="col-md-4 col-xs-6 work">
+                    <img class="img-responsive" src="./img/work3.jpg" alt="">
+                    <div class="overlay"></div>
+                    <div class="work-content">
+                        <span>Category</span>
+                        <h3>Lorem ipsum dolor</h3>
+                        <div class="work-link">
+                            <a href="#"><i class="fa fa-external-link"></i></a>
+                            <a class="lightbox" href="./img/work3.jpg"><i class="fa fa-search"></i></a>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-md-4 col-xs-6 work">
-                <img class="img-responsive" src="./img/work5.jpg" alt="">
-                <div class="overlay"></div>
-                <div class="work-content">
-                    <span>Category</span>
-                    <h3>Lorem ipsum dolor</h3>
-                    <div class="work-link">
-                        <a href="#"><i class="fa fa-external-link"></i></a>
-                        <a class="lightbox" href="./img/work5.jpg"><i class="fa fa-search"></i></a>
+                <div class="col-md-4 col-xs-6 work">
+                    <img class="img-responsive" src="./img/work4.jpg" alt="">
+                    <div class="overlay"></div>
+                    <div class="work-content">
+                        <span>Category</span>
+                        <h3>Lorem ipsum dolor</h3>
+                        <div class="work-link">
+                            <a href="#"><i class="fa fa-external-link"></i></a>
+                            <a class="lightbox" href="./img/work4.jpg"><i class="fa fa-search"></i></a>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-md-4 col-xs-6 work">
-                <img class="img-responsive" src="./img/work6.jpg" alt="">
-                <div class="overlay"></div>
-                <div class="work-content">
-                    <span>Category</span>
-                    <h3>Lorem ipsum dolor</h3>
-                    <div class="work-link">
-                        <a href="#"><i class="fa fa-external-link"></i></a>
-                        <a class="lightbox" href="./img/work6.jpg"><i class="fa fa-search"></i></a>
+                <div class="col-md-4 col-xs-6 work">
+                    <img class="img-responsive" src="./img/work5.jpg" alt="">
+                    <div class="overlay"></div>
+                    <div class="work-content">
+                        <span>Category</span>
+                        <h3>Lorem ipsum dolor</h3>
+                        <div class="work-link">
+                            <a href="#"><i class="fa fa-external-link"></i></a>
+                            <a class="lightbox" href="./img/work5.jpg"><i class="fa fa-search"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-xs-6 work">
+                    <img class="img-responsive" src="./img/work6.jpg" alt="">
+                    <div class="overlay"></div>
+                    <div class="work-content">
+                        <span>Category</span>
+                        <h3>Lorem ipsum dolor</h3>
+                        <div class="work-link">
+                            <a href="#"><i class="fa fa-external-link"></i></a>
+                            <a class="lightbox" href="./img/work6.jpg"><i class="fa fa-search"></i></a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -385,5 +490,4 @@
     </div>
 </div>
 @endsection
-
 
