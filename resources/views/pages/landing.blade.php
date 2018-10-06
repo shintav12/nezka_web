@@ -447,29 +447,18 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-md-3 col-sm-6 client_single">
-            <a href="#">
-                <img class="img-fluid d-block mx-auto" src="https://i0.wp.com/www.themonitordaily.com/wp-content/uploads/2015/11/Morph-and-Designer-for-PowerPoint-2016.png?resize=1024%2C328&ssl=1"
-                     width="200px" alt="">
-            </a>
-        </div>
-        <div class="col-md-3 col-sm-6 client_single">
-            <a href="#">
-                <img class="img-fluid d-block mx-auto" src="https://i0.wp.com/www.themonitordaily.com/wp-content/uploads/2015/11/Morph-and-Designer-for-PowerPoint-2016.png?resize=1024%2C328&ssl=1"
-                     width="200px" alt="">
-            </a>
-        </div>
-        <div class="col-md-3 col-sm-6 client_single">
-            <a href="#">
-                <img class="img-fluid d-block mx-auto" src="https://i0.wp.com/www.themonitordaily.com/wp-content/uploads/2015/11/Morph-and-Designer-for-PowerPoint-2016.png?resize=1024%2C328&ssl=1"
-                     width="200px" alt="">
-            </a>
-        </div>
-        <div class="col-md-3 col-sm-6 client_single">
-            <a href="#">
-                <img class="img-fluid d-block mx-auto" src="https://i0.wp.com/www.themonitordaily.com/wp-content/uploads/2015/11/Morph-and-Designer-for-PowerPoint-2016.png?resize=1024%2C328&ssl=1"
-                     width="200px" alt="">
-            </a>
+        <div class="col-xs-12">
+            <div id="clients" class="owl-carousel owl-theme">
+                @foreach($clients as $client)
+                    <div class="client_single">
+                        <div class="servicios">
+                            <div style="text-align: center;" href="{{url('projects')}}/{{$client->slug}}">
+                                <img class="services_img center" src="{{$client->image}}">
+                            </div>
+                        </div>
+                    </div>
+                @endforeach
+            </div>
         </div>
     </div>
 </div>
@@ -525,30 +514,7 @@
 </div>
 <<<<<<< HEAD
 =======
-<div class="container" style="padding:25px 30px 100px;">
-    <div class="row">
-        <div class="col-md-12" style="text-align: center; padding-top: 25px; padding-bottom: 45px;">
-            <div class="section-header text-center">
-                <h2 class="title">Nuestros Clientes</h2>
-            </div>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-xs-12">
-            <div id="clients" class="owl-carousel owl-theme">
-                @foreach($clients as $client)
-                    <div class="client_single">
-                        <div class="servicios">
-                            <div style="text-align: center;" href="{{url('projects')}}/{{$client->slug}}">
-                                <img class="services_img center" src="{{$client->image}}">
-                            </div>
-                        </div>
-                    </div>
-                @endforeach
-            </div>
-        </div>
-    </div>
-</div>
+
 >>>>>>> 57d1f7c85c8451809d61e08f252742012efeed58
 @endsection
 
