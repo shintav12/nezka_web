@@ -183,6 +183,19 @@
             nav: true,
             navText : ["<i class='fa fa-chevron-left'></i>","<i class='fa fa-chevron-right'></i>"]
         });
+        $('#clients').owlCarousel({
+            items:5,
+            lazyLoad:true,
+            loop:true,
+            margin:20,
+            autoHeight: false,
+            autoWidth: false,
+            autoHeightClass: 'owl-height',
+            autoplay:true,
+            dots: true,
+            nav: true,
+            navText : ["<i class='fa fa-chevron-left'></i>","<i class='fa fa-chevron-right'></i>"]
+        });
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
     <script src="https://isotope.metafizzy.co/v1/jquery.isotope.min.js"></script>
@@ -512,5 +525,32 @@
         </div>
     </div>
 </div>
+<<<<<<< HEAD
+=======
+<div class="container" style="padding:25px 30px 100px;">
+    <div class="row">
+        <div class="col-md-12" style="text-align: center; padding-top: 25px; padding-bottom: 45px;">
+            <div class="section-header text-center">
+                <h2 class="title">Nuestros Clientes</h2>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12">
+            <div id="clients" class="owl-carousel owl-theme">
+                @foreach($clients as $client)
+                    <div class="client_single">
+                        <div class="servicios">
+                            <div style="text-align: center;" href="{{url('projects')}}/{{$client->slug}}">
+                                <img class="services_img center" src="{{$client->image}}">
+                            </div>
+                        </div>
+                    </div>
+                @endforeach
+            </div>
+        </div>
+    </div>
+</div>
+>>>>>>> 57d1f7c85c8451809d61e08f252742012efeed58
 @endsection
 

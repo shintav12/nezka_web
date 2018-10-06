@@ -2,14 +2,15 @@
 
 namespace App\Http\Controllers;
 
+use App\Clients;
 use App\ClientTypes;
 use App\Models\Contact;
-use App\Models\SliderBanner;
 use App\Services;
 use App\Slider;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Input;
+
 
 class PagesController extends Controller
 {
@@ -18,9 +19,11 @@ class PagesController extends Controller
         $sliders = Slider::where("status",1)->get(["title",DB::raw('concat("'.config("app.path_url").'",slider_banner.image) as image'),"subtitle"]);
         $services = Services::where("status",1)->get(["name",DB::raw('concat("'.config("app.path_url").'",services.image) as image'),"description"]);
         $client_types = ClientTypes::get(["name",DB::raw('concat("'.config("app.path_url").'",customer_type.image) as image'),"description"]);
+        $clients = Clients::get(["name",DB::raw('concat("'.config("app.path_url").'",client.image) as image',"slug")]);
         $data["sliders"] = $sliders;
         $data["services"] = $services;
         $data["client_types"] = $client_types;
+        $data["clients"] = $clients;
         return view('pages.landing',$data);
     }
 
@@ -48,6 +51,10 @@ class PagesController extends Controller
         }catch (Exception $exception){
             return response(json_encode(array("error" => 1)), 200);
         }
+    }
+
+    public function projects($slug){
+
     }
 
     public function blog()
