@@ -40,6 +40,9 @@
     <![endif]-->
     <link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
     <style>
+        .button_slider {
+            z-index: 99999999   ;
+        }
     </style>
 
     @yield('styles')
@@ -57,7 +60,7 @@
                             <div class="container">
                                 <div class="row">
                                     <div class="col-md-10 col-md-offset-1">
-                                        <div class="home-content">
+                                        <div class="home-content button_slider">
                                             <h1 class="white-text" style="letter-spacing: 7px;">{{$slider->title}}</h1>
                                             <p class="white-text" style="font-size:30px">{{$slider->subtitle}}</p>
                                             <button class=" outline-btn">Nuestros proyectos</button>
@@ -95,16 +98,6 @@
                 </ul>
             </div>
         </nav>
-        <div class="home-wrapper">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-10 col-md-offset-1">
-                        <div class="home-content">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
     </header>
     @yield('content')
     <footer id="footer" class="sm-padding bg-dark">
