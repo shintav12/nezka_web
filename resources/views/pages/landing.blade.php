@@ -512,9 +512,5 @@
         </div>
     </div>
 </div>
-<<<<<<< HEAD
-=======
-
->>>>>>> 57d1f7c85c8451809d61e08f252742012efeed58
 @endsection
 
