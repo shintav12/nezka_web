@@ -93,7 +93,7 @@
                     <li><a href="#portafolio">Portafolio</a></li>
                     <li><a href="#clientes">Clientes</a></li>
                     <li><a href="#contacto">Contacto</a></li>
-                    <li><a href="#blog">Nuestro Blog</a></li>
+                    <!--li><a href="#blog">Nuestro Blog</a></li-->
                 </ul>
             </div>
         </nav>
