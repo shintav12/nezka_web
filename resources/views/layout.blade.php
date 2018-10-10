@@ -3,7 +3,7 @@
 
 <head>
 
-    <meta charset="utf-8">
+    <meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
@@ -41,7 +41,10 @@
     <link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
     <style>
         .button_slider {
-            z-index: 99999999   ;
+            z-index: 99999999;
+        }
+        img {
+            margin: 0px!important;
         }
     </style>
 
@@ -54,8 +57,7 @@
             <div id="slider" class="owl-carousel owl-theme bg-img">
                 @foreach($sliders as $slider)
                     <div class="">
-                        <img class="" data-src="https://placehold.it/1920x1080&text=123123123123123" src="{{$slider->image}}" >
-                        <div class="overlay"></div>
+                        <img src="{{$slider->image}}" >
                         <div class="home-wrapper">
                             <div class="container">
                                 <div class="row">
@@ -63,7 +65,7 @@
                                         <div class="home-content button_slider">
                                             <h1 class="white-text" style="letter-spacing: 7px;">{{$slider->title}}</h1>
                                             <p class="white-text" style="font-size:30px">{{$slider->subtitle}}</p>
-                                            <button class=" outline-btn">Nuestros proyectos</button>
+                                            <button class="outline-btn">Nuestros proyectos</button>
                                             <button class="white-btn">¿Quién eres?</button>
                                         </div>
                                     </div>
@@ -78,7 +80,7 @@
             <div class="container">
                 <div class="navbar-header">
                     <div class="navbar-brand">
-                        <a href="index.html">
+                        <a href="{{url('/')}}">
                             <img class="logo" src="img/logo.png" alt="logo">
                             <img class="logo-alt" src="img/logo-alt.png" alt="logo">
                         </a>
@@ -94,7 +96,7 @@
                     <li><a href="#portafolio">Portafolio</a></li>
                     <li><a href="#clientes">Clientes</a></li>
                     <li><a href="#contacto">Contacto</a></li>
-                    <li><a href="#blog">Nuestro Blog</a></li>
+                    <!--li><a href="#blog">Nuestro Blog</a></li-->
                 </ul>
             </div>
         </nav>
@@ -116,11 +118,9 @@
                         <div class="footer-title col-md-12" style="text-align: right">Síguenos aquí</div>
                         <div class="col-md-12">
                             <ul class="footer-follow" style="text-align: right!important;">
-                                <li><i class="fa fa-facebook"></i></a></li>
-                                <li><i class="fa fa-twitter"></i></a></li>
-                                <li><i class="fa fa-flickr"></i></a></li>
-                                <li><i class="fa fa-linkedin"></i></a></li>
-                                <li><i class="fa fa-vimeo"></i></a></li>
+                                @foreach($social_medias as $social_media)
+                                    <li><a target="_blank" style="background-color: #61666d" href="{{$social_media->url}}"><i class="fa fa-{{$social_media->name}}"></i></a></li>
+                                @endforeach
                             </ul>
                         </div>
                     </div>
@@ -153,13 +153,15 @@
 
                         <div class="col-md-4">
                             <div class="footer-title">nuestros aliados</div>
-                            <img src="https://i0.wp.com/www.themonitordaily.com/wp-content/uploads/2015/11/Morph-and-Designer-for-PowerPoint-2016.png?resize=1024%2C328&ssl=1" alt="logo" style="margin-bottom:-20px;" width="70%">
+                            <a href="https://www.facebook.com/MORPHaudiovisual/" target="_blank">
+                                <img  src="{{asset("img/morph.png")}}" alt="logo"  width="50%">
+                            </a>
                         </div>
-                        <div class="col-md-4" style="border-left-color: black; border-left-width: 2px;">
-                            <span>"At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint  occaecati cupiditate non provident, similique sunt in culpa qui officia"</span>
+                        <div class="col-md-4"  style="border-left-color: black; border-left-width: 2px;">
+                            <span>En Nezka Studio tenemos como objetivo transmitir los mensajes visuales y audiovisuales de manera directa por diferentes medios</span>
                             </br>
                             </br>
-                            <span>"deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil."</span></span>
+                            <span>Teniendo como base: La comunicación es la clava para una buena gestión.</span>
                         </div>
                     </div>
                 </div>
@@ -171,7 +173,7 @@
 
                     <!-- footer copyright -->
                     <div class="footer-copyright">
-                        <p>© 2021 Copyright Nezka Studio. designed by Ex Calcetin con RombosMan y Wizardcool93</p>
+                        <p>© 2018 Copyright by Nezka Studio.</p>
                     </div>
                     <!-- /footer copyright -->
                 </div>
