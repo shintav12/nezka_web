@@ -12,8 +12,7 @@
 
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700%7CVarela+Round" rel="stylesheet">
 
-    <link type="text/css" rel="stylesheet" href="{{asset('css/owl.carousel.css')}}" />
-    <link type="text/css" rel="stylesheet" href="{{asset('css/owl.theme.default.css')}}" />
+
 
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700%7CVarela+Round" rel="stylesheet">
     <link type="text/css" rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}" />
@@ -23,6 +22,8 @@
 
     <link rel="shortcut icon" href="http://18.222.199.10/nezka_web/public/favicon.ico" />
     <link type="text/css" rel="stylesheet" href="{{asset('css/style.css')}}" />
+    <link type="text/css" rel="stylesheet" href="{{asset('assets/owl/assets/owl.carousel.css')}}" />
+    <link type="text/css" rel="stylesheet" href="{{asset('assets/owl/assets/owl.theme.default.css')}}" />
 
     <link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
     <style>
@@ -171,10 +172,11 @@
         </div>
     </div>
 
-    <script type="text/javascript" src="{{asset('js/owl.carousel.min.js')}}"></script>
+
     <script type="text/javascript" src="{{asset('js/jquery.min.js')}}"></script>
     <script type="text/javascript" src="{{asset('js/bootstrap.min.js')}}"></script>
     <script type="text/javascript" src="{{asset('js/jquery.magnific-popup.js')}}"></script>
+    <script type="text/javascript" src="{{asset('assets/owl/owl.carousel.js')}}"></script>
     <script type="text/javascript" src="{{asset('js/main.js')}}"></script>
     <script src="{{asset("assets/jquery-validation/js/jquery.validate.js")}}" type="text/javascript"></script>
     <script src="{{asset("assets/jquery-validation/js/additional-methods.js")}}" type="text/javascript"></script>
