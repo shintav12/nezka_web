@@ -1,4 +1,4 @@
-@extends('layout')
+@extends('other')
 
 @section('styles')
 @endsection

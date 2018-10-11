@@ -269,7 +269,7 @@
                         <?php }?>
                             <div class="quien_eres">
                                 <div style="text-align: center; padding-bottom: 25px">
-                                    <img class="services_img center" src="{{$client_types[$i]->image}}">
+                                    <a href="{{url('who_you_are')}}/{{$client_types[$i]->slug}}"><img class="services_img center" src="{{$client_types[$i]->image}}"></a>
                                 </div>
                                 <h3>{{strtoupper($client_types[$i]->name)}}</h3>
                             </div>

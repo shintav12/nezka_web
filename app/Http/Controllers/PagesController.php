@@ -20,7 +20,7 @@ class PagesController extends Controller
     {
         $sliders = Slider::where("status",1)->get(["title",DB::raw('concat("'.config("app.path_url").'",slider_banner.image) as image'),"subtitle"]);
         $services = Services::where("status",1)->get(["name",DB::raw('concat("'.config("app.path_url").'",services.image) as image'),"description"]);
-        $client_types = ClientTypes::get(["id","name",DB::raw('concat("'.config("app.path_url").'",customer_type.image) as image'),"description","type"]);
+        $client_types = ClientTypes::get(["id","name",DB::raw('concat("'.config("app.path_url").'",customer_type.image) as image'),"description","type","slug"]);
         $clients = Clients::get(["name",DB::raw('concat("'.config("app.path_url").'",client.image) as image',"slug")]);
         $social_media = SocialMedia::get(["name","url"]);
         $categories = Categories::get(["name","slug"]);
@@ -61,6 +61,13 @@ class PagesController extends Controller
 
     public function projects($slug){
 
+    }
+
+    public function whoyouare($slug){
+
+        $social_media = SocialMedia::get(["name","url"]);
+        $data["social_medias"] = $social_media;
+        return view('pages.who_you_are',$data);
     }
 
     public function blog()
