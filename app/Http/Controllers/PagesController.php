@@ -7,6 +7,7 @@ use App\Clients;
 use App\ClientTypes;
 use App\Models\Contact;
 use App\Services;
+use App\ServicesCustomer;
 use App\Slider;
 use App\SocialMedia;
 use Illuminate\Http\Request;
@@ -20,7 +21,7 @@ class PagesController extends Controller
     {
         $sliders = Slider::where("status",1)->get(["title",DB::raw('concat("'.config("app.path_url").'",slider_banner.image) as image'),"subtitle"]);
         $services = Services::where("status",1)->get(["name",DB::raw('concat("'.config("app.path_url").'",services.image) as image'),"description"]);
-        $client_types = ClientTypes::get(["id","name",DB::raw('concat("'.config("app.path_url").'",customer_type.image) as image'),"description","type"]);
+        $client_types = ClientTypes::get(["id","name",DB::raw('concat("'.config("app.path_url").'",customer_type.image) as image'),"description","type","slug"]);
         $clients = Clients::get(["name",DB::raw('concat("'.config("app.path_url").'",client.image) as image',"slug")]);
         $social_media = SocialMedia::get(["name","url"]);
         $categories = Categories::get(["name","slug"]);
@@ -60,7 +61,22 @@ class PagesController extends Controller
     }
 
     public function projects($slug){
+        $social_media = SocialMedia::get(["name","url"]);
+        $data["social_medias"] = $social_media;
 
+
+        return view('pages.who_you_are',$data);
+    }
+
+    public function whoyouare($slug){
+        $social_media = SocialMedia::get(["name","url"]);
+        $customer_type = ClientTypes::where('slug',$slug)->first(["id","name","description"]);
+        $services_customer = ServicesCustomer::where("status",1)->get(["name",DB::raw('concat("'.config("app.path_url").'",services_customer.image) as image'),"description"]);
+        $data["social_medias"] = $social_media;
+        $data["customer_type"] = $customer_type;
+        $data["services_customer"] = $services_customer;
+
+        return view('pages.who_you_are',$data);
     }
 
     public function blog()
@@ -71,5 +87,14 @@ class PagesController extends Controller
     public function portafolio()
     {
         return view('pages.portafolio');
+    }
+
+    public function clients($slug){
+        $social_media = SocialMedia::get(["name","url"]);
+        $customer_type = ClientTypes::where('slug',$slug)->get(["id","name","description"]);
+        $data["social_medias"] = $social_media;
+        $data["customer_type"] = $customer_type;
+
+        return view('pages.who_you_are',$data);
     }
 }
