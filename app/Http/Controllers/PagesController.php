@@ -7,6 +7,7 @@ use App\Clients;
 use App\ClientTypes;
 use App\Models\Contact;
 use App\Services;
+use App\ServicesCustomer;
 use App\Slider;
 use App\SocialMedia;
 use Illuminate\Http\Request;
@@ -60,13 +61,21 @@ class PagesController extends Controller
     }
 
     public function projects($slug){
+        $social_media = SocialMedia::get(["name","url"]);
+        $data["social_medias"] = $social_media;
 
+
+        return view('pages.who_you_are',$data);
     }
 
     public function whoyouare($slug){
-
         $social_media = SocialMedia::get(["name","url"]);
+        $customer_type = ClientTypes::where('slug',$slug)->first(["id","name","description"]);
+        $services_customer = ServicesCustomer::where("status",1)->get(["name",DB::raw('concat("'.config("app.path_url").'",services_customer.image) as image'),"description"]);
         $data["social_medias"] = $social_media;
+        $data["customer_type"] = $customer_type;
+        $data["services_customer"] = $services_customer;
+
         return view('pages.who_you_are',$data);
     }
 
@@ -78,5 +87,14 @@ class PagesController extends Controller
     public function portafolio()
     {
         return view('pages.portafolio');
+    }
+
+    public function clients($slug){
+        $social_media = SocialMedia::get(["name","url"]);
+        $customer_type = ClientTypes::where('slug',$slug)->get(["id","name","description"]);
+        $data["social_medias"] = $social_media;
+        $data["customer_type"] = $customer_type;
+
+        return view('pages.who_you_are',$data);
     }
 }

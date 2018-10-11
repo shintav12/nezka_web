@@ -17,6 +17,7 @@
 .sub-page_icons{
     text-align: center;
     padding-bottom: 25px;
+    font-size: 14px !important;
 }
 .sub-page_title__h1 {
     font-size: 2em;
@@ -48,18 +49,20 @@
 <!-- REPRESENTANTE DE MARCA CONTAINER-->
 <div class="container margin-60">
     <div class="row text-center">
-        <h1 class="sub-page_title__h1">REPRESENTANTE DE MARCA</h1>
-        <p class="sub-page_p">Sabemos que formas de parte de una empresa, gracias a los servicios que te ofrecemos llegaras a más usuarios.<br>Selecciona las siguientes categorías que estés necesitando para poder ayudarte mándandote una cotización.</p>
+        <h1 class="sub-page_title__h1">{{$customer_type->name}}</h1>
+        <p class="sub-page_p">{{$customer_type->description}}</p>
     </div>
     <div class="row">
         <!-- Bloque a Copiar -->
-        <div class="col-md-4 col-sm-6 col-xs-12">
-            <div class="sub-page_icons">
-                <img src="http://18.222.199.10/web_data/services/4/4.png" width="70%"> <!-- Imagen del icono del representante de marca -->
-                <h3 class="sub-page_title__icon">branding</h3> <!-- titlo del representante de marca -->
-                <span class="sub-page_description">Incluye Logotipo - Línea gráfica - papelera - manual de marca</span> <!-- descripcion dle representante de marca -->
+        @foreach($services_customer as $item)
+            <div class="col-xs-4">
+                <div class="sub-page_icons">
+                    <img src="{{$item->image}}" width="30%"> <!-- Imagen del icono del representante de marca -->
+                    <h3 class="sub-page_title__icon">{{$item->name}}</h3> <!-- titlo del representante de marca -->
+                    <span class="sub-page_description">{{$item->description}}</span> <!-- descripcion dle representante de marca -->
+                </div>
             </div>
-        </div>
+        @endforeach
         <!-- Fin de  Bloque a Copiar -->
     </div>
 </div>
@@ -67,7 +70,7 @@
 
 <!-- COLOCA TUS DATOS CONTAINER-->
 <div class="container margin-60">
-    <div class="row text-center ">
+    <div class="row text-center margin-60">
             <h1 class="sub-page_title__h1">COLOCA TUS DATOS</h1>
             <p class="sub-page_p">Estamos casi listos para empezar a realizar tu proyecto, coloca bien tus datos y en breves momentos te haremos llegar a tu correo la cotización con todos los servicios que has escogido.</p>
     </div>
