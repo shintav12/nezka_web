@@ -1,12 +1,17 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es-PE">
 
 <head>
 
     <meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <!-- 
+        The more you learn, the more you know. 
+        The more you know, the more you forget. 
+        The more you forget, the less you know.... 
+        So why bother to learn. 
+    -->
 
     <title>Nezka Studio</title>
 
@@ -89,7 +94,6 @@
                     </div>
                 </div>
                 <ul class="main-nav nav navbar-nav navbar-right">
-                    <li><a href="#nosotros">Nosotros</a></li>
                     <li><a href="#servicios">Servicios</a></li>
                     <li><a href="#quien_eres">¿Quién eres?</a></li>
                     <li><a href="#portafolio">Portafolio</a></li>
@@ -160,7 +164,7 @@
                             <span>En Nezka Studio tenemos como objetivo transmitir los mensajes visuales y audiovisuales de manera directa por diferentes medios</span>
                             </br>
                             </br>
-                            <span>Teniendo como base: La comunicación es la clava para una buena gestión.</span>
+                            <span>Teniendo como base: La comunicación es la clave para una buena gestión.</span>
                         </div>
                     </div>
                 </div>
@@ -198,6 +202,13 @@
         </div>
     </div>
     <!-- /Preloader -->
+
+    <!--
+
+        An action doesn't have to be wrong just because it is not logical. It doesn't have to be right just because it has its logic.
+
+    -->
+
     <!-- jQuery Plugins -->
     <script type="text/javascript" src="js/jquery.min.js"></script>
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
