@@ -25,6 +25,16 @@
         img {
             margin: 0px!important;
         }
+        .exit-button {
+            color: #61666d;
+            font-weight: bold;
+            font-size: 1.8em;
+        }
+        #nav{
+            border-bottom-left-radius: 30px;
+            border-bottom-right-radius: 30px; 
+            border-bottom: 4mm ridge rgb(0,255,221,.6);
+        }
     </style>
 
     @yield('styles')
@@ -34,24 +44,22 @@
     <header id="home" style="height: 100%;">
         <nav id="nav" class="navbar">
             <div class="container">
-                <div class="navbar-header">
+                <div class="navbar-header" style="padding-left: 5px;">
                     <div class="navbar-brand">
                         <a href="{{url('/')}}">
                             <img class="logo" src="{{asset('img/logo.png')}}" alt="logo">
                         </a>
+                        <span style="font-size: 1.6em; line-height: 1.7em; padding: 5px 10px 0 10px;"> | </span>
+                        <h4 style="color:#61666d; display: inline-block">¿Quién eres?</h4>
+                        <span style="font-size: 1.6em; line-height: 1.7em; padding: 5px 10px 0 10px;"> > </span>
                     </div>
                     <div class="nav-collapse">
                         <span></span>
                     </div>
                 </div>
-                <ul class="main-nav nav navbar-nav navbar-right">
-                    <li><a href="#servicios">Servicios</a></li>
-                    <li><a href="#quien_eres">¿Quién eres?</a></li>
-                    <li><a href="#portafolio">Portafolio</a></li>
-                    <li><a href="#clientes">Clientes</a></li>
-                    <li><a href="#contacto">Contacto</a></li>
-                    <!--li><a href="#blog">Nuestro Blog</a></li-->
-                </ul>
+                <div class="main-nav nav navbar-nav navbar-right">
+                    <a href="{{url('/#quien_eres')}}"><span class="exit-button">X</span></a>
+                </div>
             </div>
         </nav>
     </header>
