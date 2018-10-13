@@ -38,7 +38,6 @@
 .sub-page_description {
     font-size: 0.9em;
     line-height: -8px;
-    letter-spacing: 2px;
 }
 </style>
 @endsection
