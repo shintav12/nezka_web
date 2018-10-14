@@ -210,7 +210,7 @@ nav.fixed-nav {
     </div>
     <form id="contact-form">
         <input name="customer_type" value="{{$customer_type->id}}" hidden>
-        <input name="services_types" value="" hidden>
+        <input id="services_types" name="services_types" value="" hidden>
         <div class="row">
             <div class="row">
                 <div class="col-md-6 col-sm-6 col-xs-12 margin-20">
@@ -227,10 +227,10 @@ nav.fixed-nav {
                 </div>
             </div>
             <div class="text-center row" style="margin-top: 25px">
-                <h3 class="sub-page_title__icon" style="text-transform: capitalize; margin-top: 80px"> Has seleccionado los siguientes servicios</h3>
+                <h3 class="sub-page_title__icon" style="text-transform: capitalize; margin-top: 40px"> Has seleccionado los siguientes servicios</h3>
             </div>
             <div class="text-center row" style="">
-                <div id="selected_items" style="text-transform: capitalize; margin-top: 80px; color:#868f9b; font-weight: 18px"></div>
+                <div id="selected_items" style="text-transform: capitalize; margin-top: 40px; color:#868f9b; font-weight: bold;"></div>
             </div>
             <div class="row text-center" style="padding-top: 25px">
                 <button class="main-btn"><strong>Enviar</strong></button>
