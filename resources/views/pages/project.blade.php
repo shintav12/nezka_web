@@ -138,7 +138,7 @@
 
 @endsection
 @section('content')
-    <div class="container">
+    <div class="container margin-80">
         <div class="row text-center margin-60">
             <h1 class="sub-page_title__h1">Titulo del cliente <span class="punto">.</span></h1>
             <p class="sub-page_p"></p>
