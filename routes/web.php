@@ -23,6 +23,10 @@ Route::get('/potafolio', 'PagesController@portafolio');
 
 Route::get('/blog', 'PagesController@blog');
 
-Route::get('clients/{slug}','Pagescontroller@projects');
+Route::get('clients/{slug}','Pagescontroller@clients');
 
 Route::get('who_you_are/{slug}','PagesController@whoyouare');
+
+Route::get('projects/{slug}','PagesController@projects');
+
+Route::post('who_you_are/save','PagesController@save');

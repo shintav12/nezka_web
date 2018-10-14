@@ -60,12 +60,38 @@ class PagesController extends Controller
         }
     }
 
+    public function save(Request $request)
+    {
+        try {
+            $name = Input::get('name');
+            $client_type = Input::get('customer_type');
+            $services = Input::get('services_types');
+            $mail = Input::get('email');
+            $bussiness_name = Input::get('company');
+            $phone = Input::get('phone');
+
+            $contact_us = new Contact();
+
+            $contact_us->name = $name;
+            $contact_us->mail = $mail;
+            $contact_us->bussiness_name = $bussiness_name;
+            $contact_us->phone =$phone;
+            $contact_us->client_type = $client_type;
+            $contact_us->services = $services;
+
+            $contact_us->save();
+            return response(json_encode(array("error" => 0, "id" => $contact_us->id)), 200);
+        }catch (Exception $exception){
+            return response(json_encode(array("error" => 1)), 200);
+        }
+    }
+
     public function projects($slug){
         $social_media = SocialMedia::get(["name","url"]);
+        $categories = Categories::get(["name","slug"]);
+        $data["categories"] = $categories;
         $data["social_medias"] = $social_media;
-
-
-        return view('pages.who_you_are',$data);
+        return view('pages.portafolio',$data);
     }
 
     public function whoyouare($slug){
@@ -74,6 +100,7 @@ class PagesController extends Controller
         $services_customer = ServicesCustomer::where("status",1)->get(["name",DB::raw('concat("'.config("app.path_url").'",services_customer.image) as image'),"description"]);
         $data["social_medias"] = $social_media;
         $data["customer_type"] = $customer_type;
+
         $data["services_customer"] = $services_customer;
 
         return view('pages.who_you_are',$data);

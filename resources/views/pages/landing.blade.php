@@ -125,13 +125,14 @@
         -webkit-border-radius: 20px;
         -moz-border-radius: 20px;
         border-radius: 20px;
-        } 
+        }
+
     </style>
 @endsection
 
 @section('scripts')
     <script src="owlcarousel/owl.carousel.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/validate.js/0.12.0/validate.min.js"></script>
+    <script src="{{asset("assets/jquery-validation/js/jquery.validate.js")}}"></script>
     <script class="text/javascript">
         $("#contact-form").validate({
             errorPlacement: function errorPlacement(error, element) {

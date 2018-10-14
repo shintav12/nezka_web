@@ -49,16 +49,13 @@
                         <a href="{{url('/')}}">
                             <img class="logo" src="{{asset('img/logo.png')}}" alt="logo">
                         </a>
-                        <span style="font-size: 1.6em; line-height: 1.7em; padding: 5px 10px 0 10px;"> | </span>
-                        <h4 style="color:#61666d; display: inline-block">¿Quién eres?</h4>
-                        <span style="font-size: 1.6em; line-height: 1.7em; padding: 5px 10px 0 10px;"> > </span>
                     </div>
                     <div class="nav-collapse">
                         <span></span>
                     </div>
                 </div>
                 <div class="main-nav nav navbar-nav navbar-right">
-                    <a href="{{url('/#quien_eres')}}"><span class="exit-button">X</span></a>
+                    <a href="{{url('/')}}"><span class="exit-button">X</span></a>
                 </div>
             </div>
         </nav>
