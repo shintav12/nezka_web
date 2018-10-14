@@ -91,7 +91,7 @@ class PagesController extends Controller
         $categories = Categories::get(["name","slug"]);
         $data["categories"] = $categories;
         $data["social_medias"] = $social_media;
-        return view('pages.portafolio',$data);
+        return view('pages.project',$data);
     }
 
     public function whoyouare($slug){
