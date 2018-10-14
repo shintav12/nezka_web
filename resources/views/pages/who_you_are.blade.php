@@ -2,102 +2,102 @@
 
 @section('styles')
 <style>
-.margin-20 {
-    margin-bottom: 20px;
-}
-.margin-40 {
-    margin-bottom: 40px;
-}
-.margin-60 {
-    margin-bottom: 60px;
-}
-.margin-80 {
-    margin-top: 40px;
-    margin-bottom: 80px;
-}
-.sub-page_icons{
-    text-align: center;
-    padding-bottom: 25px;
-    font-size: 14px !important;
-    border: 3px solid transparent!important;
-    border-radius: 10px;
-    padding:10px;
-}
-.sub-page_title__h1 {
-    font-size: 2em;
-    color: #333;
-    font-weight: 900;
-}
-.sub-page_p{
-    font-size: 0.8em;
-    padding: 0 20px;
-}
-.sub-page_title__icon{
-    font-size: 1.1em;
-    font-weight: 900;
-    text-transform: uppercase;
-    color: #333;
-}
-.sub-page_description {
-    font-size: 0.9em;
-    line-height: -8px;
-}
-.sub-page_icons:hover { opacity: .5; -webkit-filter: grayscale(100%); }
-.item-selected:hover { opacity: .5; -webkit-filter: grayscale(100%); }
-
-nav.fixed-nav {
-    position: absolute !important;
-    left: 0;
-    right: 0;
-    padding: 0px 0px;
-    background-color: #FFF !important;
-    border-bottom: 1px solid #EEE;
-}
-
-.item-selected {
-    text-align: center;
-    padding-bottom: 25px;
-    font-size: 14px !important;
-    border: 3px solid #7bffed!important;
-    border-radius: 10px;
-    padding:10px;
-}
-
-.loading {
-    width: 100%;
-    height: 100%;
-    position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    background-color: rgba(0,0,0,.5);
-}
-.loading-wheel {
-    width: 20px;
-    height: 20px;
-    margin-top: -40px;
-    margin-left: -40px;
-
-    position: absolute;
-    top: 50%;
-    left: 50%;
-
-    border-width: 30px;
-    border-radius: 50%;
-    -webkit-animation: spin 1s linear infinite;
-}
-.style-2 .loading-wheel {
-    border-style: double;
-    border-color: #ccc transparent;
-}
-@-webkit-keyframes spin {
-    0% {
-        -webkit-transform: rotate(0);
+    .margin-20 {
+        margin-bottom: 20px;
     }
-    100% {
-        -webkit-transform: rotate(-360deg);
+    .margin-40 {
+        margin-bottom: 40px;
     }
+    .margin-60 {
+        margin-bottom: 60px;
+    }
+    .margin-80 {
+        margin-top: 40px;
+        margin-bottom: 80px;
+    }
+    .sub-page_icons{
+        text-align: center;
+        padding-bottom: 25px;
+        font-size: 14px !important;
+        border: 3px solid transparent!important;
+        border-radius: 10px;
+        padding:10px;
+    }
+    .sub-page_title__h1 {
+        font-size: 2em;
+        color: #333;
+        font-weight: 900;
+    }
+    .sub-page_p{
+        font-size: 0.8em;
+        padding: 0 20px;
+    }
+    .sub-page_title__icon{
+        font-size: 1.1em;
+        font-weight: 900;
+        text-transform: uppercase;
+        color: #333;
+    }
+    .sub-page_description {
+        font-size: 0.9em;
+        line-height: -8px;
+    }
+    .sub-page_icons:hover { opacity: .5; -webkit-filter: grayscale(100%); }
+    .item-selected:hover { opacity: .5; -webkit-filter: grayscale(100%); }
+
+    nav.fixed-nav {
+        position: absolute !important;
+        left: 0;
+        right: 0;
+        padding: 0px 0px;
+        background-color: #FFF !important;
+        border-bottom: 1px solid #EEE;
+    }
+
+    .item-selected {
+        text-align: center;
+        padding-bottom: 25px;
+        font-size: 14px !important;
+        border: 3px solid #7bffed!important;
+        border-radius: 10px;
+        padding:10px;
+    }
+
+    .loading {
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-color: rgba(0,0,0,.5);
+    }
+    .loading-wheel {
+        width: 20px;
+        height: 20px;
+        margin-top: -40px;
+        margin-left: -40px;
+
+        position: absolute;
+        top: 50%;
+        left: 50%;
+
+        border-width: 30px;
+        border-radius: 50%;
+        -webkit-animation: spin 1s linear infinite;
+    }
+    .style-2 .loading-wheel {
+        border-style: double;
+        border-color: #ccc transparent;
+    }
+    @-webkit-keyframes spin {
+        0% {
+            -webkit-transform: rotate(0);
+        }
+        100% {
+            -webkit-transform: rotate(-360deg);
+        }
 }
 </style>
 @endsection

@@ -27,6 +27,8 @@
             font-size: 2em;
             color: #333;
             font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 2px;
         }
         .sub-page_p{
             font-size: 0.8em;
@@ -136,5 +138,24 @@
 
 @endsection
 @section('content')
-
+    <div class="container">
+        <div class="row text-center margin-60">
+            <h1 class="sub-page_title__h1">Titulo del cliente <span class="punto">.</span></h1>
+            <p class="sub-page_p"></p>
+        </div>
+        <div class="row">
+            <div class="col-md-6 text-center">
+                <img src="#">
+            </div>
+            <div class="col-md-6">
+                <h2 class="sub-page_title__icon">descripción del proyecto</h2>
+                <p class="sub-page_description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas sit quaerat exercitationem eius velit fuga molestias similique cupiditate? Eveniet dolorem quia exercitationem cupiditate, eos porro neque? Veritatis repellat adipisci officiis?</p>
+                <p class="sub-page_description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur, incidunt eveniet et adipisci illo eaque enim sint dolore, dignissimos laborum aliquam rem consequatur, ab quam quia commodi vero soluta fuga!</p>
+                <br>
+                <h2 class="sub-page_title__icon">detalles</h2>
+                <h3 class="sub-page_title__icon">Cliente:</h3>
+                <h3 class="sub-page_title__icon">solución</h3>
+            </div>
+        </div>
+    </div>
 @endsection
