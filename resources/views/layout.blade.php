@@ -2,31 +2,19 @@
 <html lang="es-PE">
 
 <head>
-
     <meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
     <title>Nezka Studio</title>
-
-
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700%7CVarela+Round" rel="stylesheet">
-
-
-
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700%7CVarela+Round" rel="stylesheet">
     <link type="text/css" rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}" />
-
     <link type="text/css" rel="stylesheet" href="{{asset('css/magnific-popup.css')}}" />
     <link type="text/css" rel="stylesheet" href="{{asset('css/font-awesome.min.css')}}" />
-
     <link rel="shortcut icon" href="http://18.222.199.10/nezka_web/public/favicon.ico" />
-    <link rel="shortcut icon" href="http://18.222.199.10/nezka_web/public/favicon.ico" />
-
     <link type="text/css" rel="stylesheet" href="{{asset('css/style.css')}}" />
     <link type="text/css" rel="stylesheet" href="{{asset('assets/owl/assets/owl.carousel.css')}}" />
     <link type="text/css" rel="stylesheet" href="{{asset('assets/owl/assets/owl.theme.default.css')}}" />
-
     <link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
     <style>
         .button_slider {
@@ -36,7 +24,6 @@
             margin: 0px!important;
         }
     </style>
-
     @yield('styles')
 </head>
 
@@ -52,10 +39,8 @@
                                 <div class="row">
                                     <div class="col-md-10 col-md-offset-1">
                                         <div class="home-content button_slider">
-                                            <h1 class="white-text" style="letter-spacing: 7px;">{{$slider->title}}</h1>
+                                            <h1 class="white-text" style="letter-spacing: 7px;font-size:75px;">{{$slider->title}}</h1>
                                             <p class="white-text" style="font-size:30px">{{$slider->subtitle}}</p>
-                                            <button class="outline-btn">Nuestros proyectos</button>
-                                            <button class="white-btn">¿Quién eres?</button>
                                         </div>
                                     </div>
                                 </div>
@@ -82,12 +67,39 @@
                     <li><a href="#servicios">Servicios</a></li>
                     <li><a href="#quien_eres">¿Quién eres?</a></li>
                     <li><a href="#portafolio">Portafolio</a></li>
+                    <li><a href="#noticias">Noticias</a></li>
                     <li><a href="#clientes">Clientes</a></li>
                     <li><a href="#contacto">Contacto</a></li>
-                    <!--li><a href="#blog">Nuestro Blog</a></li-->
                 </ul>
             </div>
         </nav>
+        <div class="home-wrapper">
+             <div class="container">
+                 <div class="row">
+                     <div class="col-md-10 col-md-offset-1">
+                         <div class="home-content">
+                            <br/>
+                            <br/>
+                            <br/>
+                            <br/>
+                            <br/>
+                            <br/>
+                            <br/>
+                            <br/>
+                            <br/>
+                            <br/>
+                            <br/>
+                            <br/>
+                            <br/>
+                            <br/>
+                            <br/>
+                            <button class="outline-btn">Nuestros proyectos</button>
+                            <button class="white-btn">¿Quién eres?</button>
+                         </div>
+                     </div>
+                 </div>
+             </div>
+         </div>
     </header>
     @yield('content')
     <footer id="footer" class="sm-padding bg-dark">
