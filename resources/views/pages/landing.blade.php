@@ -259,12 +259,14 @@
 		<div class="container">
             <div class="row">
                 <div class="section-header text-center" style="padding-top: 50px">
-                    <h2 class="title">¿Quién eres?<span class="punto">.</span> </h2>
+                    <h2 class="title">¿Quién eres?<span class="punto">.</span> <br>
+                        <small> texto abajo de quien eres</small>
+                    </h2>
                 </div>
                 @for($i = 0; $i < count($client_types); $i++)
                     @if($client_types[$i]->type == "mains")
                         <?php if($i == 1){ ?>
-                            <div class="col-md-4" style="border-right: 2px solid #333; border-left: 2px solid #333">
+                            <div class="col-md-4" style="border-right: 1px solid #333; border-left: 1px solid #333">
                         <?php }else{?>
                             <div class="col-md-4">
                         <?php }?>
