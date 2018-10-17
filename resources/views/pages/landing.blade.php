@@ -54,16 +54,15 @@
         margin-right: 6px;
         color: #666;
         text-decoration: none;
-        border: 1px solid #ccc;
+        border: 0px solid #fff;
         padding: 4px 15px;
         border-radius: 50px;
         display: inline-block;
         }
 
         .portfolioFilter a.current {
-        background: #00FFDD;
         border: 1px solid #1e1e1e;
-        color: black;
+        color: #fff;
         }
         .portfolioContainer{
         border: 1px solid #eee;
@@ -291,7 +290,7 @@
             </div>
             <div class="col-lg-12">
                 <div class="portfolioFilter clearfix text-center">
-                    <a href="#" data-filter="*" class="current">Todos</a>
+                    <a href="#" data-filter="*" class="current">Todas las categorías</a>
                     @foreach($categories as $category)
                         <a href="#" data-filter=".{{$category->slug}}">{{$category->name}}</a>
                     @endforeach

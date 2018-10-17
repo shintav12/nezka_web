@@ -134,8 +134,7 @@
                                 <div class="col-md-12">
                                     <div class="footer-title">estudio digital</div>
                                     <ul class="">
-                                        <li><i class="fa fa-phone"></i> (+51) 982 087 547 <span style="color:#00FFDD">|</span> 986 352
-                                            816</li>
+                                        <li><i class="fa fa-phone"></i> (+51) 932 119 264 </li>
                                         <li><i class="fa fa-envelope"></i> nezkastudio@gmail.com</li>
                                     </ul>
                                 </div>
@@ -170,7 +169,7 @@
             <div class="row">
                 <div class="container">
                     <div class="footer-copyright">
-                        <p>© 2018 Copyright by Nezka Studio.</p>
+                        <p>© 2018 Copyright Nezka Studio.</p>
                     </div>
                 </div>
             </div>
