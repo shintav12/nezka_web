@@ -346,11 +346,11 @@
                         <?php }else{?>
                             <div class="col-md-4">
                         <?php }?>
-                            <div class="quien_eres grow"  style="cursor: pointer;" href="{{url('who_you_are')}}/{{$client_types[$i]->slug}}">
+                            <div class="quien_eres grow"  style="cursor: pointer;">
                                 <div style="text-align: center; padding-bottom: 25px">
-                                    <a><img class="services_img center" src="{{$client_types[$i]->image}}"></a>
+                                    <a href="{{url('who_you_are')}}/{{$client_types[$i]->slug}}"><img class="services_img center" src="{{$client_types[$i]->image}}"></a>
                                 </div>
-                                <h3 style="color:#666666">{{strtoupper($client_types[$i]->name)}}</h3>
+                                <a href="{{url('who_you_are')}}/{{$client_types[$i]->slug}}"><h3 style="color:#666666">{{strtoupper($client_types[$i]->name)}}</h3></a>
                             </div>
                         </div>
                     @endif

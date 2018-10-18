@@ -22,6 +22,9 @@
         .button_slider {
             z-index: 99999999;
         }
+        body {
+            font-family: Algerian;
+        }
         img {
             margin: 0px!important;
         }
