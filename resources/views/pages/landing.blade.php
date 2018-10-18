@@ -65,8 +65,8 @@
         color: #fff;
         }
         .portfolioContainer{
-        border: 1px solid #eee;
-        border-radius: 3px;
+            border: 1px solid transparent;
+            border-radius: 3px;
         }
         /*img {
         margin: 5px;
@@ -150,6 +150,21 @@
             transition: 0.2s width;
         }
 
+        .portfolioFilter a.current {
+            color: #52ffdd;
+            background-color: transparent;
+        }
+        .portfolioFilter a {
+            margin-right: 6px;
+            text-decoration: none;
+            border: 0px solid transparent !important;
+            padding: 4px 15px;
+            border-radius: 50px;
+            font-weight: bolder;
+            text-transform: uppercase;
+            display: inline-block;
+        }
+
         select {
             -webkit-appearance: none;
             -moz-appearance: none;
@@ -224,7 +239,7 @@
                 1000: {
                     items: 3,
                     nav: true,
-                    loop: false
+                    loop: true
                 }
             },
         });
@@ -246,7 +261,7 @@
                 1000: {
                     items: 5,
                     nav: true,
-                    loop: false
+                    loop: true
                 }
             },
             autoHeight: false,
@@ -344,7 +359,7 @@
 	    </div>
 	</div>
 </div>
-<div id="portafolio" class="section md-padding bg-grey">
+<div id="portafolio" class="section md-padding">
     <div class="container">
         <div class="row">
             <div class="section-header text-center">
@@ -364,13 +379,16 @@
                 @foreach($works as $work)
                     <div class="col-md-4 col-xs-4 work {{$work->type_slug}}">
                         <img class="img-responsive" src="{{$work->image}}" alt="">
-                        <div class="overlay"></div>
-                        <div class="work-content">
-                            <span>Category</span>
-                            <h3>Lorem ipsum dolor</h3>
-                            <div class="work-link">
-                                <a href="#"><i class="fa fa-external-link"></i></a>
-                                <a class="lightbox" href="./img/work3.jpg"><i class="fa fa-search"></i></a>
+                        <div class="overlay" style="margin: 10px"></div>
+                        <div class="work-content" style="position: relative">
+                            <div style="position: absolute;bottom: 0;left: 0;width: 100%">
+                                <div style="margin: 15px">
+                                    <span style="text-align: left">{{$work->client_name}}</span>
+                                    <h3 style="text-align: left" >{{$work->name}}</h3>
+                                </div>
+                                <div class="work-link" style="border-top:3px solid white;">
+                                    <a href="{{url('projects/')}}/{{$work->work_slug}}">Ver m&aacute;s</a>
+                                </div>
                             </div>
                         </div>
                     </div>

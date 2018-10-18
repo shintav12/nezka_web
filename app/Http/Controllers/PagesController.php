@@ -5,7 +5,9 @@ namespace App\Http\Controllers;
 use App\Categories;
 use App\Clients;
 use App\ClientTypes;
+use App\GalleryWork;
 use App\Models\Contact;
+use App\Models\Work;
 use App\Projects;
 use App\Services;
 use App\ServicesCustomer;
@@ -28,8 +30,11 @@ class PagesController extends Controller
         $social_media = SocialMedia::get(["name","url"]);
         $categories = Categories::get(["name","slug"]);
         $works = Works::join('project_type','project_type.id','project_type_description.project_type_id')
+            ->join('project','project.id','project_type_description.project_id')
+            ->join('client','client.id','project.client_id')
             ->get(["project_type_description.name",DB::raw('project_type_description.slug as work_slug'),DB::raw('project_type.slug as type_slug'),
-                DB::raw('concat("'.config("app.path_url").'",project_type_description.image) as image')]);
+                DB::raw('concat("'.config("app.path_url").'",project_type_description.image) as image'),
+                DB::raw('client.name as client_name')]);
 
         $data["sliders"] = $sliders;
         $data["services"] = $services;
@@ -96,7 +101,17 @@ class PagesController extends Controller
     public function projects($slug){
         $social_media = SocialMedia::get(["name","url"]);
         $categories = Categories::get(["name","slug"]);
+        $work = Works::where('slug',$slug)->first();
+        $project = Projects::where('id',$work->project_id)->first();
+        $client = Clients::where('id',$project->client_id)->first();
+        $images = GalleryWork::where('project_description_id',$work->id)->get([DB::raw('concat("'.config("app.path_url").'",project_images.image) as image')]);
+        $type = Categories::where('id',$work->project_type_id)->first();
         $data["categories"] = $categories;
+        $data["work"] = $work;
+        $data["type"] = $type;
+        $data["project"] = $project;
+        $data["client"] = $client;
+        $data["images"] = $images;
         $data["social_medias"] = $social_media;
         return view('pages.project',$data);
     }

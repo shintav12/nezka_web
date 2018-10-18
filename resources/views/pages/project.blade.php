@@ -155,27 +155,26 @@
 @section('content')
     <div class="container margin-80">
         <div class="row text-center margin-60">
-            <h1 class="sub-page_title__h1">Titulo del cliente <span class="punto">.</span></h1>
+            <h1 class="sub-page_title__h1">{{$project->title}} <span class="punto">.</span></h1>
             <p class="sub-page_p"></p>
         </div>
         <div class="row">
             <div  class="col-md-6 text-center">
                 <div  id="projects" class="owl-carousel owl-theme">
-                    <img class="item" src="../img/alex/1.png" alt="" >
-                    <img class="item" src="../img/alex/2.png" alt="" >
-                    <img class="item" src="../img/alex/3.png" alt="" >
-                    <img class="item" src="../img/alex/4.png" alt="" >
-                    <img class="item" src="../img/alex/5.jpg" alt="" >
+                    @foreach($images as $image)
+                        <img class="item" src="{{$image->image}}" alt="" >
+                    @endforeach
                 </div>
             </div>
             <div class="col-md-6">
                 <h2 class="sub-page_title__icon">descripción del proyecto</h2>
-                <p class="sub-page_description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas sit quaerat exercitationem eius velit fuga molestias similique cupiditate? Eveniet dolorem quia exercitationem cupiditate, eos porro neque? Veritatis repellat adipisci officiis?</p>
-                <p class="sub-page_description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur, incidunt eveniet et adipisci illo eaque enim sint dolore, dignissimos laborum aliquam rem consequatur, ab quam quia commodi vero soluta fuga!</p>
-                <br>
+                <p class="sub-page_description">{{$work->description}}</p>
+
                 <h2 class="sub-page_title__icon">detalles</h2>
+                <p class="sub-page_description">{{$type->name}}</p>
                 <h3 class="sub-page_title__icon">Cliente:</h3>
-                <h3 class="sub-page_title__icon">solución</h3>
+                <p class="sub-page_description">{{$client->name}}</p>
+                <br>
             </div>
         </div>
     </div>
