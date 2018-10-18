@@ -1,6 +1,7 @@
 @extends('other')
 
 @section('styles')
+
     <style>
         .margin-20 {
             margin-bottom: 20px;
@@ -133,9 +134,23 @@
             border-radius: 20px;
         }
     </style>
+    <link type="text/css" rel="stylesheet" href="{{asset('assets/owl/assets/owl.carousel.min.css')}}" />
+    <link type="text/css" rel="stylesheet" href="{{asset('assets/owl/assets/owl.theme.green.min.css')}}" />
 @endsection
 @section('scripts')
-
+    <script>
+        $('#projects').owlCarousel({
+            items:1,
+            lazyLoad:true,
+            loop:true,
+            autoHeight: false,
+            autoWidth: false,
+            autoHeightClass: 'owl-height',
+            autoplay:true,
+            dots: true,
+            navText : ["<i class='fa fa-chevron-left'></i>","<i class='fa fa-chevron-right'></i>"]
+        });
+    </script>
 @endsection
 @section('content')
     <div class="container margin-80">
@@ -144,8 +159,14 @@
             <p class="sub-page_p"></p>
         </div>
         <div class="row">
-            <div class="col-md-6 text-center">
-                <img src="#">
+            <div  class="col-md-6 text-center">
+                <div  id="projects" class="owl-carousel owl-theme">
+                    <img class="item" src="../img/alex/1.png" alt="" >
+                    <img class="item" src="../img/alex/2.png" alt="" >
+                    <img class="item" src="../img/alex/3.png" alt="" >
+                    <img class="item" src="../img/alex/4.png" alt="" >
+                    <img class="item" src="../img/alex/5.jpg" alt="" >
+                </div>
             </div>
             <div class="col-md-6">
                 <h2 class="sub-page_title__icon">descripción del proyecto</h2>

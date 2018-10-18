@@ -30,14 +30,14 @@
 <body>
     <header id="home">
         <div class="bg-img">
-            <div id="slider" class="owl-carousel owl-theme bg-img">
+            <div id="slider" class="owl-carousel owl-theme">
                 @foreach($sliders as $slider)
                     <div class="">
                         <img src="{{$slider->image}}" >
                         <div class="home-wrapper">
                             <div class="container">
                                 <div class="row">
-                                    <div class="col-md-10 col-md-offset-1">
+                                    <div class="col-md-10 col-xs-12 col-xs-offset-1">
                                         <div class="home-content button_slider">
                                             <h1 class="white-text" style="letter-spacing: 7px;font-size:75px;">{{$slider->title}}</h1>
                                             <p class="white-text" style="font-size:30px">{{$slider->subtitle}}</p>
@@ -93,8 +93,11 @@
                             <br/>
                             <br/>
                             <br/>
-                            <button class="outline-btn">Nuestros proyectos</button>
-                            <button class="white-btn">¿Quién eres?</button>
+                             <br/>
+                             <br/>
+                             <br/>
+                            <button class="outline-btn" style="color:white!important; border-color: white!important; font-weight: bolder;font-size: 26px">Nuestros proyectos</button>
+                            <button class="white-btn" style="font-weight: bolder; font-size: 26px" >¿Quién eres?</button>
                          </div>
                      </div>
                  </div>
@@ -200,6 +203,7 @@
             loop:true,
             margin:0,
             autoHeight: false,
+            responsiveClass:true,
             autoWidth: false,
             autoHeightClass: 'owl-height',
             autoplay:true,

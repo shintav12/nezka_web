@@ -111,6 +111,13 @@
         border: 3px solid #868F9B;
         }
 
+        .title_color{
+            color: #4d4d4d;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            font-size: 20px;
+        }
+
         .styled-select select {
         background: transparent;
         border: 1px solid grey;
@@ -126,6 +133,29 @@
         border-radius: 20px;
         }
 
+        .grow { transition: all .2s ease-in-out; }
+        .grow:hover {
+            transform: scale(1.25);
+        }
+        .quien_eres:after {
+            content: "";
+            background-color: transparent!important;
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 0%;
+            z-index: -1;
+            -webkit-transition: 0.2s width;
+            transition: 0.2s width;
+        }
+
+        select {
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            text-indent: 10px;
+            text-overflow: '';
+        }
     </style>
 @endsection
 
@@ -180,13 +210,45 @@
             autoHeightClass: 'owl-height',
             autoplay:true,
             dots: true,
-            nav: false
+            nav: false,
+            responsiveClass:true,
+            responsive: {
+                0: {
+                    items: 1,
+                    nav: true
+                },
+                600: {
+                    items: 3,
+                    nav: false
+                },
+                1000: {
+                    items: 3,
+                    nav: true,
+                    loop: false
+                }
+            },
         });
         $('#clients').owlCarousel({
             items:4,
             lazyLoad:true,
             loop:true,
-            margin:20,
+            margin:30,
+            responsiveClass:true,
+            responsive: {
+                0: {
+                    items: 1,
+                    nav: true
+                },
+                600: {
+                    items: 3,
+                    nav: false
+                },
+                1000: {
+                    items: 5,
+                    nav: true,
+                    loop: false
+                }
+            },
             autoHeight: false,
             autoWidth: false,
             autoHeightClass: 'owl-height',
@@ -233,7 +295,7 @@
     <div class="container">
         <div class="row">
             <div class="section-header text-center">
-                <h2 class="title">Nuestros Servicios<span class="punto">.</span> </h2>
+                <h2 class="title_color">Nuestros Servicios<span class="punto">.</span> </h2>
             </div>
             <div class="col-md-12">
                 <div id="services" class="owl-carousel owl-theme">
@@ -258,22 +320,22 @@
 		<div class="container">
             <div class="row">
                 <div class="section-header text-center" style="padding-top: 50px">
-                    <h2 class="title">¿Quién eres?<span class="punto">.</span> <br>
-                        <small> texto abajo de quien eres</small>
+                    <h2 class="title_color">¿Quién eres?<span class="punto">.</span> <br>
+                        <small style="color: white;font-weight: bold;"> Queremos conocerte mejor, cuentanos m&aacute;s sobre ti</small>
                     </h2>
                 </div>
                 @for($i = 0; $i < count($client_types); $i++)
                     @if($client_types[$i]->type == "mains")
                         <?php if($i == 1){ ?>
-                            <div class="col-md-4" style="border-right: 1px solid #333; border-left: 1px solid #333">
+                            <div class="col-md-4" style="border-right: 1px solid #333; border-left: 1px solid #333;">
                         <?php }else{?>
                             <div class="col-md-4">
                         <?php }?>
-                            <div class="quien_eres">
+                            <div class="quien_eres grow"  style="cursor: pointer;" href="{{url('who_you_are')}}/{{$client_types[$i]->slug}}">
                                 <div style="text-align: center; padding-bottom: 25px">
-                                    <a href="{{url('who_you_are')}}/{{$client_types[$i]->slug}}"><img class="services_img center" src="{{$client_types[$i]->image}}"></a>
+                                    <a><img class="services_img center" src="{{$client_types[$i]->image}}"></a>
                                 </div>
-                                <h3>{{strtoupper($client_types[$i]->name)}}</h3>
+                                <h3 style="color:#666666">{{strtoupper($client_types[$i]->name)}}</h3>
                             </div>
                         </div>
                     @endif
@@ -286,7 +348,7 @@
     <div class="container">
         <div class="row">
             <div class="section-header text-center">
-                <h2 class="title">portafolio de proyectos<span class="punto">.</span> </h2>
+                <h2 class="title_color">portafolio de proyectos<span class="punto">.</span> </h2>
             </div>
             <div class="col-lg-12">
                 <div class="portfolioFilter clearfix text-center">
@@ -299,7 +361,7 @@
             </div>
             <div class="portfolioContainer">
                 <div class="col-md-4 col-xs-6 work webTemplates objects">
-                    <img class="img-responsive" src="./img/work1.jpg" alt="">
+                    <img class="img-responsive" src="./img/portada_alex.jpg" alt="">
                     <div class="overlay"></div>
                     <div class="work-content">
                         <span>Category</span>
@@ -381,7 +443,7 @@
 				¿sabías que?
 			</div>
 			<div class="text-center">
-					<a  href="text-center" style="color:#fff; text-transform:uppercase; letter-spacing: 8px; font-size: 17px; border-bottom: 1px solid #fff ">ver video</a>
+                <a  href="text-center" style="color:#fff; text-transform:uppercase; letter-spacing: 8px; font-size: 17px; border-bottom: 1px solid #fff ">ver video</a>
 			</div>
         </div>
     </div>
@@ -445,7 +507,7 @@
     <div class="row">
         <div class="col-md-12" style="text-align: center; padding-top: 25px; padding-bottom: 45px;">
             <div class="section-header text-center">
-                <h2 class="title">Nuestros Clientes</h2>
+                <h2 class="title_color">Nuestros Clientes</h2>
             </div>
         </div>
     </div>
@@ -467,49 +529,51 @@
 </div>
 <div id="contacto" class="section md-padding">
     <div class="container">
-        <div class="row">
-            <div class="section-header text-center">
-                <h2 class="title">¿CÓMO TE PODEMOS AYUDAR?<span class="punto">.</span></h2>
-            </div>
-            <div class="col-md-12">
-                <form id="contact-form">
-                    <div class="row">
-                        <div class="col-md-6">
-                            <label for="name">Nombre</label><br>
-                            <input type="text" name="name" class="input">
+        <div style="padding-right: 50px;padding-right: 50px;">
+            <div class="row">
+                <div class="section-header text-center">
+                    <h2 class="title_color">¿CÓMO TE PODEMOS AYUDAR?<span class="punto">.</span></h2>
+                </div>
+                <div class="col-md-12">
+                    <form id="contact-form">
+                        <div class="row" style="padding-bottom: 15px">
+                            <div class="col-md-6">
+                                <label for="name">Nombre</label><br>
+                                <input type="text" name="name" class="input">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="email">Correo</label><br>
+                                <input type="email" name="email" class="input">
+                            </div>
                         </div>
-                        <div class="col-md-6">
-                            <label for="email">Correo</label><br>
-                            <input type="email" name="email" class="input">
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-4">
-                            <label for="company">Empresa</label><br>
-                            <input type="text" name="company" class="input">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <label for="company">Empresa</label><br>
+                                <input type="text" name="company" class="input">
 
+                            </div>
+                            <div class="col-md-4">
+                                <label for="phone">Teléfono</label><br>
+                                <input type="tel" name="phone" class="input">
+                            </div>
+                            <div class="col-md-4" >
+                                <label for="company_type">¿Quién eres?</label><br>
+                                <select class="input styled-select rounded" name="company_type" >
+                                    @foreach($client_types as $client_type)
+                                        <option value="{{$client_type->id}}">{{$client_type->name}}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+                            <div class="col-md-12" style="padding-top: 15px">
+                                <label for="message">Asunto</label> <br>
+                                <textarea class="input" name="message" rows="30"></textarea>
+                            </div>
                         </div>
-                        <div class="col-md-4">
-                            <label for="phone">Teléfono</label><br>
-                            <input type="tel" name="phone" class="input">
+                        <div class="col-md-12" style="text-align: center; padding-top: 30px">
+                            <button class="main-btn" style="font-weight: bold; font-size: 18px;border-radius: 15px;">Enviar Mensaje</button>
                         </div>
-                        <div class="col-md-4" >
-                            <label for="company_type">¿Quién eres?</label><br>
-                            <select class="input styled-select rounded" name="company_type" >
-                                @foreach($client_types as $client_type)
-                                    <option value="{{$client_type->id}}">{{$client_type->name}}</option>
-                                @endforeach
-                            </select>
-                        </div>
-                        <div class="col-md-12">
-                            <label for="message">Asunto</label> <br>
-                            <textarea class="input" name="message" rows="30"></textarea>
-                        </div>
-                    </div>
-                    <div class="col-md-12" style="text-align: center; padding-top: 30px">
-                        <button class="main-btn">Enviar Mensaje</button>
-                    </div>
-                </form>
+                    </form>
+                </div>
             </div>
         </div>
     </div>
