@@ -359,79 +359,22 @@
 
                 </div>
             </div>
+
             <div class="portfolioContainer">
-                <div class="col-md-4 col-xs-6 work webTemplates objects">
-                    <img class="img-responsive" src="./img/portada_alex.jpg" alt="">
-                    <div class="overlay"></div>
-                    <div class="work-content">
-                        <span>Category</span>
-                        <h3>Lorem ipsum dolor</h3>
-                        <div class="work-link">
-                            <a href="#"><i class="fa fa-external-link"></i></a>
-                            <a class="lightbox" href="./img/work1.jpg"><i class="fa fa-search"></i></a>
+                @foreach($works as $work)
+                    <div class="col-md-4 col-xs-4 work {{$work->type_slug}}">
+                        <img class="img-responsive" src="{{$work->image}}" alt="">
+                        <div class="overlay"></div>
+                        <div class="work-content">
+                            <span>Category</span>
+                            <h3>Lorem ipsum dolor</h3>
+                            <div class="work-link">
+                                <a href="#"><i class="fa fa-external-link"></i></a>
+                                <a class="lightbox" href="./img/work3.jpg"><i class="fa fa-search"></i></a>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-md-4 col-xs-6 work logos">
-                    <img class="img-responsive" src="./img/work2.jpg" alt="">
-                    <div class="overlay"></div>
-                    <div class="work-content">
-                        <span>Category</span>
-                        <h3>Lorem ipsum dolor</h3>
-                        <div class="work-link">
-                            <a href="#"><i class="fa fa-external-link"></i></a>
-                            <a class="lightbox" href="./img/work2.jpg"><i class="fa fa-search"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 col-xs-6 work">
-                    <img class="img-responsive" src="./img/work3.jpg" alt="">
-                    <div class="overlay"></div>
-                    <div class="work-content">
-                        <span>Category</span>
-                        <h3>Lorem ipsum dolor</h3>
-                        <div class="work-link">
-                            <a href="#"><i class="fa fa-external-link"></i></a>
-                            <a class="lightbox" href="./img/work3.jpg"><i class="fa fa-search"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 col-xs-6 work">
-                    <img class="img-responsive" src="./img/work4.jpg" alt="">
-                    <div class="overlay"></div>
-                    <div class="work-content">
-                        <span>Category</span>
-                        <h3>Lorem ipsum dolor</h3>
-                        <div class="work-link">
-                            <a href="#"><i class="fa fa-external-link"></i></a>
-                            <a class="lightbox" href="./img/work4.jpg"><i class="fa fa-search"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 col-xs-6 work">
-                    <img class="img-responsive" src="./img/work5.jpg" alt="">
-                    <div class="overlay"></div>
-                    <div class="work-content">
-                        <span>Category</span>
-                        <h3>Lorem ipsum dolor</h3>
-                        <div class="work-link">
-                            <a href="#"><i class="fa fa-external-link"></i></a>
-                            <a class="lightbox" href="./img/work5.jpg"><i class="fa fa-search"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 col-xs-6 work">
-                    <img class="img-responsive" src="./img/work6.jpg" alt="">
-                    <div class="overlay"></div>
-                    <div class="work-content">
-                        <span>Category</span>
-                        <h3>Lorem ipsum dolor</h3>
-                        <div class="work-link">
-                            <a href="#"><i class="fa fa-external-link"></i></a>
-                            <a class="lightbox" href="./img/work6.jpg"><i class="fa fa-search"></i></a>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
             </div>
         </div>
     </div>
