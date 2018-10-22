@@ -39,7 +39,7 @@
                                 <div class="row">
                                     <div class="col-md-10 col-xs-12 col-xs-offset-1">
                                         <div class="home-content button_slider">
-                                            <h1 class="white-text" style="letter-spacing: 7px;font-size:75px;">{{$slider->title}}</h1>
+                                            <h1 class="white-text" style="letter-spacing: 7px;font-size:60px;">{{$slider->title}}</h1>
                                             <p class="white-text" style="font-size:30px">{{$slider->subtitle}}</p>
                                         </div>
                                     </div>
@@ -112,8 +112,7 @@
                     <div class="col-md-6">
                         <div>
                             <span class="footer-logo">
-                            <a href="index.html"><img src="img/logo-alt.png" alt="logo" style="margin-bottom:-20px;">
-                                <br><span style="color:#fff;margin-top:-10px">Studio</span></a>
+                            <a href="index.html"><img src="img/logo_alt_footer.png" alt="logo" style="margin-bottom:-20px;"></a>
                             </span>
                         </div>
                     </div>

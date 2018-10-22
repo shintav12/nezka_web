@@ -409,61 +409,33 @@
         </div>
     </div>
 </div>
-{{--<div id="blog" class="section md-padding bg-grey">--}}
-    {{--<div class="container">--}}
-        {{--<div class="row">--}}
-            {{--<div class="section-header text-center">--}}
-                {{--<h2 class="title">ultimas noticias de nuestro blog<span class="punto">.</span> </h2>--}}
-            {{--</div>--}}
-            {{--<div class="col-md-4">--}}
-                {{--<div class="blog">--}}
-                    {{--<div class="blog-img">--}}
-                        {{--<img class="img-responsive" src="./img/blog1.jpg" alt="">--}}
-                    {{--</div>--}}
-                    {{--<div class="blog-content">--}}
-                        {{--<h3 class="thumbnail-blog__title">TÍTULO NOTICIA</h3>--}}
-                        {{--<ul class="blog-meta">--}}
-                            {{--<li>Nezka Studio</li>--}}
-                            {{--<li>13 May 2018</li>--}}
-                        {{--</ul>--}}
-                    {{--</div>--}}
-                {{--</div>--}}
-            {{--</div>--}}
-            {{--<div class="col-md-4">--}}
-                {{--<div class="blog">--}}
-                    {{--<div class="blog-img">--}}
-                        {{--<img class="img-responsive" src="./img/blog2.jpg" alt="">--}}
-                    {{--</div>--}}
-                    {{--<div class="blog-content">--}}
-                        {{--<h3 class="thumbnail-blog__title">TÍTULO NOTICIA</h3>--}}
-                        {{--<ul class="blog-meta">--}}
-                            {{--<li>Nezka Studio</li>--}}
-                            {{--<li>13 May 2018</li>--}}
-                        {{--</ul>--}}
-                    {{--</div>--}}
-                {{--</div>--}}
-            {{--</div>--}}
-            {{--<div class="col-md-4">--}}
-                {{--<div class="blog">--}}
-                    {{--<div class="blog-img">--}}
-                        {{--<img class="img-responsive" src="./img/blog3.jpg" alt="">--}}
-                    {{--</div>--}}
-                    {{--<div class="blog-content">--}}
-                        {{--<h3 class="thumbnail-blog__title">TÍTULO NOTICIA</h3>--}}
-                        {{--<ul class="blog-meta">--}}
-                            {{--<li>Nezka Studio</li>--}}
-                            {{--<li>13 May 2018</li>--}}
-                        {{--</ul>--}}
-                    {{--</div>--}}
-                {{--</div>--}}
-            {{--</div>--}}
-        {{--</div>--}}
+<div id="noticias" class="section md-padding bg-grey">
+    <div class="container">
+        <div class="row">
+            <div class="section-header text-center">
+                <h2 class="title">ultimas noticias<span class="punto">.</span> </h2>
+            </div>
+            @foreach($news as $new)
+                <div class="col-md-4">
+                    <div class="blog">
+                        <div class="blog-img">
+                            <a target="_blank" href="{{$new->url}}"><img class="img-responsive" src="{{$new->image}}" alt=""></a>
+                        </div>
+                        <div class="blog-content">
+                            <h3 class="thumbnail-blog__title">{{$new->title}}</h3>
+                            <ul class="blog-meta">
+                                <li>{{$new->subtitle}}</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            @endforeach
+        </div>
         {{--<div class="row text-right">--}}
-
             {{--<a class="link" href="#">ver más ></a>--}}
         {{--</div>--}}
-    {{--</div>--}}
-{{--</div>--}}
+    </div>
+</div>
 <div id ="clientes" class="container" style="padding:25px 30px 100px;">
     <div class="row">
         <div class="col-md-12" style="text-align: center; padding-top: 25px; padding-bottom: 45px;">

@@ -116,6 +116,15 @@
             border: 3px solid #868F9B;
         }
 
+        nav.fixed-nav {
+            position: absolute !important;
+            left: 0;
+            right: 0;
+            padding: 0px 0px;
+            background-color: #FFF !important;
+            border-bottom: 1px solid #EEE;
+        }
+
         .styled-select select {
             background: transparent;
             border: 1px solid grey;

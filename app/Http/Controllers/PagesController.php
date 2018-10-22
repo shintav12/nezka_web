@@ -8,6 +8,7 @@ use App\ClientTypes;
 use App\GalleryWork;
 use App\Models\Contact;
 use App\Models\Work;
+use App\News;
 use App\Projects;
 use App\Services;
 use App\ServicesCustomer;
@@ -28,6 +29,7 @@ class PagesController extends Controller
         $client_types = ClientTypes::get(["id","name",DB::raw('concat("'.config("app.path_url").'",customer_type.image) as image'),"description","type","slug"]);
         $clients = Clients::get(["name",DB::raw('concat("'.config("app.path_url").'",client.image) as image',"slug")]);
         $social_media = SocialMedia::get(["name","url"]);
+        $news = News::orderBy('created_at','desc')->limit(3)->get(["title","subtitle","url",DB::raw('concat("'.config("app.path_url").'",blog.image) as image')]);
         $categories = Categories::get(["name","slug"]);
         $works = Works::join('project_type','project_type.id','project_type_description.project_type_id')
             ->join('project','project.id','project_type_description.project_id')
@@ -41,6 +43,7 @@ class PagesController extends Controller
         $data["client_types"] = $client_types;
         $data["clients"] = $clients;
         $data["works"] = $works;
+        $data["news"] = $news;
         $data["categories"] = $categories;
         $data["social_medias"] = $social_media;
         return view('pages.landing',$data);

@@ -2,21 +2,16 @@
 <html lang="es-PE">
 
 <head>
-
     <meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Nezka Studio</title>
-
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700%7CVarela+Round" rel="stylesheet">
     <link type="text/css" rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}" />
-
     <link type="text/css" rel="stylesheet" href="{{asset('css/magnific-popup.css')}}" />
     <link type="text/css" rel="stylesheet" href="{{asset('css/font-awesome.min.css')}}" />
-
     <link rel="shortcut icon" href="http://18.222.199.10/nezka_web/public/favicon.ico" />
     <link type="text/css" rel="stylesheet" href="{{asset('css/style.css')}}" />
-
     <link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
     <style>
         .button_slider {
@@ -39,7 +34,6 @@
             border-bottom: 4mm ridge rgb(0,255,221,.6);
         }
     </style>
-
     @yield('styles')
 </head>
 
@@ -47,7 +41,7 @@
     <header id="home" style="height: 100%;">
         <nav id="nav" class="navbar">
             <div class="container">
-                <div class="navbar-header" style="padding-left: 5px;">
+                <div class="navbar-header">
                     <div class="navbar-brand">
                         <a href="{{url('/')}}">
                             <img class="logo" src="{{asset('img/logo.png')}}" alt="logo">

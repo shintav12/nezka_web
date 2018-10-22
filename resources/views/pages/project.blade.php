@@ -119,6 +119,16 @@
             border: 3px solid #868F9B;
         }
 
+
+        nav.fixed-nav {
+            position: absolute !important;
+            left: 0;
+            right: 0;
+            padding: 0px 0px;
+            background-color: #FFF !important;
+            border-bottom: 1px solid #EEE;
+        }
+
         .styled-select select {
             background: transparent;
             border: 1px solid grey;
@@ -169,11 +179,10 @@
             <div class="col-md-6">
                 <h2 class="sub-page_title__icon">descripción del proyecto</h2>
                 <p class="sub-page_description">{{$work->description}}</p>
-
                 <h2 class="sub-page_title__icon">detalles</h2>
-                <p class="sub-page_description">{{$type->name}}</p>
-                <h3 class="sub-page_title__icon">Cliente:</h3>
-                <p class="sub-page_description">{{$client->name}}</p>
+                <p class="sub-page_description">{{$type->detail}}</p>
+                <h3 class="sub-page_title__icon">Caetegor&iacute;as</h3>
+                <p class="sub-page_description">{{$client->catgories}}</p>
                 <br>
             </div>
         </div>
