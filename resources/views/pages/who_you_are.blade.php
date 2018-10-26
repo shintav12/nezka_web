@@ -235,7 +235,7 @@
     <div class="loading-wheel" ></div>
 </div>
 
-<div class="container margin-80" id="form_services" style="display: none" >
+<div class="container margin-80" id="form_services" style="display: none;padding: 0 160px 0 160px">
     <div class="row text-center margin-40">
         <h1 class="sub-page_title__h1">COLOCA TUS DATOS</h1>
         <p class="sub-page_p" style="font-size: 20px !important;">Estamos casi listos para empezar a realizar tu proyecto, coloca bien tus datos y en breves momentos te haremos llegar a tu correo la cotización con todos los servicios que has escogido.</p>
@@ -244,7 +244,7 @@
         <input name="customer_type" value="{{$customer_type->id}}" hidden>
         <input id="services_types" name="services_types" value="" hidden>
         <div class="row">
-            <div class="row">
+            <div class="row" style="padding: 0 160px 0 160px">
                 <div class="col-md-6 col-sm-6 col-xs-12 margin-20">
                     <input type="text" name="name" placeholder="Nombre">
                 </div>
