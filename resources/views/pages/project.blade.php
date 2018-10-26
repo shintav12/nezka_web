@@ -180,9 +180,9 @@
                 <h2 class="sub-page_title__icon">descripción del proyecto</h2>
                 <p class="sub-page_description">{{$work->description}}</p>
                 <h2 class="sub-page_title__icon">detalles</h2>
-                <p class="sub-page_description">{{$type->detail}}</p>
-                <h3 class="sub-page_title__icon">Caetegor&iacute;as</h3>
-                <p class="sub-page_description">{{$client->catgories}}</p>
+                <p class="sub-page_description">{{$work->detail}}</p>
+                <h3 class="sub-page_title__icon">Categor&iacute;as</h3>
+                <p class="sub-page_description">{{$work->categories}}</p>
                 <br>
             </div>
         </div>
