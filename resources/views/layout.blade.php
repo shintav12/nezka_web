@@ -80,7 +80,7 @@
     <footer id="footer" class="sm-padding bg-dark">
         <div class="container">
             <div class="row">
-                <div class="col-md-12 col-xs-12">
+                <div class="col-md-12 col-xs-12" style="padding-right: 0px">
                     <div class="col-md-6 col-xs-12">
                         <div>
                             <span class="footer-logo">
@@ -88,10 +88,10 @@
                             </span>
                         </div>
                     </div>
-                    <div class="col-md-6 col-xs-12">
-                        <div class="footer-title col-md-12" style="text-align: right">Síguenos aquí</div>
+                    <div class="col-md-6 col-xs-12" style="padding-right: 0px">
+                        <div class="footer-title col-md-12" style="text-align: right;padding-right: 0px">Síguenos aquí</div>
                         <div class="col-md-12">
-                            <ul class="footer-follow" style="text-align: right!important;">
+                            <ul class="footer-follow" style="text-align: right!important;padding-right: 0px">
                                 @foreach($social_medias as $social_media)
                                     <li style="margin-right: -10px;"><a target="_blank" style="background-color: #61666d; font-size: 0.7em" href="{{$social_media->url}}"><i class="fa fa-{{$social_media->name}} "></i></a></li>
                                 @endforeach
@@ -102,10 +102,10 @@
             </div>
             <div class="container" style="padding: 0px">
                 <div class="row">
-                    <div class="col-md-12 col-xs-12">
+                    <div class="col-md-12 col-xs-12" style="padding: 0px">
                         <div class="col-md-4">
                             <div class="row col-xs-12">
-                                <div class="col-md-12 col-xs-12">
+                                <div class="col-md-12 col-xs-12" style="padding: 0px">
                                     <div class="footer-title">estudio digital</div>
                                     <ul class="">
                                         <li><i class="fa fa-whatsapp"></i><a target="_blank" style="color:#868F9B" href="https://api.whatsapp.com/send?phone=51932119264"> (+51) 932 119 264 </a></li>

@@ -91,6 +91,11 @@
         border-style: double;
         border-color: #ccc transparent;
     }
+
+    .error{
+        font-size: small !important;
+        letter-spacing: 1px !important;
+    }
     @-webkit-keyframes spin {
         0% {
             -webkit-transform: rotate(0);
@@ -136,7 +141,9 @@
                         $(".loading").show();
                     },
                     success: function () {
-                        window.location.href = "{{url('/')}}"
+                        $(".loading").fadeOut("fast");
+                        $("#form_services").fadeOut("fast");
+                        $("#message").fadeIn("slow");
                     }
                 });
             }
@@ -147,7 +154,7 @@
 
         });
         $(".item").click(function(){
-            let div = $(this).find("#icon")
+            var div = $(this).find("#icon")
             if(div.hasClass("sub-page_icons")){
                 div.removeClass("sub-page_icons");
                 div.addClass("item-selected");
@@ -159,8 +166,8 @@
             }
             text = "";
             values = "";
-            let divs_names =  $(".selected_div");
-            for( let i = 0; i < divs_names.length; i++) {
+            var divs_names =  $(".selected_div");
+            for( var i = 0; i < divs_names.length; i++) {
                 text = text + "<span style='padding-right: 20px;padding-left: 20px;'>" + divs_names.eq(i).attr("name") + "</span>";
                 values = values + " " + divs_names.eq(i).attr("name")
             }
@@ -171,9 +178,20 @@
 
         });
         $("#next_btn").click(function(e){
+            if(text == ""){
+                alert("Debe seleccionar por lo menos un servicio");
+                return;
+            }
             window.scrollTo(0, 0);
             $("#select_services").fadeOut("slow");
             $("#form_services").fadeIn("slow");
+
+        });
+
+        $("#return_btn").click(function(e){
+            window.scrollTo(0, 0);
+            $("#select_services").fadeIn("slow");
+            $("#form_services").fadeOut("slow");
 
         });
     </script>
@@ -183,7 +201,7 @@
 <div class="container margin-80" id="select_services">
     <div class="row text-center margin-60">
         <h1 class="sub-page_title__h1">{{$customer_type->name}}</h1>
-        <p class="sub-page_p">{{$customer_type->description}}</p>
+        <p class="sub-page_p" style="font-size: 20px!important;">{{$customer_type->description}}</p>
     </div>
     <div class="row">
         @foreach($services_customer as $item)
@@ -203,10 +221,24 @@
 <div class="loading style-2" style="display: none">
     <div class="loading-wheel" ></div>
 </div>
-<div class="container margin-60" id="form_services" style="display: none" >
+
+<div class="container margin-80" id="message" style="display: none">
+    <div class="row text-center margin-60">
+        <h1 class="sub-page_title__h1">Enviando con &eacute;xito</h1>
+        <p class="sub-page_p" style="font-size: 20px!important;">Nos estaremos contactando a la brevedad</p>
+    </div>
+    <div class="row text-center" style="padding-top: 25px">
+        <a id="redirect_home" href="{{url("/")}}#quien_eres" class="main-btn"><strong>Regresar a Nezka</strong></a>
+    </div>
+</div>
+<div class="loading style-2" style="display: none">
+    <div class="loading-wheel" ></div>
+</div>
+
+<div class="container margin-80" id="form_services" style="display: none" >
     <div class="row text-center margin-40">
         <h1 class="sub-page_title__h1">COLOCA TUS DATOS</h1>
-        <p class="sub-page_p">Estamos casi listos para empezar a realizar tu proyecto, coloca bien tus datos y en breves momentos te haremos llegar a tu correo la cotización con todos los servicios que has escogido.</p>
+        <p class="sub-page_p" style="font-size: 20px !important;">Estamos casi listos para empezar a realizar tu proyecto, coloca bien tus datos y en breves momentos te haremos llegar a tu correo la cotización con todos los servicios que has escogido.</p>
     </div>
     <form id="contact-form">
         <input name="customer_type" value="{{$customer_type->id}}" hidden>
@@ -233,7 +265,15 @@
                 <div id="selected_items" style="text-transform: capitalize; margin-top: 40px; color:#868f9b; font-weight: bold;"></div>
             </div>
             <div class="row text-center" style="padding-top: 25px">
-                <button class="main-btn"><strong>Enviar</strong></button>
+                <div class="col-xs-12">
+                    <div class="col-xs-6">
+                        <a id="return_btn" style="float: right" class="main-btn col-xs-6"><strong>Retroceder</strong></a>
+                    </div>
+                    <div class="col-xs-6" style="text-align: left;">
+                        <button class="main-btn col-xs-6"><strong>Enviar</strong></button>
+                    </div>
+                </div>
+
             </div>
         </div>
 

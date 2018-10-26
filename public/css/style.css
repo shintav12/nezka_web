@@ -46,9 +46,34 @@ Table OF Contents
 
 @font-face {
     font-family: 'Geometric';
-    src: url("/public/fonts/Gemotric/HurmeGeometricSans1.otf");
-    src: url("/public/fonts/Gemotric/HurmeGeometricSans1_Bold.otf");
-    font-style: normal;
+    src: url("../fonts/Gemotric/HurmeGeometricSans1.woff") format('woff'),
+    url("../fonts/Gemotric/HurmeGeometricSans1.woff2") format('woff2'),
+    url("../fonts/Gemotric/HurmeGeometricSans1_Black.woff") format('woff'),
+    url("../fonts/Gemotric/HurmeGeometricSans1_Black.woff2") format('woff2'),
+    url("../fonts/Gemotric/HurmeGeometricSans1_BlackOblique.woff") format('woff'),
+    url("../fonts/Gemotric/HurmeGeometricSans1_BlackOblique.woff2") format('woff2'),
+    url("../fonts/Gemotric/HurmeGeometricSans1_Bold.woff") format('woff'),
+    url("../fonts/Gemotric/HurmeGeometricSans1_Bold.woff2") format('woff2'),
+    url("../fonts/Gemotric/HurmeGeometricSans1_BoldOblique.woff") format('woff'),
+    url("../fonts/Gemotric/HurmeGeometricSans1_BoldOblique.woff2") format('woff2'),
+    url("../fonts/Gemotric/HurmeGeometricSans1_Hairline.woff") format('woff'),
+    url("../fonts/Gemotric/HurmeGeometricSans1_Hairline.woff2") format('woff2'),
+    url("../fonts/Gemotric/HurmeGeometricSans1_HairlineOblique.woff") format('woff'),
+    url("../fonts/Gemotric/HurmeGeometricSans1_HairlineOblique.woff2") format('woff2'),
+    url("../fonts/Gemotric/HurmeGeometricSans1_Light.woff") format('woff'),
+    url("../fonts/Gemotric/HurmeGeometricSans1_Light.woff2") format('woff2'),
+    url("../fonts/Gemotric/HurmeGeometricSans1_LightOblique.woff") format('woff'),
+    url("../fonts/Gemotric/HurmeGeometricSans1_LightOblique.woff2") format('woff2'),
+    url("../fonts/Gemotric/HurmeGeometricSans1_Oblique.woff") format('woff'),
+    url("../fonts/Gemotric/HurmeGeometricSans1_Oblique.woff2") format('woff2'),
+    url("../fonts/Gemotric/HurmeGeometricSans1_SemiBold.woff") format('woff'),
+    url("../fonts/Gemotric/HurmeGeometricSans1_SemiBold.woff2") format('woff2'),
+    url("../fonts/Gemotric/HurmeGeometricSans1_Thin.woff") format('woff'),
+    url("../fonts/Gemotric/HurmeGeometricSans1_Thin.woff2") format('woff2'),
+    url("../fonts/Gemotric/HurmeGeometricSans1_ThinOblique.woff") format('woff'),
+    url("../fonts/Gemotric/HurmeGeometricSans1_ThinOblique.woff2") format('woff2'),
+    url("../fonts/Gemotric/HurmeGeometricSans1SemiBoldOblique.woff") format('woff'),
+    url("../fonts/Gemotric/HurmeGeometricSans1SemiBoldOblique.woff2") format('woff2');
 }
 body {
     font-family: 'Geometric', Sans-Serif !important;
@@ -59,7 +84,7 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Geometric', sans-serif;
     font-weight: 700;
     margin-top: 0px;
     margin-bottom: 20px;
