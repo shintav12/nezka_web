@@ -335,7 +335,7 @@
 		<div class="container">
             <div class="row">
                 <div class="section-header text-center" style="padding-top: 50px">
-                    <h2 class="title_color">¿Quién eres?<span class="punto">.</span> <br>
+                    <h2 class="title_color">¿Quién eres?<span class="punto-wh">.</span> <br>
                         <small style="color: white;font-weight: bold;"> Queremos conocerte mejor, cuentanos m&aacute;s sobre ti</small>
                     </h2>
                 </div>
@@ -409,7 +409,7 @@
         </div>
     </div>
 </div>
-<div id="noticias" class="section md-padding bg-grey">
+<div id="noticias" class="section md-padding">
     <div class="container">
         <div class="row">
             <div class="section-header text-center">
@@ -440,7 +440,7 @@
     <div class="row">
         <div class="col-md-12" style="text-align: center; padding-top: 25px; padding-bottom: 45px;">
             <div class="section-header text-center">
-                <h2 class="title_color">Nuestros Clientes</h2>
+                <h2 class="title_color">Nuestros Clientes<span class="punto">.</span></h2>
             </div>
         </div>
     </div>
@@ -461,8 +461,8 @@
     </div>
 </div>
 <div id="contacto" class="section md-padding">
-    <div class="container">
-        <div style="padding-right: 50px;padding-right: 50px;">
+    <div class="container text-center" style="padding: 0 160px 0 160px">
+        <div style="padding-right: auto;padding-right: auto;">
             <div class="row">
                 <div class="section-header text-center">
                     <h2 class="title_color">¿CÓMO TE PODEMOS AYUDAR?<span class="punto">.</span></h2>

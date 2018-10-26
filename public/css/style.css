@@ -141,6 +141,11 @@ ul, ol {
     font-size: 40px;
 }
 
+.punto-wh {
+    color: #fff;
+    font-size: 40px;
+}
+
 /* -- section  -- */
 
 .section {
@@ -245,7 +250,7 @@ label{
     margin-bottom: -15px;
     text-align: left;
     font-size: 20px;
-    letter-spacing: 4px;
+    letter-spacing: 1px;
 }
 
 /* --  Buttons  -- */

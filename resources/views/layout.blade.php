@@ -80,15 +80,15 @@
     <footer id="footer" class="sm-padding bg-dark">
         <div class="container">
             <div class="row">
-                <div class="col-md-12">
-                    <div class="col-md-6">
+                <div class="col-md-12 col-xs-12">
+                    <div class="col-md-6 col-xs-12">
                         <div>
                             <span class="footer-logo">
                             <a href="index.html"><img src="img/logo_alt_footer.png" alt="logo" style="margin-bottom:-20px;"></a>
                             </span>
                         </div>
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-md-6 col-xs-12">
                         <div class="footer-title col-md-12" style="text-align: right">Síguenos aquí</div>
                         <div class="col-md-12">
                             <ul class="footer-follow" style="text-align: right!important;">
@@ -102,10 +102,10 @@
             </div>
             <div class="container" style="padding: 0px">
                 <div class="row">
-                    <div class="col-md-12">
+                    <div class="col-md-12 col-xs-12">
                         <div class="col-md-4">
-                            <div class="row">
-                                <div class="col-md-12">
+                            <div class="row col-xs-12">
+                                <div class="col-md-12 col-xs-12">
                                     <div class="footer-title">estudio digital</div>
                                     <ul class="">
                                         <li><i class="fa fa-whatsapp"></i><a target="_blank" style="color:#868F9B" href="https://api.whatsapp.com/send?phone=51932119264"> (+51) 932 119 264 </a></li>
@@ -115,7 +115,7 @@
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="col-md-12" style="padding-right: 0px; padding-top: 25px">
+                                <div class="col-md-12 col-xs-12" style="padding-right: 0px; padding-top: 25px">
                                     <div class="col-md-6 white-text" style="padding-left: 0px;padding-right: 5px; padding-bottom: 10px"><span style="font-weight: bolder; font-size: large">Portafolio</span></div>
                                     <div class="col-md-6 white-text" style="padding-left: 0px;padding-right: 5px; padding-bottom: 10px"><span style="font-weight: bolder; font-size: large">Cotizar</span></div>
                                     <div class="col-md-6 white-text" style="padding-left: 0px;padding-right: 5px; padding-bottom: 10px"><span style="font-weight: bolder; font-size: large">Quien Eres?</span></div>
