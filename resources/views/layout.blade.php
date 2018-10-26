@@ -93,7 +93,7 @@
                         <div class="col-md-12">
                             <ul class="footer-follow" style="text-align: right!important;">
                                 @foreach($social_medias as $social_media)
-                                    <li><a target="_blank" style="background-color: #61666d" href="{{$social_media->url}}"><i class="fa fa-{{$social_media->name}}"></i></a></li>
+                                    <li style="margin-right: -10px;"><a target="_blank" style="background-color: #61666d; font-size: 0.7em" href="{{$social_media->url}}"><i class="fa fa-{{$social_media->name}} "></i></a></li>
                                 @endforeach
                             </ul>
                         </div>
@@ -108,7 +108,8 @@
                                 <div class="col-md-12">
                                     <div class="footer-title">estudio digital</div>
                                     <ul class="">
-                                        <li><i class="fa fa-phone"></i> (+51) 932 119 264 </li>
+                                        <li><i class="fa fa-whatsapp"></i><a target="_blank" style="color:#868F9B" href="https://api.whatsapp.com/send?phone=51932119264"> (+51) 932 119 264 </a></li>
+                                        <li><i class="fa fa-whatsapp"></i><a target="_blank" style="color:#868F9B" href="https://api.whatsapp.com/send?phone=51986652816"> (+51) 986 652 816 </a></li>
                                         <li><i class="fa fa-envelope"></i> nezkastudio@gmail.com</li>
                                     </ul>
                                 </div>
@@ -125,11 +126,16 @@
                         </div>
 
                         <div class="col-md-4">
-                            <div class="footer-title">nuestros aliados</div>
-                            <a href="https://www.facebook.com/MORPHaudiovisual/" target="_blank">
-                                <img  src="{{asset("img/morph.png")}}" alt="logo"  width="50%">
-                            </a>
+                            <div class="row">
+                                <div class="footer-title">
+                                    <span>nuestros aliados</span>
+                                </div>
+                                <a href="https://www.facebook.com/MORPHaudiovisual/" target="_blank">
+                                    <img  src="{{asset("img/morph.png")}}" alt="logo"  width="50%">
+                                </a>
+                            </div>
                         </div>
+
                         <div class="col-md-4"  style="border-left-color: black; border-left-width: 2px;">
                             <span>En Nezka Studio tenemos como objetivo transmitir los mensajes visuales y audiovisuales de manera directa por diferentes medios</span>
                             </br>
@@ -141,8 +147,8 @@
             </div>
             <br>
             <div class="row">
-                <div class="container">
-                    <div class="footer-copyright">
+                <div class="container-fluid">
+                    <div class="footer-copyright" style="margin-top: 25px; margin-bottom: -35px">
                         <p>© 2018 Copyright Nezka Studio.</p>
                     </div>
                 </div>
