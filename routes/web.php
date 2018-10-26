@@ -23,7 +23,7 @@ Route::get('/potafolio', 'PagesController@portafolio');
 
 Route::get('/blog', 'PagesController@blog');
 
-Route::get('clients/{slug}','Pagescontroller@clients');
+Route::get('clients/{slug}','PagesController@clients');
 
 Route::get('who_you_are/{slug}','PagesController@whoyouare');
 
