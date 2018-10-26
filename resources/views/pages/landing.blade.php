@@ -137,6 +137,12 @@
         .grow:hover {
             transform: scale(1.25);
         }
+
+        .error{
+            font-size: small !important;
+            letter-spacing: 1px !important;
+        }
+
         .quien_eres:after {
             content: "";
             background-color: transparent!important;
@@ -335,7 +341,7 @@
 		<div class="container">
             <div class="row">
                 <div class="section-header text-center" style="padding-top: 50px">
-                    <h2 class="title_color">¿Quién eres?<span class="punto">.</span> <br>
+                    <h2 class="title_color">¿Quién eres?<span class="punto-wh">.</span> <br>
                         <small style="color: white;font-weight: bold;"> Queremos conocerte mejor, cuentanos m&aacute;s sobre ti</small>
                     </h2>
                 </div>
@@ -378,19 +384,18 @@
             <div class="portfolioContainer">
                 @foreach($works as $work)
                     <div class="col-md-4 col-xs-4 work {{$work->type_slug}}">
-                        <img class="img-responsive" src="{{$work->image}}" alt="">
-                        <div class="overlay" style="margin: 10px"></div>
-                        <div class="work-content" style="position: relative">
-                            <div style="position: absolute;bottom: 0;left: 0;width: 100%">
-                                <div style="margin: 15px">
-                                    <span style="text-align: left">{{$work->client_name}}</span>
-                                    <h3 style="text-align: left" >{{$work->name}}</h3>
-                                </div>
-                                <div class="work-link" style="border-top:3px solid white;">
-                                    <a href="{{url('projects/')}}/{{$work->work_slug}}">Ver m&aacute;s</a>
+                        <a href="{{url('projects/')}}/{{$work->work_slug}}">
+                            <img class="img-responsive" src="{{$work->image}}" alt="">
+                            <div class="overlay" style="margin: 10px"></div>
+                            <div class="work-content" style="position: relative">
+                                <div style="position: absolute;bottom: 0;left: 0;width: 100%">
+                                    <div style="margin: 15px">
+                                        <span style="text-align: left">{{$work->client_name}}</span>
+                                        <h3 style="text-align: left" >{{$work->name}}</h3>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
+                        </a>
                     </div>
                 @endforeach
             </div>
@@ -409,7 +414,7 @@
         </div>
     </div>
 </div>
-<div id="noticias" class="section md-padding bg-grey">
+<div id="noticias" class="section md-padding">
     <div class="container">
         <div class="row">
             <div class="section-header text-center">
@@ -440,7 +445,7 @@
     <div class="row">
         <div class="col-md-12" style="text-align: center; padding-top: 25px; padding-bottom: 45px;">
             <div class="section-header text-center">
-                <h2 class="title_color">Nuestros Clientes</h2>
+                <h2 class="title_color">Nuestros Clientes<span class="punto">.</span></h2>
             </div>
         </div>
     </div>
@@ -450,8 +455,10 @@
                 @foreach($clients as $client)
                     <div class="client_single">
                         <div class="servicios">
-                            <div style="text-align: center;" href="{{url('projects')}}/{{$client->slug}}">
-                                <img class="client_img center" src="{{$client->image}}">
+                            <div style="text-align: center;">
+                                <a href="{{url('clients')}}/{{$client->slug}}">
+                                    <img class="client_img center" src="{{$client->image}}">
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -461,8 +468,8 @@
     </div>
 </div>
 <div id="contacto" class="section md-padding">
-    <div class="container">
-        <div style="padding-right: 50px;padding-right: 50px;">
+    <div class="container text-center" style="padding: 0 160px 0 160px">
+        <div style="padding-right: auto;padding-right: auto;">
             <div class="row">
                 <div class="section-header text-center">
                     <h2 class="title_color">¿CÓMO TE PODEMOS AYUDAR?<span class="punto">.</span></h2>

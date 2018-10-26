@@ -165,7 +165,7 @@
 @section('content')
     <div class="container margin-80">
         <div class="row text-center margin-60">
-            <h1 class="sub-page_title__h1">{{$project->title}} <span class="punto">.</span></h1>
+            <a href="{{url("clients")}}/{{$client->slug}}"><h1 class="sub-page_title__h1">{{$project->title}} <span class="punto">.</span></h1></a>
             <p class="sub-page_p"></p>
         </div>
         <div class="row">

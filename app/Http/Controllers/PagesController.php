@@ -27,7 +27,7 @@ class PagesController extends Controller
         $sliders = Slider::where("status",1)->get(["title",DB::raw('concat("'.config("app.path_url").'",slider_banner.image) as image'),"subtitle"]);
         $services = Services::where("status",1)->get(["name",DB::raw('concat("'.config("app.path_url").'",services.image) as image'),"description"]);
         $client_types = ClientTypes::get(["id","name",DB::raw('concat("'.config("app.path_url").'",customer_type.image) as image'),"description","type","slug"]);
-        $clients = Clients::get(["name",DB::raw('concat("'.config("app.path_url").'",client.image) as image',"slug")]);
+        $clients = Clients::get(["name",DB::raw('concat("'.config("app.path_url").'",client.image) as image'),"slug"]);
         $social_media = SocialMedia::get(["name","url"]);
         $news = News::orderBy('created_at','desc')->limit(3)->get(["title","subtitle","url",DB::raw('concat("'.config("app.path_url").'",blog.image) as image')]);
         $categories = Categories::get(["name","slug"]);
@@ -131,22 +131,24 @@ class PagesController extends Controller
         return view('pages.who_you_are',$data);
     }
 
-    public function blog()
-    {
-        return view('pages.blog');
-    }
-
-    public function portafolio()
-    {
-        return view('pages.portafolio');
-    }
-
     public function clients($slug){
         $social_media = SocialMedia::get(["name","url"]);
         $customer_type = ClientTypes::where('slug',$slug)->get(["id","name","description"]);
+        $categories = Categories::get(["name","slug"]);
+        $client = Clients::where("slug",$slug)->first();
+        $works = Works::join('project_type','project_type.id','project_type_description.project_type_id')
+            ->join('project','project.id','project_type_description.project_id')
+            ->join('client','client.id','project.client_id')
+            ->where('project.client_id',$client->id)
+            ->get(["project_type_description.name",DB::raw('project_type_description.slug as work_slug'),DB::raw('project_type.slug as type_slug'),
+                DB::raw('concat("'.config("app.path_url").'",project_type_description.image) as image'),
+                DB::raw('client.name as client_name')]);
+        $data["works"] = $works;
+        $data["client"] = $client;
+        $data["categories"] = $categories;
         $data["social_medias"] = $social_media;
         $data["customer_type"] = $customer_type;
 
-        return view('pages.who_you_are',$data);
+        return view('pages.portafolio',$data);
     }
 }

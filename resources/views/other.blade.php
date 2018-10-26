@@ -52,7 +52,7 @@
                     </div>
                 </div>
                 <div class="main-nav nav navbar-nav navbar-right">
-                    <a href="{{url('/')}}"><span class="exit-button">X</span></a>
+                    <a href="{{url('/')}}#portafolio"><span class="exit-button">X</span></a>
                 </div>
             </div>
         </nav>
