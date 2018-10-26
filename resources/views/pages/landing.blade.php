@@ -236,7 +236,7 @@
             responsive: {
                 0: {
                     items: 1,
-                    nav: true
+                    nav: false
                 },
                 600: {
                     items: 3,
@@ -244,7 +244,7 @@
                 },
                 1000: {
                     items: 3,
-                    nav: true,
+                    nav: false,
                     loop: true
                 }
             },
@@ -258,7 +258,7 @@
             responsive: {
                 0: {
                     items: 1,
-                    nav: true
+                    nav: false
                 },
                 600: {
                     items: 3,
@@ -266,7 +266,7 @@
                 },
                 1000: {
                     items: 5,
-                    nav: true,
+                    nav: false,
                     loop: true
                 }
             },

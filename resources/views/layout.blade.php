@@ -183,9 +183,8 @@
             autoHeightClass: 'owl-height',
             autoplay:false,
             dots: false,
-            nav:true,
-            smartSpeed :900,
-            navText : ["<i class='fa fa-chevron-left'></i>","<i class='fa fa-chevron-right'></i>"]
+            nav:false,
+            smartSpeed :900
         });
     </script>
     @yield('scripts')
