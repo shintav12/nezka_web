@@ -356,7 +356,7 @@
                             <div style="text-align: center; padding-bottom: 25px;text-transform: uppercase;">
                                     <a href="{{url('who_you_are')}}/{{$client_types[$i]->slug}}"><img class="services_img center" src="{{$client_types[$i]->image}}"></a>
                                 </div>
-                                <a href="{{url('who_you_are')}}/{{$client_types[$i]->slug}}"><h3 style="color:#666666;tphp artsian serveext-transform: uppercase;">{{strtoupper($client_types[$i]->name)}}</h3></a>
+                                <a href="{{url('who_you_are')}}/{{$client_types[$i]->slug}}"><h3 style="color:#666666;text-transform: uppercase;">{{strtoupper($client_types[$i]->name)}}</h3></a>
                             </div>
                         </div>
                     @endif
