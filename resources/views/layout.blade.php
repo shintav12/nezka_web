@@ -181,7 +181,7 @@
             responsiveClass:true,
             autoWidth: false,
             autoHeightClass: 'owl-height',
-            autoplay:false,
+            autoplay:true,
             dots: false,
             nav:false,
             smartSpeed :900
