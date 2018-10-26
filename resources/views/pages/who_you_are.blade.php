@@ -244,7 +244,7 @@
         <input name="customer_type" value="{{$customer_type->id}}" hidden>
         <input id="services_types" name="services_types" value="" hidden>
         <div class="row">
-            <div class="row" style="padding: 0 160px 0 160px">
+            <div class="row" style="padding: 0 80px 0 80px">
                 <div class="col-md-6 col-sm-6 col-xs-12 margin-20">
                     <input type="text" name="name" placeholder="Nombre">
                 </div>
