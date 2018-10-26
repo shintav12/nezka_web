@@ -157,7 +157,7 @@
     </footer>
     <div id="back-to-top"></div>
     <div id="preloader">
-        span></span>
+        <span></span>
         <span></span>
         <span></span>
         <span></span>
