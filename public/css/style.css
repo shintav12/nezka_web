@@ -250,6 +250,13 @@ label{
 
 /* --  Buttons  -- */
 
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
+}
+
 .main-btn, .white-btn, .outline-btn {
     display: inline-block;
     padding: 10px 35px;
@@ -1657,6 +1664,7 @@ header {
 \*------------------------------------*/
 
 /* -- dots -- */
+
 
 .owl-theme .owl-dots .owl-dot span {
     border: none;

@@ -137,6 +137,12 @@
         .grow:hover {
             transform: scale(1.25);
         }
+
+        .error{
+            font-size: small !important;
+            letter-spacing: 1px !important;
+        }
+
         .quien_eres:after {
             content: "";
             background-color: transparent!important;
@@ -378,19 +384,18 @@
             <div class="portfolioContainer">
                 @foreach($works as $work)
                     <div class="col-md-4 col-xs-4 work {{$work->type_slug}}">
-                        <img class="img-responsive" src="{{$work->image}}" alt="">
-                        <div class="overlay" style="margin: 10px"></div>
-                        <div class="work-content" style="position: relative">
-                            <div style="position: absolute;bottom: 0;left: 0;width: 100%">
-                                <div style="margin: 15px">
-                                    <span style="text-align: left">{{$work->client_name}}</span>
-                                    <h3 style="text-align: left" >{{$work->name}}</h3>
-                                </div>
-                                <div class="work-link" style="border-top:3px solid white;">
-                                    <a href="{{url('projects/')}}/{{$work->work_slug}}">Ver m&aacute;s</a>
+                        <a href="{{url('projects/')}}/{{$work->work_slug}}">
+                            <img class="img-responsive" src="{{$work->image}}" alt="">
+                            <div class="overlay" style="margin: 10px"></div>
+                            <div class="work-content" style="position: relative">
+                                <div style="position: absolute;bottom: 0;left: 0;width: 100%">
+                                    <div style="margin: 15px">
+                                        <span style="text-align: left">{{$work->client_name}}</span>
+                                        <h3 style="text-align: left" >{{$work->name}}</h3>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
+                        </a>
                     </div>
                 @endforeach
             </div>
@@ -450,8 +455,10 @@
                 @foreach($clients as $client)
                     <div class="client_single">
                         <div class="servicios">
-                            <div style="text-align: center;" href="{{url('projects')}}/{{$client->slug}}">
-                                <img class="client_img center" src="{{$client->image}}">
+                            <div style="text-align: center;">
+                                <a href="{{url('clients')}}/{{$client->slug}}">
+                                    <img class="client_img center" src="{{$client->image}}">
+                                </a>
                             </div>
                         </div>
                     </div>

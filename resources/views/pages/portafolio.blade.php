@@ -107,6 +107,21 @@
             transition-property: transform, opacity;
         }
 
+        .portfolioFilter a.current {
+            color: #52ffdd;
+            background-color: transparent;
+        }
+        .portfolioFilter a {
+            margin-right: 6px;
+            text-decoration: none;
+            border: 0px solid transparent !important;
+            padding: 4px 15px;
+            border-radius: 50px;
+            font-weight: bolder;
+            text-transform: uppercase;
+            display: inline-block;
+        }
+
         /* FORMULARIO DE CONTACTO*/
         .styled-select {
             background: url(http://i62.tinypic.com/15xvbd5.png) no-repeat 96% 0;
@@ -176,94 +191,41 @@
 @endsection
 @section('content')
 
-    <div id="portafolio" class="section md-padding bg-grey">
+    <div id="portafolio" class="section md-padding bg-grey" style="padding-top: 60px!important; background-color: white!important;">
         <div class="container">
             <div class="row">
                 <div class="section-header text-center">
-                    <h2 class="title">portafolio de proyectos<span class="punto">.</span> </h2>
+                    <h2 class="title_color">{{$client->name}}<span class="punto">.</span> </h2>
                 </div>
                 <div class="col-lg-12">
                     <div class="portfolioFilter clearfix text-center">
-                        <a href="#" data-filter="*" class="current">Todos</a>
+                        <a href="#" data-filter="*" class="current">Todas las categorías</a>
                         @foreach($categories as $category)
                             <a href="#" data-filter=".{{$category->slug}}">{{$category->name}}</a>
                         @endforeach
 
                     </div>
                 </div>
+
                 <div class="portfolioContainer">
-                    <div class="col-md-4 col-xs-6 work webTemplates objects">
-                        <img class="img-responsive" src="./img/work1.jpg" alt="">
-                        <div class="overlay"></div>
-                        <div class="work-content">
-                            <span>Category</span>
-                            <h3>Lorem ipsum dolor</h3>
-                            <div class="work-link">
-                                <a href="#"><i class="fa fa-external-link"></i></a>
-                                <a class="lightbox" href="./img/work1.jpg"><i class="fa fa-search"></i></a>
+                    @foreach($works as $work)
+
+                        <div class="col-md-4 col-xs-4 work {{$work->type_slug}}">
+                            <a href="{{url('projects/')}}/{{$work->work_slug}}">
+                            <img class="img-responsive" src="{{$work->image}}" alt="">
+                            <div class="overlay" style="margin: 10px"></div>
+                            <div class="work-content" style="position: relative">
+                                <div style="position: absolute;bottom: 0;left: 0;width: 100%">
+                                    <div style="margin: 15px">
+                                        <span style="text-align: left">{{$work->client_name}}</span>
+                                        <h3 style="text-align: left" >{{$work->name}}</h3>
+                                    </div>
+                                </div>
                             </div>
+                            </a>
                         </div>
-                    </div>
-                    <div class="col-md-4 col-xs-6 work logos">
-                        <img class="img-responsive" src="./img/work2.jpg" alt="">
-                        <div class="overlay"></div>
-                        <div class="work-content">
-                            <span>Category</span>
-                            <h3>Lorem ipsum dolor</h3>
-                            <div class="work-link">
-                                <a href="#"><i class="fa fa-external-link"></i></a>
-                                <a class="lightbox" href="./img/work2.jpg"><i class="fa fa-search"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 col-xs-6 work">
-                        <img class="img-responsive" src="./img/work3.jpg" alt="">
-                        <div class="overlay"></div>
-                        <div class="work-content">
-                            <span>Category</span>
-                            <h3>Lorem ipsum dolor</h3>
-                            <div class="work-link">
-                                <a href="#"><i class="fa fa-external-link"></i></a>
-                                <a class="lightbox" href="./img/work3.jpg"><i class="fa fa-search"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 col-xs-6 work">
-                        <img class="img-responsive" src="./img/work4.jpg" alt="">
-                        <div class="overlay"></div>
-                        <div class="work-content">
-                            <span>Category</span>
-                            <h3>Lorem ipsum dolor</h3>
-                            <div class="work-link">
-                                <a href="#"><i class="fa fa-external-link"></i></a>
-                                <a class="lightbox" href="./img/work4.jpg"><i class="fa fa-search"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 col-xs-6 work">
-                        <img class="img-responsive" src="./img/work5.jpg" alt="">
-                        <div class="overlay"></div>
-                        <div class="work-content">
-                            <span>Category</span>
-                            <h3>Lorem ipsum dolor</h3>
-                            <div class="work-link">
-                                <a href="#"><i class="fa fa-external-link"></i></a>
-                                <a class="lightbox" href="./img/work5.jpg"><i class="fa fa-search"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 col-xs-6 work">
-                        <img class="img-responsive" src="./img/work6.jpg" alt="">
-                        <div class="overlay"></div>
-                        <div class="work-content">
-                            <span>Category</span>
-                            <h3>Lorem ipsum dolor</h3>
-                            <div class="work-link">
-                                <a href="#"><i class="fa fa-external-link"></i></a>
-                                <a class="lightbox" href="./img/work6.jpg"><i class="fa fa-search"></i></a>
-                            </div>
-                        </div>
-                    </div>
+
+                    @endforeach
                 </div>
             </div>
         </div>
