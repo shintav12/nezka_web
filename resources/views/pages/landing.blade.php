@@ -356,7 +356,7 @@
                             <div style="text-align: center; padding-bottom: 25px;text-transform: uppercase;">
                                     <a href="{{url('who_you_are')}}/{{$client_types[$i]->slug}}"><img class="services_img center" src="{{$client_types[$i]->image}}"></a>
                                 </div>
-                                <a href="{{url('who_you_are')}}/{{$client_types[$i]->slug}}"><h3 style="color:#666666;text-transform: uppercase;">{{strtoupper($client_types[$i]->name)}}</h3></a>
+                                <a href="{{url('who_you_are')}}/{{$client_types[$i]->slug}}"><h3 style="color:#666666;tphp artsian serveext-transform: uppercase;">{{strtoupper($client_types[$i]->name)}}</h3></a>
                             </div>
                         </div>
                     @endif
@@ -405,12 +405,7 @@
 <div id="team" class="section md-padding">
     <div class="container-fluid" style="background: #333; padding: 175px 0px; margin:0">
         <div class="row">
-			<div style="color: #fff; letter-spacing: 8px; text-transform: uppercase; font-weight: bold; font-size: 35px; margin-bottom: 10px;" class="text-center">
-				¿sabías que?
-			</div>
-			<div class="text-center">
-                <a  href="text-center" style="color:#fff; text-transform:uppercase; letter-spacing: 8px; font-size: 17px; border-bottom: 1px solid #fff ">ver video</a>
-			</div>
+            {{--<iframe src="https://player.vimeo.com/video/274984914" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>--}}
         </div>
     </div>
 </div>

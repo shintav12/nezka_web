@@ -81,7 +81,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12 col-xs-12" style="padding-right: 0px">
-                    <div class="col-md-6 col-xs-12">
+                    <div class="col-md-6 col-xs-12" style="padding-left: 0px">
                         <div>
                             <span class="footer-logo">
                             <a href="index.html"><img src="img/logo_alt_footer.png" alt="logo" style="margin-bottom:-20px;"></a>
