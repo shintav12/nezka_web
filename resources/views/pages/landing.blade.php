@@ -19,6 +19,10 @@
             opacity: 1;
             transition: 0.3s filter, 0.3s opacity;
         }
+        .owl-item{
+            text-align: center
+        }
+
         .client_single {
             display: inline-block;
             vertical-align: top;
@@ -142,6 +146,18 @@
             font-size: small !important;
             letter-spacing: 1px !important;
         }
+        @media screen and (min-device-width : 0px) and (max-device-width : 600px) {
+            .contacto-container{
+                padding: 0 20px 0 20px
+            }
+        }
+
+        @media screen and (min-device-width : 601px) and (max-device-width : 1920px) {
+            .contacto-container{
+                padding: 0 160px 0 160px
+            }
+        }
+
 
         .quien_eres:after {
             content: "";
@@ -253,28 +269,32 @@
             items:4,
             lazyLoad:true,
             loop:true,
-            margin:30,
             responsiveClass:true,
             responsive: {
                 0: {
                     items: 1,
-                    nav: false
+                    margin:0,
+                    nav: false,
+                    dots: false
                 },
                 600: {
                     items: 3,
-                    nav: false
+                    margin:30,
+                    nav: false,
+                    dots: false
                 },
                 1000: {
                     items: 5,
+                    margin:30,
                     nav: false,
-                    loop: true
+                    loop: true,
+                    dots: false
                 }
             },
             autoHeight: false,
             autoWidth: false,
             autoHeightClass: 'owl-height',
-            autoplay:true,
-            dots: true,
+            autoplay:false,
             nav: false
         });
     </script>
@@ -312,6 +332,29 @@
 @endsection
 
 @section('content')
+<div class="home-wrapper">
+            <div id="slider" class="owl-carousel owl-theme">
+                @foreach($sliders as $slider)
+                    <div class="">
+                        <img src="{{$slider->image}}" >
+                        <div class="home-wrapper">
+                            <div class="">
+                                <div class="row">
+                                    <div class="col-md-10 col-xs-12 col-xs-offset-1">
+                                        <div class="home-content button_slider">
+                                            <h1 class="white-text" style="letter-spacing: 5px;font-size:60px;margin:0px">{{$slider->title}}</h1>
+                                            <p class="white-text" style="font-size:25px">{{$slider->subtitle}}</p>
+                                            <a class="outline-btn" href="#portafolio"  style="color:white!important; border-color: white!important; font-weight: bolder;font-size: 15px">Nuestros proyectos</a>
+                                            <a class="white-btn" href="#quien_eres" style="font-weight: bolder; font-size: 15px" >¿Quién eres?</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                @endforeach
+            </div>
+        </div>
 <div id="servicios" class="section md-padding">
     <div class="container">
         <div class="row">
@@ -463,7 +506,7 @@
     </div>
 </div>
 <div id="contacto" class="section md-padding">
-    <div class="container text-center" style="padding: 0 160px 0 160px">
+    <div class="container text-center contacto-container">
         <div style="padding-right: auto;padding-right: auto;">
             <div class="row">
                 <div class="section-header text-center">
