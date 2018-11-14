@@ -294,7 +294,7 @@
             autoHeight: false,
             autoWidth: false,
             autoHeightClass: 'owl-height',
-            autoplay:false,
+            autoplay: true,
             nav: false
         });
     </script>
@@ -403,7 +403,7 @@
 
             <div class="portfolioContainer">
                 @foreach($works as $work)
-                    <div class="col-md-4 col-xs-4 work {{$work->type_slug}}">
+                    <div class="col-md-4 col-xs-6 work {{$work->type_slug}}">
                         <a href="{{url('projects/')}}/{{$work->work_slug}}">
                             <img class="img-responsive" src="{{$work->image}}" alt="">
                             <div class="overlay" style="margin: 10px"></div>
@@ -433,7 +433,7 @@
     <div class="container">
         <div class="row">
             <div class="section-header text-center">
-                <h2 class="title">ultimas noticias<span class="punto">.</span> </h2>
+                <h2 class="title_color">ultimas noticias<span class="punto">.</span> </h2>
             </div>
             @foreach($news as $new)
                 <div class="col-md-4">
