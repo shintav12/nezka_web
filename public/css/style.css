@@ -297,6 +297,19 @@ button:focus {
     display: none;
 }
 
+@media only screen and (max-width: 991px){
+    .footer-desktop{
+        display:none;
+    }
+    .footer-mobile{
+        display:block;
+    }
+}
+
+.footer-mobile{
+    display:none;
+}
+
 @media only screen and (max-width: 767px) {
     #nav.nav-transparent .navbar-brand .logo-alt {
         display: none !important;

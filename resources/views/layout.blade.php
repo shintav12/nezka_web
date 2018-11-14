@@ -77,7 +77,7 @@
         </div>
     </header>
     @yield('content')
-    <footer id="footer" class="sm-padding bg-dark">
+    <footer id="footer" class="sm-padding footer-desktop bg-dark">
         <div class="container">
             <div class="row">
                 <div class="col-md-12 col-xs-12" style="padding-right: 0px">
@@ -136,6 +136,81 @@
                             </div>
                         </div>
 
+                        <div class="col-md-4"  style="border-left-color: black; border-left-width: 2px;">
+                            <span>En Nezka Studio tenemos como objetivo transmitir los mensajes visuales y audiovisuales de manera directa por diferentes medios</span>
+                            </br>
+                            </br>
+                            <span>Teniendo como base: La comunicación es la clave para una buena gestión.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="container-fluid">
+                    <div class="footer-copyright" style="margin-top: 25px; margin-bottom: -35px">
+                        <p>© 2018 Copyright Nezka Studio.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <footer id="footer" class="sm-padding footer-mobile bg-dark">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 col-xs-12" style="padding-right: 0px">
+                    <div class="col-md-6 col-xs-12" style="padding-left: 0px">
+                        <div>
+                            <span class="footer-logo">
+                            <a href="index.html"><img src="img/logo_alt_footer.png" alt="logo" style="margin-bottom:-20px;"></a>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-xs-12" style="padding-right: 0px">
+                        <div class="footer-title col-md-12" style="text-align: right;padding-right: 0px">Síguenos aquí</div>
+                        <div class="col-md-12">
+                            <ul class="footer-follow" style="text-align: right!important;padding-right: 0px">
+                                @foreach($social_medias as $social_media)
+                                    <li style="margin-right: -10px;"><a target="_blank" style="background-color: #61666d; font-size: 0.7em" href="{{$social_media->url}}"><i class="fa fa-{{$social_media->name}} "></i></a></li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container" style="padding: 0px">
+                <div class="row">
+                    <div class="col-md-12 col-xs-12" style="padding: 0px">
+                        <div class="col-md-4">
+                            <div class="row col-xs-12">
+                                <div class="col-md-12 col-xs-12" style="padding: 0px">
+                                    <div class="footer-title">estudio digital</div>
+                                    <ul class="">
+                                        <li><i class="fa fa-whatsapp"></i><a target="_blank" style="color:#868F9B" href="https://api.whatsapp.com/send?phone=51932119264"> (+51) 932 119 264 </a></li>
+                                        <li><i class="fa fa-whatsapp"></i><a target="_blank" style="color:#868F9B" href="https://api.whatsapp.com/send?phone=51986652816"> (+51) 986 652 816 </a></li>
+                                        <li><i class="fa fa-envelope"></i> nezkastudio@gmail.com</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12 col-xs-12" style="padding-right: 0px; padding-top: 25px">
+                                    <div class="col-md-6 white-text" style="padding-left: 0px;padding-right: 5px; padding-bottom: 10px"><span style="font-weight: bolder; font-size: large">Portafolio</span></div>
+                                    <div class="col-md-6 white-text" style="padding-left: 0px;padding-right: 5px; padding-bottom: 10px"><span style="font-weight: bolder; font-size: large">Cotizar</span></div>
+                                    <div class="col-md-6 white-text" style="padding-left: 0px;padding-right: 5px; padding-bottom: 10px"><span style="font-weight: bolder; font-size: large">Quien Eres?</span></div>
+                                    <div class="col-md-6 white-text" style="padding-left: 0px;padding-right: 5px; padding-bottom: 10px"><span style="font-weight: bolder; font-size: large">Servicios</span></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="row">
+                                <div class="footer-title">
+                                    <span>nuestros aliados</span>
+                                </div>
+                                <a href="https://www.facebook.com/MORPHaudiovisual/" target="_blank">
+                                    <img  src="{{asset("img/morph.png")}}" alt="logo"  width="50%">
+                                </a>
+                            </div>
+                        </div>
                         <div class="col-md-4"  style="border-left-color: black; border-left-width: 2px;">
                             <span>En Nezka Studio tenemos como objetivo transmitir los mensajes visuales y audiovisuales de manera directa por diferentes medios</span>
                             </br>

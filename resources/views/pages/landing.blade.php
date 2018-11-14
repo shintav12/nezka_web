@@ -403,7 +403,7 @@
 
             <div class="portfolioContainer">
                 @foreach($works as $work)
-                    <div class="col-md-4 col-xs-6 work {{$work->type_slug}}">
+                    <div class="col-md-6 col-sm-4 col-lg-4 col-xs-6 work {{$work->type_slug}}">
                         <a href="{{url('projects/')}}/{{$work->work_slug}}">
                             <img class="img-responsive" src="{{$work->image}}" alt="">
                             <div class="overlay" style="margin: 10px"></div>
