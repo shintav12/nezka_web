@@ -120,6 +120,7 @@
             text-transform: uppercase;
             letter-spacing: 4px;
             font-size: 20px;
+            font-family: 'Gemotric-Bold';
         }
 
         .styled-select select {
@@ -332,7 +333,7 @@
 @endsection
 
 @section('content')
-<div id="servicios" class="section md-padding">
+<div id="servicios" class="section sm-padding">
     <div class="container">
         <div class="row">
             <div class="section-header text-center">
@@ -356,7 +357,7 @@
         </div>
     </div>
 </div>
-<div id="quien_eres" class="section nd padding">
+<div id="quien_eres" class="section sm-padding">
 	<div class="container-fluid" style="background:#00FFDD; padding: 15px 0px 50px 0px">
 		<div class="container">
             <div class="row">
@@ -372,20 +373,20 @@
                         <?php }else{?>
                             <div class="col-md-4">
                         <?php }?>
-                            <div class="quien_eres grow"  style="cursor: pointer;">
-                            <div style="text-align: center; padding-bottom: 25px;text-transform: uppercase;">
-                                    <a href="{{url('who_you_are')}}/{{$client_types[$i]->slug}}"><img class="services_img center" src="{{$client_types[$i]->image}}"></a>
+                                <div class="quien_eres grow"  style="cursor: pointer;">
+                                    <div style="text-align: center; padding-bottom: 25px;text-transform: uppercase;">
+                                        <a href="{{url('who_you_are')}}/{{$client_types[$i]->slug}}"><img class="services_img center" src="{{$client_types[$i]->image}}"></a>
+                                    </div>
+                                    <a href="{{url('who_you_are')}}/{{$client_types[$i]->slug}}"><h3 style="color:#666666;text-transform: uppercase;">{{strtoupper($client_types[$i]->name)}}</h3></a>
                                 </div>
-                                <a href="{{url('who_you_are')}}/{{$client_types[$i]->slug}}"><h3 style="color:#666666;text-transform: uppercase;">{{strtoupper($client_types[$i]->name)}}</h3></a>
                             </div>
-                        </div>
                     @endif
                 @endfor
             </div>
 	    </div>
 	</div>
 </div>
-<div id="portafolio" class="section md-padding">
+<div id="portafolio" class="section sm-padding">
     <div class="container">
         <div class="row">
             <div class="section-header text-center">
@@ -400,10 +401,9 @@
 
                 </div>
             </div>
-
             <div class="portfolioContainer">
                 @foreach($works as $work)
-                    <div class="col-md-6 col-sm-4 col-lg-4 col-xs-6 work {{$work->type_slug}}">
+                    <div class="col-md-6 col-sm-4 col-lg-4 col-xs-12 work {{$work->type_slug}}">
                         <a href="{{url('projects/')}}/{{$work->work_slug}}">
                             <img class="img-responsive" src="{{$work->image}}" alt="">
                             <div class="overlay" style="margin: 10px"></div>
@@ -422,14 +422,14 @@
         </div>
     </div>
 </div>
-<div id="team" class="section md-padding">
-    <div class="container-fluid" style="background: #333; padding: 175px 0px; margin:0">
-        <div class="row">
+{{--<div id="team" class="section md-padding">--}}
+    {{--<div class="container-fluid" style="background: #333; padding: 175px 0px; margin:0">--}}
+        {{--<div class="row">--}}
             {{--<iframe src="https://player.vimeo.com/video/274984914" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>--}}
-        </div>
-    </div>
-</div>
-<div id="noticias" class="section md-padding">
+        {{--</div>--}}
+    {{--</div>--}}
+{{--</div>--}}
+<div id="noticias" class="section sm-padding">
     <div class="container">
         <div class="row">
             <div class="section-header text-center">
@@ -441,7 +441,7 @@
                         <div class="blog-img">
                             <a target="_blank" href="{{$new->url}}"><img class="img-responsive" src="{{$new->image}}" alt=""></a>
                         </div>
-                        <div class="blog-content">
+                        <div class="blog-content" style="padding-bottom: 5px">
                             <h3 class="thumbnail-blog__title">{{$new->title}}</h3>
                             <ul class="blog-meta">
                                 <li>{{$new->subtitle}}</li>
@@ -456,7 +456,7 @@
         {{--</div>--}}
     </div>
 </div>
-<div id ="clientes" class="container" style="padding:25px 30px 100px;">
+<div id ="clientes" class="container" style="padding:25px 30px 25px;">
     <div class="row">
         <div class="col-md-12" style="text-align: center; padding-top: 25px; padding-bottom: 45px;">
             <div class="section-header text-center">
@@ -482,7 +482,7 @@
         </div>
     </div>
 </div>
-<div id="contacto" class="section md-padding">
+<div id="contacto" class="section sm-padding">
     <div class="container text-center contacto-container">
         <div style="padding-right: auto;padding-right: auto;">
             <div class="row">

@@ -7,8 +7,6 @@
     url("../fonts/Gemotric/HurmeGeometricSans1_Black.woff2") format('woff2'),
     url("../fonts/Gemotric/HurmeGeometricSans1_BlackOblique.woff") format('woff'),
     url("../fonts/Gemotric/HurmeGeometricSans1_BlackOblique.woff2") format('woff2'),
-    url("../fonts/Gemotric/HurmeGeometricSans1_Bold.woff") format('woff'),
-    url("../fonts/Gemotric/HurmeGeometricSans1_Bold.woff2") format('woff2'),
     url("../fonts/Gemotric/HurmeGeometricSans1_BoldOblique.woff") format('woff'),
     url("../fonts/Gemotric/HurmeGeometricSans1_BoldOblique.woff2") format('woff2'),
     url("../fonts/Gemotric/HurmeGeometricSans1_Hairline.woff") format('woff'),
@@ -29,6 +27,12 @@
     url("../fonts/Gemotric/HurmeGeometricSans1_ThinOblique.woff2") format('woff2'),
     url("../fonts/Gemotric/HurmeGeometricSans1SemiBoldOblique.woff") format('woff'),
     url("../fonts/Gemotric/HurmeGeometricSans1SemiBoldOblique.woff2") format('woff2');
+}
+
+@font-face {
+    font-family: 'Geometric-Bold';
+    src:  url("../fonts/Gemotric/HurmeGeometricSans1_Bold.woff") format('woff'),
+    url("../fonts/Gemotric/HurmeGeometricSans1_Bold.woff2") format('woff2');
 }
 body {
     font-family: 'Geometric', Sans-Serif !important;
@@ -297,6 +301,10 @@ button:focus {
     display: none;
 }
 
+.footer-mobile{
+    display:none;
+}
+
 @media only screen and (max-width: 991px){
     .footer-desktop{
         display:none;
@@ -306,9 +314,7 @@ button:focus {
     }
 }
 
-.footer-mobile{
-    display:none;
-}
+
 
 @media only screen and (max-width: 767px) {
     #nav.nav-transparent .navbar-brand .logo-alt {
