@@ -62,7 +62,7 @@
                                 <div class="row">
                                     <div class="col-md-10 col-xs-12 col-xs-offset-1">
                                         <div class="home-content button_slider">
-                                            <h1 class="white-text" style="letter-spacing: 5px;font-size:60px;margin:0px">{{$slider->title}}</h1>
+                                            <h1 class="white-text" style="letter-spacing: 5px;font-size:60px;margin:0px; font-family: 'Geometric-Black'">{{$slider->title}}</h1>
                                             <p class="white-text" style="font-size:25px">{{$slider->subtitle}}</p>
                                             <a class="outline-btn" href="#portafolio"  style="color:white!important; border-color: white!important; font-weight: bolder;font-size: 15px">Nuestros proyectos</a>
                                             <a class="white-btn" href="#quien_eres" style="font-weight: bolder; font-size: 15px" >¿Quién eres?</a>

@@ -120,7 +120,8 @@
             text-transform: uppercase;
             letter-spacing: 4px;
             font-size: 20px;
-            font-family: 'Gemotric-Bold';
+            font-family: 'Geometric-Bold' !important;
+            font-weight: bolder;
         }
 
         .styled-select select {

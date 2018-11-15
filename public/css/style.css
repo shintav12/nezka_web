@@ -34,6 +34,19 @@
     src:  url("../fonts/Gemotric/HurmeGeometricSans1_Bold.woff") format('woff'),
     url("../fonts/Gemotric/HurmeGeometricSans1_Bold.woff2") format('woff2');
 }
+
+@font-face {
+    font-family: 'Geometric-Blac';
+    src:  url("../fonts/Gemotric/HurmeGeometricSans1_Bold.woff") format('woff'),
+    url("../fonts/Gemotric/HurmeGeometricSans1_Bold.woff2") format('woff2');
+}
+
+@font-face {
+    font-family: 'Geometric-Black';
+    src:  url("../fonts/Gemotric/HurmeGeometricSans1_Black.woff") format('woff'),
+    url("../fonts/Gemotric/HurmeGeometricSans1_Black.woff2") format('woff2');
+}
+
 body {
     font-family: 'Geometric', Sans-Serif !important;
     font-size: 16px;
