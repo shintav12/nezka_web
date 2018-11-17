@@ -82,7 +82,7 @@
             <div class="row" style="padding-bottom: 25px;">
                 <div class="col-xs-12">
                     <span class="footer-logo">
-                        <a href="index.html"><img src="img/logo_alt_footer.png" alt="logo" ></a>
+                        <a href="{{url("/")}}"><img src="{{asset("img/logo_alt_footer.png")}}" alt="logo" ></a>
                     </span>
                 </div>
             </div>
@@ -157,7 +157,7 @@
             <div class="row" style="padding-bottom: 25px">
                 <div class="col-xs-12">
                     <span class="footer-logo">
-                    <a href="index.html"><img src="img/logo_alt_footer.png" alt="logo" style="margin-bottom:-20px;"></a>
+                        <a href="{{url("/")}}"><img src="{{asset("img/logo_alt_footer.png")}}" alt="logo" ></a>
                     </span>
                 </div>
             </div>

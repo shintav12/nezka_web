@@ -334,6 +334,36 @@
 @endsection
 
 @section('content')
+<div id="slider_mobile" class="sm-padding" style="padding-left: 0px; padding-right: 0px">
+    <div class="container" style="padding: 0px">
+        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+                @for($i = 0; $i < count($sliders); $i++)
+                    <li data-target="#myCarousel" data-slide-to="{{$i}}" <?php if($i == 0) echo('class="active"')?> ></li>
+                @endfor
+            </ol>
+            <div class="carousel-inner">
+                @for($i = 0; $i < count($sliders); $i++)
+                    <div class="item  <?php if($i == 0) echo('active')?>">
+                        <img src="{{$sliders[$i]->image}}" alt="Los Angeles" style="width:100%;">
+                        <div class="carousel-caption" style="bottom: 35px">
+                            <h2 class="white-text" style="letter-spacing: 5px;margin:0px; font-family: 'Geometric-Black'">{{$sliders[$i]->title}}</h2>
+                            <p class="white-text">{{$sliders[$i]->subtitle}}</p>
+                        </div>
+                    </div>
+                @endfor
+            </div>
+            <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                <span class="carousel-navs"><i class="fa fa-chevron-left"></i></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                <span class="carousel-navs"><i class="fa fa-chevron-right"></i></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+    </div>
+</div>
 <div id="servicios" class="section sm-padding">
     <div class="container">
         <div class="row">
