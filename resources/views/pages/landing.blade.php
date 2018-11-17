@@ -346,7 +346,7 @@
                 @for($i = 0; $i < count($sliders); $i++)
                     <div class="item  <?php if($i == 0) echo('active')?>">
                         <img src="{{$sliders[$i]->image}}" alt="Los Angeles" style="width:100%;">
-                        <div class="carousel-caption" style="bottom: 35px">
+                        <div class="carousel-caption" style="bottom: 30px;right: 10%;left: 10%">
                             <h2 class="white-text" style="letter-spacing: 5px;margin:0px; font-family: 'Geometric-Black'">{{$sliders[$i]->title}}</h2>
                             <p class="white-text">{{$sliders[$i]->subtitle}}</p>
                         </div>
