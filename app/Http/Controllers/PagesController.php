@@ -46,7 +46,7 @@ class PagesController extends Controller
         $data["news"] = $news;
         $data["categories"] = $categories;
         $data["social_medias"] = $social_media;
-        return view('pages.landing',$data);
+        return view('pages.index',$data);
     }
 
     public function SaveContact(Request $request)

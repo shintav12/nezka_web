@@ -1,256 +1,257 @@
 <!DOCTYPE html>
-<html lang="es-PE">
+<html dir="ltr" lang="en-US">
 
 <head>
-    <meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,400i,700|Raleway:300,400,500,600,700|Crete+Round:400i"
+        rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="{{asset('css/bootstrap.css')}}" type="text/css" />
+    <link rel="stylesheet" href="{{asset('style.css')}}" type="text/css" />
+    <link rel="stylesheet" href="{{asset('css/dark.css')}}" type="text/css" />
+    <link rel="stylesheet" href="{{asset('css/font-icons.css')}}" type="text/css" />
+    <link rel="stylesheet" href="{{asset('css/animate.css')}}" type="text/css" />
+    <link rel="stylesheet" href="{{asset('css/magnific-popup.css')}}" type="text/css" />
+    <link rel="stylesheet" href="{{asset('css/responsive.css')}}" type="text/css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" href="{{asset('include/rs-plugin/css/settings.css')}}" media="screen" />
+    <link rel="stylesheet" type="text/css" href="{{asset('include/rs-plugin/css/layers.css')}}">
+	<link rel="stylesheet" type="text/css" href="{{asset('include/rs-plugin/css/navigation.css')}}">
+	<link rel="stylesheet" href="css/barber.css" type="text/css" />
+
     <title>Nezka Studio</title>
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700%7CVarela+Round" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700%7CVarela+Round" rel="stylesheet">
-    <link type="text/css" rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}" />
-    <link type="text/css" rel="stylesheet" href="{{asset('css/magnific-popup.css')}}" />
-    <link type="text/css" rel="stylesheet" href="{{asset('css/font-awesome.min.css')}}" />
-    <link rel="shortcut icon" href="http://18.222.199.10/nezka_web/public/favicon.ico" />
-    <link type="text/css" rel="stylesheet" href="{{asset('css/style.css')}}" />
-    <link type="text/css" rel="stylesheet" href="{{asset('assets/owl/assets/owl.carousel.css')}}" />
-    <link type="text/css" rel="stylesheet" href="{{asset('assets/owl/assets/owl.theme.default.css')}}" />
-    <link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
     <style>
-        .button_slider {
-            z-index: 99999999;
+        .revo-slider-emphasis-text {
+            font-size: 64px;
+            font-weight: 700;
+            letter-spacing: -1px;
+            font-family: 'Raleway', sans-serif;
+            padding: 15px 20px;
+            border-top: 2px solid #FFF;
+            border-bottom: 2px solid #FFF;
         }
-        img {
-            margin: 0px!important;
+        
+        .revo-slider-desc-text {
+            font-size: 20px;
+            font-family: 'Lato', sans-serif;
+            width: 650px;
+            text-align: center;
+            line-height: 1.5;
+        }
+        
+        .revo-slider-caps-text {
+            font-size: 16px;
+            font-weight: 400;
+            letter-spacing: 3px;
+            font-family: 'Raleway', sans-serif;
+        }
+        
+        .tp-video-play-button {
+            display: none !important;
+        }
+        
+        .tp-caption {
+            white-space: nowrap;
         }
     </style>
+
     @yield('styles')
+
 </head>
 
-<body>
-    <header id="home">
-        <nav id="nav" class="navbar nav-transparent">
-            <div class="container">
-                <div class="navbar-header">
-                    <div class="navbar-brand">
-                        <a href="{{url('/')}}">
-                            <img class="logo" src="img/logo.png"style="padding-left: 10px" alt="logo">
-                            <img class="logo-alt" src="img/logo-alt.png" alt="logo">
-                        </a>
-                    </div>
-                    <div class="nav-collapse">
-                        <span></span>
-                    </div>
-                </div>
-                <ul class="main-nav nav navbar-nav navbar-right">
-                    <li><a href="#servicios">Servicios</a></li>
-                    <li><a href="#quien_eres">¿Quién eres?</a></li>
-                    <li><a href="#portafolio">Portafolio</a></li>
-                    <li><a href="#noticias">Noticias</a></li>
-                    <li><a href="#clientes">Clientes</a></li>
-                    <li><a href="#contacto">Contacto</a></li>
-                </ul>
-            </div>
-        </nav>
-        <div class="home-wrapper">
-            <div id="slider" class="owl-carousel owl-theme">
-                @foreach($sliders as $slider)
-                    <div class="">
-                        <img src="{{$slider->image}}" >
-                        <div class="home-wrapper">
-                            <div class="">
-                                <div class="row">
-                                    <div class="col-md-10 col-xs-12 col-xs-offset-1">
-                                        <div class="home-content button_slider">
-                                            <h1 class="white-text" style="letter-spacing: 5px;font-size:60px;margin:0px; font-family: 'Geometric-Black'">{{$slider->title}}</h1>
-                                            <p class="white-text" style="font-size:25px">{{$slider->subtitle}}</p>
-                                            <a class="outline-btn" href="#portafolio"  style="color:white!important; border-color: white!important; font-weight: bolder;font-size: 15px">Nuestros proyectos</a>
-                                            <a class="white-btn" href="#quien_eres" style="font-weight: bolder; font-size: 15px" >¿Quién eres?</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                @endforeach
-            </div>
-        </div>
-    </header>
-    @yield('content')
-    <footer id="footer" class="sm-padding footer-desktop bg-dark">
-        <div class="container">
-            <div class="row" style="padding-bottom: 25px;">
-                <div class="col-xs-12">
-                    <span class="footer-logo">
-                        <a href="{{url("/")}}"><img src="{{asset("img/logo_alt_footer.png")}}" alt="logo" ></a>
-                    </span>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-xs-8" >
-                    <div class="row" style="padding-bottom: 40px">
-                        <div class="col-xs-7">
-                            <div class="footer-title" style="padding-bottom: 15px">estudio digital</div>
-                            <span style="color:white">En Nezka Studio tenemos como objetivo transmitir los mensajes visuales y audiovisuales de manera directa por diferentes medios</span>
-                            </br>
-                            </br>
-                            <span style="color:white">Teniendo como base: La comunicación es la clave para una buena gestión.</span>
-                        </div>
-                        <div class="col-xs-5" style="  padding: 0px 0px 0px 71px;">
-                            <div class="footer-title" style="padding-bottom: 15px">
-                                <span>nuestros aliados</span>
-                            </div>
-                            <a href="https://www.facebook.com/MORPHaudiovisual/" target="_blank">
-                                <img  src="{{asset("img/morph.png")}}" alt="logo"  width="70%%">
-                            </a>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-xs-4">
-                            <div class="col-md-12 white-text" href="#portafolio" style="color:#868F9B;padding-left: 0px;padding-right: 5px; padding-bottom: 10px"><span style="font-weight: bolder; font-size: large">Portafolio</span></div>
-                            <div class="col-md-12 white-text" href="#contacto" style="color:#868F9B; padding-left: 0px;padding-right: 5px; padding-bottom: 10px"><span style="font-weight: bolder; font-size: large">Cotizar</span></div>
-                        </div>
-                        <div class="col-xs-4">
-                            <div class="col-md-12 white-text" href="#quien_eres" style="color:#868F9B;padding-left: 0px;padding-right: 5px; padding-bottom: 10px"><span style="font-weight: bolder; font-size: large">Quien Eres?</span></div>
-                            <div class="col-md-12 white-text" href="#servicios" style="color:#868F9B;padding-left: 0px;padding-right: 5px; padding-bottom: 10px"><span style="font-weight: bolder; font-size: large">Servicios</span></div>
-                        </div>
-                        <div class="col-xs-4">
-                            <div class="col-md-12 white-text" style="padding-left: 0px;padding-right: 5px; padding-bottom: 10px"><span style="font-weight: bolder; font-size: large"><br></span></div>
-                            <div class="col-md-12 white-text" href="#noticias" style="color:#868F9B;padding-left: 0px;padding-right: 5px; padding-bottom: 10px"><span style="font-weight: bolder; font-size: large">&Uacute;ltimas Noticas</span></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xs-4">
-                    <div class="row" style="padding-bottom: 20px">
-                        <div class="col-xs-12">
-                            <div class="footer-title" style="padding-bottom: 15px">CONT&Aacute;CTANOS</div>
-                            <ul class="row">
-                                <li class="col-xs-5" style="border-right: 1px solid #00FFDD; padding-right: 5px;color:white"><i class="fa fa-whatsapp"></i><a target="_blank" style="color:white" href="https://api.whatsapp.com/send?phone=51932119264"> (+51) 932 119 264 </a></li>
-                                <li class="col-xs-5" style="padding-right: 0px; padding-left: 15px;color:white"><i class="fa fa-whatsapp"></i><a target="_blank" style="color:white" href="https://api.whatsapp.com/send?phone=51986652816"> (+51) 986 652 816 </a></li>
-                                <li class="col-xs-12" style="padding-top: 15px;color:white"><i class="fa fa-envelope"></i> nezkastudio@gmail.com</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-xs-12">
-                            <ul class="footer-follow" style="text-align: left;">
-                                @foreach($social_medias as $social_media)
-                                    <li style="margin-right: 13px!important; margin-left: 0px!important;"><a target="_blank" style="width:37px; height: 37px; line-height: 40px; background-color: #00ffdd; color: #313131; font-size: 0.7em; border-radius: 5px;" href="{{$social_media->url}}"><i class="fa fa-{{$social_media->name}} "></i></a></li>
-                                @endforeach
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <br>
-            <div class="row">
-                <div class="container-fluid">
-                    <div class="footer-copyright" style="margin-top: 25px; margin-bottom: -35px">
-                        <p style="color:white">© 2018 Copyright Nezka Studio</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer >
-    <footer id="footer" class="sm-padding footer-mobile bg-dark" style="padding-top: 15px;">
-        <div class="container">
-            <div class="row" style="padding-bottom: 25px">
-                <div class="col-xs-12">
-                    <span class="footer-logo">
-                        <a href="{{url("/")}}"><img src="{{asset("img/logo_alt_footer.png")}}" alt="logo" ></a>
-                    </span>
-                </div>
-            </div>
-            <div class="row" style="padding-bottom: 25px">
-                <div class="col-xs-12">
-                    <div class="footer-title">estudio digital</div>
-                    <span>En Nezka Studio tenemos como objetivo transmitir los mensajes visuales y audiovisuales de manera directa por diferentes medios</span>
-                    <br>
-                    <span>Teniendo como base: La comunicación es la clave para una buena gestión.</span>
-                </div>
-            </div>
+<body class="stretched">
+    <div id="wrapper" class="clearfix"> 
+	<header id="header" class="full-header transparent-header static-sticky" data-sticky-offset="full" data-sticky-offset-negative="100">
+		<div id="header-wrap" style="border:0px">
+			<div class="container clearfix">
+				<div id="primary-menu-trigger"><i class="icon-reorder"></i></div>
+				<div id="logo" style="border:0px">
+					<a href="index.html" class="standard-logo" data-dark-logo="{{asset('img/logo-alt.png')}}"><img src="{{asset('img/logo.png')}}" alt="Canvas Logo"></a>
+					<a href="index.html" class="retina-logo" data-dark-logo="{{asset('img/logo-alt.png')}}"><img src="{{asset('img/logo.png')}}" alt="Canvas Logo"></a>
+				</div>
+				<nav id="primary-menu" style="border:0px">
+				<ul class="one-page-menu" data-easing="easeInOutExpo" data-speed="1250" data-offset="65" style="border:0px">
+					<li><a href="#" data-href="#services"><div>Servicios</div></a></li>
+					<li><a href="#" data-href="#quien_eres"><div>¿Qui&eacute;n eres?</div></a></li>
+					<li><a href="#" data-href="#portofolio"><div>Portafolio</div></a></li>
+					<li><a href="#" data-href="#news"><div>Noticias</div></a></li>
+					<li><a href="#" data-href="#clients"><div>Clientes</div></a></li>
+					<li><a href="#" data-href="#contact_us"><div>Contacto</div></a></li>
+				</ul>
+				</nav>
+			</div>
+		</div>
+		</header>
+		<section id="slider" class="slider-element slider-parallax full-screen force-full-screen">
+		<div class="slider-parallax-inner">
+			<div class="full-screen force-full-screen section nopadding nomargin noborder ohidden">
+				<div class="container center">
+					<div class="vertical-middle ignore-header">
+						<div class="emphasis-title">
+							<h1 style="font-size:64px"> 
+								<span class="text-rotater nocolor" data-separator="|" data-rotate="fadeIn" data-speed="4000">
+									<span class="t-rotate t700 font-body opm-large-word">Inspiraci&oacute;n.|Confianza.|Identidad.|Marca.</span>
+								</span>
+							</h1>
+						</div>
+						<a href="#" class="button button-border button-circle" data-href="#quien_eres" data-scrollto="#quien_eres" data-easing="easeInOutExpo" data-speed="1250" data-offset="70">Dejanos qui&eacute;n eres</a>
+					</div>
+				</div>
+				<div class="video-wrap">
+					<video poster="images/videos/3.jpg" preload="auto" loop autoplay muted>
+						<source src="{{asset('videos/video1.webm')}}" type='video/webm' />
+						<source src="{{asset('videos/video1.mp4')}}" type='video/mp4' />
+					</video>
+					<div class="video-overlay" style="background: rgba(255,255,255,0.40);"></div>
+				</div>
+				<a href="#" data-scrollto="#section-about" data-easing="easeInOutExpo" data-speed="1250" data-offset="65" class="one-page-arrow dark"><i class="icon-angle-down infinite animated fadeInDown"></i></a>
+			</div>
+		</div>
+		</section>
+        <section id="content">
+			@yield('content')
+    	</section>
+		<footer id="footer" class="dark" style="background-color: #121212; padding: 60px 0">
+			<div class="container clearfix">
+				<div class="footer-widgets-wrap center clearfix">
+					<img src="{{asset('img/logo_alt_footer.png')}}" width="200" alt="">
+					<div class="topmargin-lg clearfix">
+						<a href="https://www.facebook.com/nezkastudio/" class="social-icon si-small si-borderless inline-block si-facebook">
+							<i class="icon-facebook"></i>
+							<i class="icon-facebook"></i>
+						</a>
 
-            <div class="row" style="padding-bottom: 25px">
-                <div class="col-xs-12" >
-                    <div class="col-xs-6 white-text" style="padding-left: 0px;padding-right: 5px; padding-bottom: 10px"><span style="font-weight: bolder; font-size: large">Portafolio</span></div>
-                    <div class="col-xs-6 white-text" style="padding-left: 0px;padding-right: 5px; padding-bottom: 10px"><span style="font-weight: bolder; font-size: large">Cotizar</span></div>
-                    <div class="col-xs-6 white-text" style="padding-left: 0px;padding-right: 5px; padding-bottom: 10px"><span style="font-weight: bolder; font-size: large">Quien Eres?</span></div>
-                    <div class="col-xs-6 white-text" style="padding-left: 0px;padding-right: 5px; padding-bottom: 10px"><span style="font-weight: bolder; font-size: large">Servicios</span></div>
-                </div>
-            </div>
-            <div class="row" style="padding-bottom: 25px">
-                <div class="col-xs-12">
-                    <div class="footer-title">
-                        <span>nuestros aliados</span>
-                    </div>
-                    <a href="https://www.facebook.com/MORPHaudiovisual/" class="img-responsive" target="_blank">
-                        <img  src="{{asset("img/morph.png")}}" alt="logo"  width="50%">
-                    </a>
-                </div>
-            </div>
-            <div class="row" style="padding-bottom: 25px">
-                <div class="col-xs-12">
-                    <div class="footer-title col-xs-5" style="padding: 0px">Síguenos aquí</div>
-                    <ul class="footer-follow col-xs-7" style="text-align: left; padding: 0px">
-                        @foreach($social_medias as $social_media)
-                            <li style="margin: 0px!important;"><a target="_blank" style="background-color: #61666d; font-size: 0.7em" href="{{$social_media->url}}"><i class="fa fa-{{$social_media->name}} "></i></a></li>
-                        @endforeach
-                    </ul>
-                </div>
-            </div>
-            <div class="row" style="padding-bottom: 25px">
-                <div class="col-xs-12">
-                    <ul>
-                        <li class="col-xs-6"><i class="fa fa-whatsapp"></i><a target="_blank" style="color:#868F9B" href="https://api.whatsapp.com/send?phone=51932119264"> (+51) 932 119 264 </a></li>
-                        <li class="col-xs-6"><i class="fa fa-whatsapp" style="text-align: right"></i><a target="_blank" style="color:#868F9B" href="https://api.whatsapp.com/send?phone=51986652816"> (+51) 986 652 816 </a></li>
-                        <li class="col-xs-12" style="text-align: center"><i class="fa fa-envelope"></i> nezkastudio@gmail.com</li>
-                    </ul>
-                </div>
-            </div>
-            <br>
-            <div class="row" style="padding-bottom: 25px;">
-                <div class="container-fluid">
-                    <div class="footer-copyright">
-                        <p>© 2018 Copyright Nezka Studio.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
-    <div id="back-to-top"></div>
-    <div id="preloader">
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
+						<a href="https://vimeo.com/user86210896" class="social-icon si-small si-borderless inline-block si-vimeo">
+							<i class="icon-vimeo"></i>
+							<i class="icon-vimeo"></i>
+						</a>
+						<a href="https://www.instagram.com/nezkastudio/" class="social-icon si-small si-borderless inline-block si-instagram">
+							<i class="icon-instagram"></i>
+							<i class="icon-instagram"></i>
+						</a>
+						<a href="https://www.linkedin.com/company/nezka-studio" class="social-icon inline-block  si-small si-borderless si-linkedin">
+							<i class="icon-linkedin"></i>
+							<i class="icon-linkedin"></i>
+						</a>
+					</div>
+					<div class="uppercase ls3" style="color: #333; margin-top: 10px">&copy; Nezkastudio 2018. All Rights Reserved.</div>
+				</div>
+			</div>
+		</footer>
     </div>
 
+    <div id="gotoTop" class="icon-angle-up"></div>
 
-    <script type="text/javascript" src="{{asset('js/jquery.min.js')}}"></script>
-    <script type="text/javascript" src="{{asset('js/bootstrap.min.js')}}"></script>
-    <script type="text/javascript" src="{{asset('js/jquery.magnific-popup.js')}}"></script>
-    <script type="text/javascript" src="{{asset('assets/owl/owl.carousel.js')}}"></script>
-    <script type="text/javascript" src="{{asset('js/main.js')}}"></script>
-    <script src="{{asset("assets/jquery-validation/js/jquery.validate.js")}}" type="text/javascript"></script>
-    <script src="{{asset("assets/jquery-validation/js/additional-methods.js")}}" type="text/javascript"></script>
-    <script type="text/javascript">
-        $('#slider').owlCarousel({
-            items:1,
-            lazyLoad:true,
-            loop:true,
-            margin:0,
-            autoHeight: false,
-            responsiveClass:true,
-            autoWidth: false,
-            autoHeightClass: 'owl-height',
-            autoplay:true,
-            dots: false,
-            nav:false,
-            smartSpeed :900
-        });
-    </script>
-    @yield('scripts')
+    <script data-cfasync="false" src="../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+    <script src="js/jquery.js"></script>
+    <script src="js/plugins.js"></script>
 
+    <script src="js/functions.js"></script>
+
+    <script src="include/rs-plugin/js/jquery.themepunch.tools.min.js"></script>
+    <script src="include/rs-plugin/js/jquery.themepunch.revolution.min.js"></script>
+    <script src="include/rs-plugin/js/extensions/revolution.extension.video.min.js"></script>
+    <script src="include/rs-plugin/js/extensions/revolution.extension.slideanims.min.js"></script>
+    <script src="include/rs-plugin/js/extensions/revolution.extension.actions.min.js"></script>
+    <script src="include/rs-plugin/js/extensions/revolution.extension.layeranimation.min.js"></script>
+    <script src="include/rs-plugin/js/extensions/revolution.extension.kenburn.min.js"></script>
+    <script src="include/rs-plugin/js/extensions/revolution.extension.navigation.min.js"></script>
+    <script src="include/rs-plugin/js/extensions/revolution.extension.migration.min.js"></script>
+    <script src="include/rs-plugin/js/extensions/revolution.extension.parallax.min.js"></script>
+    <script>
+        var tpj = jQuery;
+
+        var revapi202;
+        tpj(document).ready(function () {
+            if (tpj("#rev_slider_579_1").revolution == undefined) {
+                revslider_showDoubleJqueryError("#rev_slider_579_1");
+            } else {
+                revapi202 = tpj("#rev_slider_579_1").show().revolution({
+                    sliderType: "standard",
+                    jsFileLocation: "include/rs-plugin/js/",
+                    sliderLayout: "fullscreen",
+                    dottedOverlay: "none",
+                    delay: 9000,
+                    responsiveLevels: [1140, 1024, 778, 480],
+                    visibilityLevels: [1140, 1024, 778, 480],
+                    gridwidth: [1140, 1024, 778, 480],
+                    gridheight: [728, 768, 960, 720],
+                    lazyType: "none",
+                    shadow: 0,
+                    spinner: "off",
+                    stopLoop: "on",
+                    stopAfterLoops: 0,
+                    stopAtSlide: 1,
+                    shuffle: "off",
+                    autoHeight: "off",
+                    fullScreenAutoWidth: "off",
+                    fullScreenAlignForce: "off",
+                    fullScreenOffsetContainer: "",
+                    fullScreenOffset: "",
+                    disableProgressBar: "on",
+                    hideThumbsOnMobile: "off",
+                    hideSliderAtLimit: 0,
+                    hideCaptionAtLimit: 0,
+                    hideAllCaptionAtLilmit: 0,
+                    debugMode: false,
+                    fallbacks: {
+                        simplifyAll: "off",
+                        disableFocusListener: false,
+                    },
+                    parallax: {
+                        type: "mouse",
+                        origo: "slidercenter",
+                        speed: 300,
+                        levels: [2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 49, 50, 51, 55],
+                    },
+                    navigation: {
+                        keyboardNavigation: "off",
+                        keyboard_direction: "horizontal",
+                        mouseScrollNavigation: "off",
+                        onHoverStop: "off",
+                        touch: {
+                            touchenabled: "on",
+                            swipe_threshold: 75,
+                            swipe_min_touches: 1,
+                            swipe_direction: "horizontal",
+                            drag_block_vertical: false
+                        },
+                        arrows: {
+                            style: "hermes",
+                            enable: true,
+                            hide_onmobile: false,
+                            hide_onleave: false,
+                            tmp: '<div class="tp-arr-allwrapper">	<div class="tp-arr-imgholder"></div>	<div class="tp-arr-titleholder">title</div>	</div>',
+                            left: {
+                                h_align: "left",
+                                v_align: "center",
+                                h_offset: 10,
+                                v_offset: 0
+                            },
+                            right: {
+                                h_align: "right",
+                                v_align: "center",
+                                h_offset: 10,
+                                v_offset: 0
+                            }
+                        }
+                    }
+                });
+                revapi202.bind("revolution.slide.onloaded", function (e) {
+                    setTimeout(function () {
+                        SEMICOLON.slider.sliderParallaxDimensions();
+                    }, 200);
+                });
+
+                revapi202.bind("revolution.slide.onchange", function (e, data) {
+                    SEMICOLON.slider.revolutionSliderMenu();
+                });
+            }
+        }); /*ready*/
+	</script>
+	@yield('scripts')
 </body>
+
+<!-- Mirrored from themes.semicolonweb.com/html/canvas/index-corporate.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 17 Nov 2018 08:30:41 GMT -->
 
 </html>
