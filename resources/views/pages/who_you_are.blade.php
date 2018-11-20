@@ -10,8 +10,8 @@
 @section('content')
 <section id="page-title" style="background:white;">
     <div class="container clearfix">
-        <h1>{{$customer_type->name}}</h1>
-        <h3><{{$customer_type->description}}/h3>
+        <h1 class="mb-3">{{$customer_type->name}}</h1>
+        <h4 class="mb-1">{{$customer_type->description}}</h4>
     </div>
 </section>
 <section id="content">
