@@ -57,7 +57,7 @@
                     <div class="oc-item">
                         <div class="iportfolio">
                             <div class="portfolio-image">
-                                <a href="portfolio-single.html"><img src="{{$rwork->image}}" alt="Open Imagination"></a>
+                                <a href="{{url('projects/')}}/{{$work->work_slug}}"><img src="{{$rwork->image}}" alt="Open Imagination"></a>
                                 <div class="portfolio-overlay">
                                     <a href="{{$rwork->image}}" class="left-icon" data-lightbox="image"><i class="icon-line-plus"></i></a>
                                     <a href="{{url('projects/')}}/{{$rwork->work_slug}}" class="right-icon"><i class="icon-line-ellipsis"></i></a>

@@ -35,7 +35,7 @@
                 @foreach($works as $work)
                     <article class="portfolio-item {{$work->type_slug}}">
                         <div class="portfolio-image">
-                            <a href="portfolio-single.html"><img src="{{$work->image}}" alt="Open Imagination"></a>
+                            <a href="{{url('projects/')}}/{{$work->work_slug}}"><img src="{{$work->image}}" alt="Open Imagination"></a>
                             <div class="portfolio-overlay">
                                 <a href="{{$work->image}}" class="left-icon" data-lightbox="image"><i class="icon-line-plus"></i></a>
                                 <a href="{{url('projects/')}}/{{$work->work_slug}}" class="right-icon"><i class="icon-line-ellipsis"></i></a>
