@@ -1,10 +1,6 @@
-@extends('layout')
+@extends('templates.layout')
 
-@section('styles')
-    <link rel="stylesheet" type="text/css" href="include/rs-plugin/css/settings.css" media="screen" />
-	<link rel="stylesheet" type="text/css" href="include/rs-plugin/css/layers.css">
-    <link rel="stylesheet" type="text/css" href="include/rs-plugin/css/navigation.css">
-    
+@section('styles')   
     <style>
         .flex-control-nav {
             top:80px !important;
@@ -30,7 +26,7 @@
             <div class="clear"></div>
         </div>
         <div class="row clearfix">
-            @foreach($services as $service)5
+            @foreach($services as $service)
             <div class="col-lg-4 bottommargin">
                 <div class="feature-box fbox-plain fbox-dark">
                     <div class="fbox-icon">
@@ -44,7 +40,7 @@
         </div>    
     </div>
 </div>
-<section id="section-testimonials" class="section parallax nobottommargin page-section dark" style="background-image: url('img/bg-testimonials.jpg'); padding: 140px 0; background-size: cover"  data-bottom-top="background-position:0px 300px;" data-top-bottom="background-position:0px -300px;">
+<section id="section-testimonials" class="section parallax nobottommargin page-section dark" style="background-image: url('img/pilars.jpg'); padding: 140px 0; background-size: cover"  data-bottom-top="background-position:0px 300px;" data-top-bottom="background-position:0px -300px;">
     <div class="container clearfix">
         <div class="row">
             <div class="col-lg-8">
@@ -77,7 +73,7 @@
     <div class="row common-height clearfix">
     @foreach($client_types as $client)
         @if($client->type == "mains")
-        <div class="col-lg-4 dark bgcolor" style="background: url('demos/car/images/5.jpg') center center no-repeat; background-size: cover;">
+        <div class="col-lg-4 dark bgcolor" style="background: center center no-repeat; background-size: cover;">
             <div class="col-padding clearfix">
                 <div class="fbox-icon mb-4">
                     <img style="width:15%" class="img-responsive inline-block" src="{{$client->image}}" alt="Open Imagination">
@@ -86,11 +82,18 @@
                     <h4>{{$client->name}}</h4>
                 </div>
                 <p>{{$client->description}}</p>
-                <a href="#" class="button button-rounded button-white button-light nomargin">Empecemos</a>
+                <a href="{{url('who_you_are')}}/{{$client->slug}}" class="button button-rounded button-white button-light nomargin">Empecemos</a>
             </div>
         </div>
         @endif
     @endforeach
+    </div>
+</div>
+<div class="section notopmargin mb-0 notopborder"  style="background:white">
+    <div class="container clearfix">
+        <div class="heading-block center nomargin">
+            <h3>Portafolio</h3>
+        </div>
     </div>
 </div>
 <div id="portofolio" class="portfolio grid-container portfolio-nomargin portfolio-notitle portfolio-full clearfix">
@@ -127,7 +130,7 @@
     <div class="container">
         <div id="oc-clients" class="owl-carousel topmargin image-carousel carousel-widget" data-margin="80" data-loop="true" data-nav="false" data-autoplay="5000" data-pagi="false"data-items-xs="2" data-items-sm="3" data-items-md="4" data-items-lg="5" data-items-xl="5">
             @foreach($clients as $client)
-                <div class="oc-item"><a href="#"><img src="{{$client->image}}" alt="Clients"></a></div>
+                <div class="oc-item"><a href="{{url('clients')}}/{{$client->slug}}"><img src="{{$client->image}}" alt="Clients"></a></div>
             @endforeach    
         </div>
     </div>
