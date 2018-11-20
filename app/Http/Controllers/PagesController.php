@@ -46,7 +46,7 @@ class PagesController extends Controller
         $data["news"] = $news;
         $data["categories"] = $categories;
         $data["social_medias"] = $social_media;
-        return view('pages.landing',$data);
+        return view('pages.index',$data);
     }
 
     public function SaveContact(Request $request)
@@ -73,6 +73,21 @@ class PagesController extends Controller
         }catch (Exception $exception){
             return response(json_encode(array("error" => 1)), 200);
         }
+    }
+
+    public function portofolio(){
+        $categories = Categories::get(["name","slug"]);
+        $works = Works::join('project_type','project_type.id','project_type_description.project_type_id')
+            ->join('project','project.id','project_type_description.project_id')
+            ->join('client','client.id','project.client_id')
+            ->get(["project_type_description.name",DB::raw('project_type_description.slug as work_slug'),DB::raw('project_type.slug as type_slug'),
+                DB::raw('concat("'.config("app.path_url").'",project_type_description.image) as image'),
+                DB::raw('client.name as client_name')]);
+
+        $data["works"] = $works;
+        $data["client_name"] = "";;
+        $data["categories"] = $categories;
+        return view('pages.portofolio',$data);
     }
 
     public function save(Request $request)
@@ -105,12 +120,20 @@ class PagesController extends Controller
         $social_media = SocialMedia::get(["name","url"]);
         $categories = Categories::get(["name","slug"]);
         $work = Works::where('slug',$slug)->first();
+        $related_works = $works = Works::join('project_type','project_type.id','project_type_description.project_type_id')
+        ->join('project','project.id','project_type_description.project_id')
+        ->join('client','client.id','project.client_id')
+        ->where('project_type_description.project_type_id',$work->project_type_id)
+        ->get(["project_type_description.name",DB::raw('project_type_description.slug as work_slug'),DB::raw('project_type.slug as type_slug'),
+            DB::raw('concat("'.config("app.path_url").'",project_type_description.image) as image'),
+            DB::raw('client.name as client_name')]);
         $project = Projects::where('id',$work->project_id)->first();
         $client = Clients::where('id',$project->client_id)->first();
         $images = GalleryWork::where('project_description_id',$work->id)->get([DB::raw('concat("'.config("app.path_url").'",project_images.image) as image')]);
         $type = Categories::where('id',$work->project_type_id)->first();
         $data["categories"] = $categories;
         $data["work"] = $work;
+        $data["related_works"] = $related_works;
         $data["type"] = $type;
         $data["project"] = $project;
         $data["client"] = $client;
@@ -145,10 +168,11 @@ class PagesController extends Controller
                 DB::raw('client.name as client_name')]);
         $data["works"] = $works;
         $data["client"] = $client;
+        $data["client_name"] = "- ".$client->name;
         $data["categories"] = $categories;
         $data["social_medias"] = $social_media;
         $data["customer_type"] = $customer_type;
 
-        return view('pages.portafolio',$data);
+        return view('pages.portofolio',$data);
     }
 }

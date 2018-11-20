@@ -19,7 +19,7 @@ Route::get('/', 'PagesController@home');
 
 Route::post('/contact_us/save','PagesController@SaveContact')->name('contact_save');
 
-Route::get('/potafolio', 'PagesController@portafolio');
+Route::get('/portofolio', 'PagesController@portofolio');
 
 Route::get('/blog', 'PagesController@blog');
 

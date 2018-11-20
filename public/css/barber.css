@@ -1,0 +1,43 @@
+/*----------------------------------------------------------------
+	Canvas: Barber
+	Version: 1.0
+-----------------------------------------------------------------*/
+
+
+/* Border Form Design
+---------------------------------------------------------------------------- */
+
+.border-form-control {
+    height: 42px;
+    padding: 7px 4px;
+    font-size: 17px;
+    letter-spacing: 1px;
+    background-color: transparent !important;
+    border-top: transparent;
+    border-right: transparent;
+    border-left: transparent;
+    border-bottom-width: 1px;
+    border-color: black;
+    font-family: 'PT Sans Captions', sans-serif;
+}
+
+.border-form-control::-moz-placeholder {
+    font-weight: 300;
+    color: #CCC;
+}
+
+.border-form-control:-ms-input-placeholder {
+    font-weight: 300;
+    color: #CCC;
+}
+
+.border-form-control::-webkit-input-placeholder {
+    font-weight: 300;
+    color: #CCC;
+}
+
+textarea.border-form-control {
+    resize: none;
+    overflow: hidden;
+    word-wrap: break-word;
+}
