@@ -4,10 +4,16 @@
     <style>
         .flex-control-nav {
             top:80px !important;
-            right:0 !important;
-            text-align: left !important;
+            text-align: center !important;
             position: initial !important;
         }
+        .portfolio-overlay a.right-icon {
+            left: auto;
+            right: 50%;
+            margin-left: 0;
+            margin-right: -20px;
+        }
+}
     </style>
 @endsection
 
@@ -41,9 +47,9 @@
     </div>
 </div>
 <section id="section-testimonials" class="section parallax nobottommargin page-section dark" style="background-image: url('img/pilars.jpg'); padding: 140px 0; background-size: cover"  data-bottom-top="background-position:0px 300px;" data-top-bottom="background-position:0px -300px;">
-    <div class="container clearfix">
+    <div class="container clearfix" style="text-align:center">
         <div class="row">
-            <div class="col-lg-8">
+            <div class="col-lg-12">
                 <div class="heading-block nobottomborder mb-3">
                     <h1>¿Por qu&eacute; elegirnos?</h1>
                 </div>
@@ -102,7 +108,13 @@
             <div class="portfolio-image">
                 <a href="{{url('projects/')}}/{{$work->work_slug}}"><img src="{{$work->image}}" alt="Open Imagination"></a>
                 <div class="portfolio-overlay">
-                    <a href="{{url('projects/')}}/{{$work->work_slug}}" class="right-icon"><i class="icon-line-plus"></i></a>
+                    <a href="{{url('projects/')}}/{{$work->work_slug}}" class="right-icon">
+                    @if($work->type_slug == 'animacion' || $work->type_slug == 'contenido-digital' || $work->type_slug == 'audiovisual')
+                    <i class="icon-line-play"></i>
+                    @else
+                    <i class="icon-line-stack"></i>
+                    @endif
+                    </a>
                 </div>
             </div>
             <div class="portfolio-desc">

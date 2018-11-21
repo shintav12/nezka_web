@@ -128,6 +128,7 @@ class PagesController extends Controller
         ->join('project','project.id','project_type_description.project_id')
         ->join('client','client.id','project.client_id')
         ->where('project_type_description.project_type_id',$work->project_type_id)
+        ->where('project_type.status',1)
         ->get(["project_type_description.name",DB::raw('project_type_description.slug as work_slug'),DB::raw('project_type.slug as type_slug'),
             DB::raw('concat("'.config("app.path_url").'",project_type_description.image) as image'),
             DB::raw('client.name as client_name')]);

@@ -45,7 +45,7 @@
                 <div class="line mb-4"></div>
                 <ul class="portfolio-meta bottommargin">
                     <li><span><i class="icon-user"></i>Cliente:</span> {{$client->name}}</li>
-                    <li><span><i class="icon-link"></i>Categor&iacute;as:</span> <a href="#">{{$work->categories}}</a></li>
+                    <li><span><i class="icon-link"></i>Categor&iacute;as:</span> <span>{{$work->categories}}</span></li>
                 </ul>
             </div>
             <div class="clear"></div>
