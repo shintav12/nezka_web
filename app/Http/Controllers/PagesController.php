@@ -27,13 +27,16 @@ class PagesController extends Controller
         $sliders = Slider::where("status",1)->get(["title",DB::raw('concat("'.config("app.path_url").'",slider_banner.image) as image'),"subtitle"]);
         $services = Services::where("status",1)->get(["name",DB::raw('concat("'.config("app.path_url").'",services.image) as image'),"description"]);
         $client_types = ClientTypes::get(["id","name",DB::raw('concat("'.config("app.path_url").'",customer_type.image) as image'),"description","type","slug"]);
-        $clients = Clients::get(["name",DB::raw('concat("'.config("app.path_url").'",client.image) as image'),"slug"]);
+        $clients = Clients::where('status',1)->get(["name",DB::raw('concat("'.config("app.path_url").'",client.image) as image'),"slug"]);
         $social_media = SocialMedia::get(["name","url"]);
         $news = News::orderBy('created_at','desc')->limit(3)->get(["title","subtitle","url",DB::raw('concat("'.config("app.path_url").'",blog.image) as image')]);
         $categories = Categories::get(["name","slug"]);
         $works = Works::join('project_type','project_type.id','project_type_description.project_type_id')
             ->join('project','project.id','project_type_description.project_id')
             ->join('client','client.id','project.client_id')
+            ->where('project.status',1)
+            ->orderBy('project_type_description.id','desc')
+            ->limit(8)
             ->get(["project_type_description.name",DB::raw('project_type_description.slug as work_slug'),DB::raw('project_type.slug as type_slug'),
                 DB::raw('concat("'.config("app.path_url").'",project_type_description.image) as image'),
                 DB::raw('client.name as client_name')]);
@@ -80,6 +83,7 @@ class PagesController extends Controller
         $works = Works::join('project_type','project_type.id','project_type_description.project_type_id')
             ->join('project','project.id','project_type_description.project_id')
             ->join('client','client.id','project.client_id')
+            ->where('project.status',1)
             ->get(["project_type_description.name",DB::raw('project_type_description.slug as work_slug'),DB::raw('project_type.slug as type_slug'),
                 DB::raw('concat("'.config("app.path_url").'",project_type_description.image) as image'),
                 DB::raw('client.name as client_name')]);

@@ -102,8 +102,7 @@
             <div class="portfolio-image">
                 <a href="{{url('projects/')}}/{{$work->work_slug}}"><img src="{{$work->image}}" alt="Open Imagination"></a>
                 <div class="portfolio-overlay">
-                    <a href="{{$work->image}}" class="left-icon" data-lightbox="image"><i class="icon-line-plus"></i></a>
-                    <a href="{{url('projects/')}}/{{$work->work_slug}}" class="right-icon"><i class="icon-line-ellipsis"></i></a>
+                    <a href="{{url('projects/')}}/{{$work->work_slug}}" class="right-icon"><i class="icon-line-plus"></i></a>
                 </div>
             </div>
             <div class="portfolio-desc">
@@ -119,22 +118,6 @@
         <strong style="border-bottom:0px">Ver m&aacute;s proyectos</strong>
     </div>
 </a>
-<div class="section notopmargin noborder nobottommargin" style="background:white;l" >
-    <div class="container clearfix">
-        <div class="heading-block center nobottommargin">
-            <h2>Nuestros Clientes</h2>
-        </div>
-    </div>
-</div>
-<div id="clients" class="section topmargin-lg pt-0 clearfix" style="background:white;margin-top:0px!important">
-    <div class="container">
-        <div id="oc-clients" class="owl-carousel topmargin image-carousel carousel-widget" data-margin="80" data-loop="true" data-nav="false" data-autoplay="5000" data-pagi="false"data-items-xs="2" data-items-sm="3" data-items-md="4" data-items-lg="5" data-items-xl="5">
-            @foreach($clients as $client)
-                <div class="oc-item"><a href="{{url('clients')}}/{{$client->slug}}"><img src="{{$client->image}}" alt="Clients"></a></div>
-            @endforeach    
-        </div>
-    </div>
-</div>
 <div class="section notopmargin mb-0 notopborder"  style="background:white">>
     <div class="container clearfix">
         <div class="heading-block center nomargin">
@@ -159,6 +142,22 @@
             </div>
         </div>
         @endforeach
+    </div>
+</div>
+<div class="section notopmargin noborder nobottommargin" style="background:white;l" >
+    <div class="container clearfix">
+        <div class="heading-block center nobottommargin">
+            <h2>Nuestros Clientes</h2>
+        </div>
+    </div>
+</div>
+<div id="clients" class="section topmargin-lg pt-0 clearfix" style="background:white;margin-top:0px!important">
+    <div class="container">
+        <div id="oc-clients" class="owl-carousel topmargin image-carousel carousel-widget" data-margin="80" data-loop="true" data-nav="false" data-autoplay="5000" data-pagi="false"data-items-xs="2" data-items-sm="3" data-items-md="4" data-items-lg="5" data-items-xl="5">
+            @foreach($clients as $client)
+                <div class="oc-item"><a href="{{url('clients')}}/{{$client->slug}}"><img src="{{$client->image}}" alt="Clients"></a></div>
+            @endforeach    
+        </div>
     </div>
 </div>
 <div class="section notopmargin mb-0 pb-3 notopborder"  style="background:white">>
