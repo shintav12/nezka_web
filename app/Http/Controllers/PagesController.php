@@ -135,12 +135,11 @@ class PagesController extends Controller
             DB::raw('client.name as client_name')]);
         $project = Projects::where('id',$work->project_id)->first();
         $client = Clients::where('id',$project->client_id)->first();
-        $images = GalleryWork::where('type','gallery')->where('project_description_id',$work->id)->get([DB::raw('concat("'.config("app.path_url").'",project_images.image) as image')]);
-        $videos = GalleryWork::where('type','video')->where('project_description_id',$work->id)->get(['image']);
+        $images = GalleryWork::where('project_description_id',$work->id)->get([DB::raw('concat("'.config("app.path_url").'",project_images.image) as image'),"type"]);
         $videos_parsed = [];
         $clean = "";
-        foreach($videos as $video){
-            $videos_parsed[] = Utils::parseHtml($clean, $video->image);
+        foreach($images as $image){
+            $image->video = Utils::parseHtml($clean, $image->video);
         }
         
         $type = Categories::where('id',$work->project_type_id)->first();

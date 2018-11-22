@@ -26,10 +26,11 @@
                     <div class="flexslider">
                         <div class="slider-wrap">
                             @foreach($images as $image)
+                                @if($image->type == "gallery")
                                 <div class="slide" data-thumb="{{$image->image}}"><a href="#"><img src="{{$image->image}}" alt=""></a></div>
-                            @endforeach
-                            @foreach($videos as $video)
-                                <div class="slide" data-thumb="{{asset('img/video_placeholder.png')}}"><?php echo $video?></div>
+                                @else
+                                <div class="slide" data-thumb="{{$image->image}}"><?php echo $image->video?></div>
+                                @endif
                             @endforeach
                         </div>
                     </div>
