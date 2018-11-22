@@ -29,7 +29,7 @@
                                 @if($image->type == "gallery")
                                 <div class="slide" data-thumb="{{$image->image}}"><a href="#"><img src="{{$image->image}}" alt=""></a></div>
                                 @else
-                                <div class="slide" data-thumb="{{$image->image}}"><?php echo $image->video?></div>
+                                <div class="slide" video data-thumb="{{$image->image}}"><?php echo $image->video?></div>
                                 @endif
                             @endforeach
                         </div>
