@@ -15,6 +15,7 @@ use App\ServicesCustomer;
 use App\Slider;
 use App\SocialMedia;
 use App\Works;
+use App\Utils;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Input;
@@ -128,13 +129,20 @@ class PagesController extends Controller
         ->join('project','project.id','project_type_description.project_id')
         ->join('client','client.id','project.client_id')
         ->where('project_type_description.project_type_id',$work->project_type_id)
-        ->where('project_type.status',1)
+        ->where('project_type_description.status',1)
         ->get(["project_type_description.name",DB::raw('project_type_description.slug as work_slug'),DB::raw('project_type.slug as type_slug'),
             DB::raw('concat("'.config("app.path_url").'",project_type_description.image) as image'),
             DB::raw('client.name as client_name')]);
         $project = Projects::where('id',$work->project_id)->first();
         $client = Clients::where('id',$project->client_id)->first();
-        $images = GalleryWork::where('project_description_id',$work->id)->get([DB::raw('concat("'.config("app.path_url").'",project_images.image) as image')]);
+        $images = GalleryWork::where('type','gallery')->where('project_description_id',$work->id)->get([DB::raw('concat("'.config("app.path_url").'",project_images.image) as image')]);
+        $videos = GalleryWork::where('type','video')->where('project_description_id',$work->id)->get(['image']);
+        $videos_parsed = [];
+        $clean = "";
+        foreach($videos as $video){
+            $videos_parsed[] = Utils::parseHtml($clean, $video->image);
+        }
+        
         $type = Categories::where('id',$work->project_type_id)->first();
         $data["categories"] = $categories;
         $data["work"] = $work;
@@ -142,6 +150,7 @@ class PagesController extends Controller
         $data["type"] = $type;
         $data["project"] = $project;
         $data["client"] = $client;
+        $data["videos"] = $videos_parsed;
         $data["images"] = $images;
         $data["social_medias"] = $social_media;
         return view('pages.project',$data);

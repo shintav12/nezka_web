@@ -28,6 +28,9 @@
                             @foreach($images as $image)
                                 <div class="slide" data-thumb="{{$image->image}}"><a href="#"><img src="{{$image->image}}" alt=""></a></div>
                             @endforeach
+                            @foreach($videos as $video)
+                                <div class="slide" data-thumb="{{asset('img/video_placeholder.png')}}"><?php echo $video?></div>
+                            @endforeach
                         </div>
                     </div>
                 </div>
