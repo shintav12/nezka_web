@@ -76,11 +76,22 @@
         $("#services_types").val(value);
         $("#selecciones").append("<br>");
         $("#content2").fadeOut();
-        $("#section-contact").fadeIn("slow");
+            $(".uno").fadeOut();
+        setTimeout(function(){  
+            $(".dos").fadeIn();
+            $("#section-contact").fadeIn();
+        }, 400);
+       
     });
     $("#anterior").click(function(){
         $("#section-contact").fadeOut();
-        $("#content2").fadeIn();
+        $(".dos").fadeOut();
+        
+        setTimeout(function(){  
+            $("#content2").fadeIn();
+            $(".uno").fadeIn();
+        }, 400); 
+        
     });
     $("#form").validate({
                 errorPlacement: function errorPlacement(error, element) {
@@ -89,13 +100,11 @@
                 rules: {
                     name: "required",
                     email: "required",
-                    company: "required",
                     phone: "required"
                 },
                 messages: {
                     name: "Requerido",
                     email: "Requerido",
-                    company: "Requerido",
                     phone: "Requerido"
                 },
                 submitHandler: function (form) {
@@ -108,7 +117,7 @@
                             processData: false,
                             beforeSend: function () {
                                 swal({
-                                    title: 'Cargando...',
+                                    title: 'Enviando...',
                                     showCancelButton: false,
                                     showConfirmButton: false,
                                     onOpen: function () {
@@ -152,18 +161,21 @@
 @endsection
 
 @section('content')
-<section id="page-title" style="background:white;">
-    <div class="container clearfix">
-        <h1 class="mb-3">{{$customer_type->name}}</h1>
-        <h4 class="mb-1">{{$customer_type->description}}</h4>
-    </div>
-</section>
+
+
 <section id="content">
-    <div id="content2" class="content-wrap">
+    <div id="content2" class="content-wrap" style="padding:0px">
+        <section id="page-title" style="background:white;text-align:center;border-bottom:0px" class="uno">
+            <div class="container clearfix">
+                <h1 class="mb-3">{{$customer_type->name}}</h1>
+                <h4 class="mb-1">{{$customer_type->description}}</h4>
+                <h4 class="mb-1" style="color:gray">Elige las soluciones que se ajusten a tus necesidades</h4>
+            </div>
+        </section>
         <div class="container clearfix">
             <div class="row">
             @foreach($services_customer as $item)
-                <div data-name="{{$item->name}}" class="col-lg-4 mb-3 pb-3 option">
+                <div data-name="{{$item->name}}"  class="col-lg-4 mb-3 pb-3 option">
                     <div class="feature-box fbox-small fbox-plain" data-animate="fadeIn">
                         <div class="fbox-icon">
                             <img src="{{$item->image}}" width="25%">
@@ -183,6 +195,12 @@
         </div>
     </div>
     <div id="section-contact" class="page-section notoppadding" style="display:none;" >
+        <section id="page-title" style="background:white;text-align:center;display:none;border-bottom:0px" class="dos">
+            <div class="container clearfix">
+                <h1 class="mb-3">Coloca tus datos</h1>
+                <h4 class="mb-1 mx-5" style="color:gray">Estamos casi listos para empezar a realizar tu proyecto, coloca bien tus datos y en breves momentos te haremos llegar a tu correo la propuesta con todos los servicios que has escogido</h4>
+            </div>
+        </section>
         <div class="container clearfix">
             <div class="divcenter topmargin" style="max-width: 850px;">
                 <div class="contact-widget">
@@ -206,8 +224,7 @@
                         </div>
                         <div class="clear"></div>
                         <div class="col_full center pt-3">
-                            <h4>Has seleccionado las siguientes soluciones</h4>
-                            <br>
+                            <h4 style=>Has seleccionado las siguientes soluciones</h4>
                         </div>
                         <div class="clear"></div>
                         <div id="selecciones" class="col_full center pb-3">

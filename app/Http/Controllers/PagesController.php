@@ -90,7 +90,8 @@ class PagesController extends Controller
                 DB::raw('client.name as client_name')]);
 
         $data["works"] = $works;
-        $data["client_name"] = "";;
+        $data["client_name"] = "";
+        $data["page"] = "Portafolio";
         $data["categories"] = $categories;
         return view('pages.portofolio',$data);
     }
@@ -156,6 +157,7 @@ class PagesController extends Controller
         $data["client"] = $client;
         $data["videos"] = $videos_parsed;
         $data["images"] = $images;
+        $data["page"] = "Proyectos";
         $data["social_medias"] = $social_media;
         return view('pages.project',$data);
     }
@@ -168,7 +170,7 @@ class PagesController extends Controller
         $data["customer_type"] = $customer_type;
 
         $data["services_customer"] = $services_customer;
-
+        $data["page"] = "¿Quién eres?";
         return view('pages.who_you_are',$data);
     }
 
@@ -191,7 +193,7 @@ class PagesController extends Controller
         $data["categories"] = $categories;
         $data["social_medias"] = $social_media;
         $data["customer_type"] = $customer_type;
-
+        $data["page"] = "Clientes";
         return view('pages.portofolio',$data);
     }
 }

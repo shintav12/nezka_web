@@ -19,9 +19,7 @@
     <div class="container clearfix">
         <h1>{{$project->title}}</h1>
         <div id="portfolio-navigation">
-            <a href="#"><i class="icon-angle-left"></i></a>
-            <a href="{{url('/')}}/#portofolio"><i class="icon-line-grid"></i></a>
-            <a href="#"><i class="icon-angle-right"></i></a>
+            <a href="{{url('/portofolio')}}"><i class="icon-plus"></i></a>
         </div>
     </div>
 </section>

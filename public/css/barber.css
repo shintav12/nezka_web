@@ -18,7 +18,6 @@
     border-left: transparent;
     border-bottom-width: 1px;
     border-color: black;
-    font-family: 'PT Sans Captions', sans-serif;
 }
 
 .border-form-control::-moz-placeholder {

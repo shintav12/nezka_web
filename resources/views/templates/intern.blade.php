@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html dir="ltr" lang="en-US">
 <head>
-    <title>Portafolio | Nezka Studio</title>
+    <title>{{$page}}} | Nezka Studio</title>
 	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 	<meta name="author" content="NezkaStudio" />
 	<link href="https://fonts.googleapis.com/css?family=Lato:300,400,400i,700|Raleway:300,400,500,600,700|Crete+Round:400i" rel="stylesheet" type="text/css" />

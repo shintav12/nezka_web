@@ -31,7 +31,7 @@
                             </span>
                         </h1>
                     </div>
-                    <a href="#" class="button button-border button-circle" data-href="#quien_eres" data-scrollto="#quien_eres" data-easing="easeInOutExpo" data-speed="1250" data-offset="70">Dejanos saber qui&eacute;n eres</a>
+                    <a href="#" class="button button-border button-circle" data-href="#quien_eres" data-scrollto="#quien_eres" data-easing="easeInOutExpo" data-speed="1250" data-offset="70">Cu&eacute;ntanos qui&eacute;n eres</a>
                 </div>
             </div>
             <div class="video-wrap">

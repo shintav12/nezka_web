@@ -4,9 +4,10 @@
 <link rel="stylesheet" href="{{asset('assets/sweet-alert/sweetalert2.min.css')}}" type="text/css" />
 <style>
     .flex-control-nav {
-        top:80px !important;
-        text-align: center !important;
-        position: initial !important;
+        top:90px !important;
+        position:absolute !important;
+        left:47% !important;
+
     }
     .portfolio-overlay a.right-icon {
         left: auto;
@@ -131,8 +132,8 @@
                         <div class="slider-wrap">
                             @foreach($sliders as $slider)
                             <div class="slide">
-                                <h3 class="mb-0">{{$slider->title}}</h3>
-                                <p class="lead">"{{$slider->subtitle}}"</p>
+                                <p class="lead mb-0">"{{$slider->subtitle}}"</p>
+                                <h3 class="mt-0">{{$slider->title}}</h3>
                             </div>
                             @endforeach
                         </div>
@@ -142,26 +143,26 @@
         </div>
     </div>
 </section>
-<div id="quien_eres" class="section nomargin clearfix dark bgcolor pt-4">
-    <div class="container clearfix dark bgcolor pt-4">
+<div id="quien_eres" class="section nomargin clearfix dark pt-4" style="background: #121212;" >
+    <div class="container clearfix dark pt-4">
         <div class="heading-block center nobottommargin">
-            <h2>¿Qui&eacute;n eres?</h2>
-            <span>Queremos conocerte mejor, cuentanos m&aacute;s sobre ti?</span>
+            <h2 style="color:#00ffdc">¿Qui&eacute;n eres?</h2>
+            <span>Queremos conocerte mejor, cuentanos m&aacute;s sobre ti</span>
         </div>
     </div>
     <div class="row common-height clearfix">
     @foreach($client_types as $client)
         @if($client->type == "mains")
-        <div class="col-lg-4 dark bgcolor" style="background: center center no-repeat; background-size: cover;">
+        <div class="col-lg-4 dark" style="background: center center no-repeat; background-size: cover;">
             <div class="col-padding clearfix">
                 <div class="fbox-icon mb-4">
                     <img style="width:15%" class="img-responsive inline-block" src="{{$client->image}}" alt="Open Imagination">
                 </div>
                 <div class="heading-block noborder" style="margin-bottom: 20px;">
-                    <h4>{{$client->name}}</h4>
+                    <h4 >{{$client->name}}</h4>
                 </div>
                 <p>{{$client->description}}</p>
-                <a href="{{url('who_you_are')}}/{{$client->slug}}" class="button button-rounded button-white button-light nomargin">Empecemos</a>
+                <a href="{{url('who_you_are')}}/{{$client->slug}}" class="button button-rounded button-white bgcolor button-light nomargin">Empecemos</a>
             </div>
         </div>
         @endif
@@ -221,7 +222,7 @@
                 <div class="entry-title">
                     <h3><a href="{{$new->url}}">{{$new->title}}</a></h3>
                 </div>
-                <div class="entry-content">
+                <div class="entry-content" style="margin:0px">
                     <p>{{$new->subtitle}}</p>
                 </div>
             </div>
@@ -245,25 +246,18 @@
         </div>
     </div>
 </div>
-<div class="section notopmargin mb-0 pb-3 notopborder"  style="background:white">>
-    <div class="container clearfix">
-        <div class="heading-block center nomargin">
-            <h3>Contacto</h3>
-        </div>
-    </div>
-</div>
-<div class="section mt-0 pt-0" style="background:white">
+<div class="section mt-0 pt-0" style="background:white;background-image: url('img/1.png');margin:0px;height:550px">
     <div class="container">
         <div id="contact" class="row common-height page-section notoppadding clearfix">
             <div id="show_message" class="col-lg-6 col-padding" style="display:none">
                 <div>
-                    <h3 class="uppercase" style="font-weight: 600;">Gracias por contactarnos</h3>
-                    <p style="line-height: 1.8;">Pronto nos estaremos comunicando contigo para atender tu solicitud</p>
+                    <h3 class="uppercase" style="font-weight: 600;color:white">Gracias por contactarnos</h3>
+                    <p style="line-height: 1.8;color:white">Pronto nos estaremos comunicando contigo para atender tu solicitud</p>
                 </div>
             </div>
             <div id="contact2" class="col-lg-6 col-padding">
                 <div class="contact-widget">
-                    <div class="contact-form-result"></div>
+                <h3 class="uppercase" style="color:white">CONTACTO</h3>
                     <form class="nobottommargin" id="form">
                         <div class="form-process"></div>
                         <div class="col_half">
@@ -292,20 +286,19 @@
             </div>
             <div class="col-lg-6 col-padding">
                 <div class="max-height">
-                    <h3 class="uppercase">Nosotros</h3>
                     <div class="row topmargin-sm clearfix" style="font-size: 16px; line-height: 1.7;">
-                    <div class="col-lg-6">
-                            <a href="https://www.facebook.com/MORPHaudiovisual/" target="_blank">
-                                <img src="{{asset('img/morph.png')}}" alt="logo" width="70%%">
-                            </a>
-                        </div>
-                        <div class="col-lg-6">
-                            <abbr title="Phone Number"><strong>Telefono:</strong></abbr>  (+51) 986 652 816 | (+51) 932 119 264<br>
-                            <abbr title="Email Address"><strong>Correo:</strong></abbr> nezkastudio@gmail.com
+                        <div class="col-lg-12" style="color:white">
+                            <i class="icon-call mr-2"></i>  (+51) 986 652 816
+                            <br>
+                            <i class="icon-call mr-2"></i>   (+51) 932 119 264
+                            <br>
+                            <i class="icon-email3 mr-2"></i>  nezkastudio@gmail.com
                         </div>
                         <div class="col-lg-12 mt-3">
-                            <p>En Nezka Studio tenemos como objetivo transmitir los mensajes visuales y audiovisuales de manera directa por diferentes medios </p>
-                            <p>Teniendo como base: La comunicación es la clave para una buena gestión.</p>
+                            <h3 class="uppercase mt-4 mb-2" style="color:white">NUESTRO ALIADO</h3>
+                            <a href="https://www.facebook.com/MORPHaudiovisual/" target="_blank">
+                                <img src="{{asset('img/morph.png')}}" alt="logo" width="40%">
+                            </a>
                         </div>
                     </div>
                 </div>
