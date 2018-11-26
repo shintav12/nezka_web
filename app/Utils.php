@@ -65,7 +65,7 @@ class Utils {
         $message = (new Swift_Message('Cotizacion - '.$company))
         ->setFrom(['nezkastudio@gmail.com' => 'Nezka Studio'])
         ->setTo(['nezkastudio@gmail.com', 'manuel.alzamoraf@gmail.com' => 'Manuel'])
-        ->setBody($html);
+            ->addPart($html, 'text/html');
 
         $result = $mailer->send($message);
     }
