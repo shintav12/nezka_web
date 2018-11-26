@@ -56,7 +56,7 @@ class Utils {
         $headers .= 'From: <webmaster@example.com>' . "\r\n";
         $headers .= 'Cc: myboss@example.com' . "\r\n";
 
-        $transport = (new Swift_SmtpTransport('smtp.gmail.com', 587))
+        $transport = (new Swift_SmtpTransport('smtp.gmail.com', 465,'ssl'))
                         ->setUsername('nezkastudio@gmail.com')
                         ->setPassword('freya2018');
 
