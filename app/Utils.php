@@ -2,6 +2,11 @@
 
 namespace App;
 
+use Mail;
+use Swift_Transport;
+use Swift_Message;
+use Swift_Mailer;
+
 class Utils {
 
     public static function sendEmail($name,$email,$company,$phone,$services="-----",$message="-----",$client_type="-------"){
@@ -42,7 +47,7 @@ class Utils {
         </body>
         </html>";
 
-        // Always set content-type when sending HTML email
+
         $headers = "MIME-Version: 1.0" . "\r\n";
         $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
 
