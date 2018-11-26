@@ -29,4 +29,4 @@ Route::get('who_you_are/{slug}','PagesController@whoyouare');
 
 Route::get('projects/{slug}','PagesController@projects');
 
-Route::post('who_you_are/save','PagesController@save');
+Route::post('who_you_are/save','PagesController@save')->name("save_who_your_area");

@@ -1,23 +1,96 @@
 @extends('templates.layout')
 
 @section('styles')   
-    <style>
-        .flex-control-nav {
-            top:80px !important;
-            text-align: center !important;
-            position: initial !important;
-        }
-        .portfolio-overlay a.right-icon {
-            left: auto;
-            right: 50%;
-            margin-left: 0;
-            margin-right: -20px;
-        }
-}
-    </style>
+<link rel="stylesheet" href="{{asset('assets/sweet-alert/sweetalert2.min.css')}}" type="text/css" />
+<style>
+    .flex-control-nav {
+        top:80px !important;
+        text-align: center !important;
+        position: initial !important;
+    }
+    .portfolio-overlay a.right-icon {
+        left: auto;
+        right: 50%;
+        margin-left: 0;
+        margin-right: -20px;
+    }
+</style>
 @endsection
 
 @section('scripts')
+<script src="{{asset('assets/sweet-alert/sweetalert2.all.min.js')}}"></script>
+<script src="{{asset('assets/jquery-validation/js/jquery.validate.js')}}" type="text/javascript"></script>
+<script src="{{asset('assets/jquery-validation/js/additional-methods.js')}}" type="text/javascript"></script>
+<script>
+    $("#form").validate({
+                errorPlacement: function errorPlacement(error, element) {
+                    element.after(error);
+                },
+                rules: {
+                    name: "required",
+                    email: "required",
+                    company: "required",
+                    phone: "required",
+                    message: "required"
+                },
+                messages: {
+                    name: "Requerido",
+                    email: "Requerido",
+                    company: "Requerido",
+                    phone: "Requerido",
+                    message: "Requerido"
+                },
+                submitHandler: function (form) {
+                        $.ajax({
+                            type: "POST",
+                            dataType: "json",
+                            url: "{{ route('contact_save') }}",
+                            data: new FormData($("#form")[0]),
+                            contentType: false,
+                            processData: false,
+                            beforeSend: function () {
+                                swal({
+                                    title: 'Cargando...',
+                                    showCancelButton: false,
+                                    showConfirmButton: false,
+                                    onOpen: function () {
+                                        swal.showLoading()
+                                    }
+                                });
+                            },
+                            success: function (data) {
+                                var error = data.error;
+                                if (error == 0) {
+                                    swal.close();
+                                    swal({
+                                        type: 'success',
+                                        title: 'Enviado con éxito',
+                                        text: 'Nos estaremos contactando a la brevedad',
+                                        showConfirmButton: true,
+                                    });
+                                    $("#show_message").fadeIn("slow");
+                                    $("#contact2").fadeOut("slow");
+                                } else {
+                                    swal.close();
+                                    swal(
+                                        'Oops...',
+                                        'Algo ocurrió!',
+                                        'error'
+                                    );
+                                }
+                            }, error: function () {
+                                swal.close();
+                                swal(
+                                    'Oops...',
+                                    'Algo ocurrió!',
+                                    'error'
+                                );
+                            }
+                        });
+
+                }
+            });
+</script>
 @endsection
 
 @section('content')
@@ -182,35 +255,38 @@
 <div class="section mt-0 pt-0" style="background:white">
     <div class="container">
         <div id="contact" class="row common-height page-section notoppadding clearfix">
-            <div class="col-lg-6 col-padding">
+            <div id="show_message" class="col-lg-6 col-padding" style="display:none">
+                <div>
+                    <h3 class="uppercase" style="font-weight: 600;">Gracias por contactarnos</h3>
+                    <p style="line-height: 1.8;">Pronto nos estaremos comunicando contigo para atender tu solicitud</p>
+                </div>
+            </div>
+            <div id="contact2" class="col-lg-6 col-padding">
                 <div class="contact-widget">
                     <div class="contact-form-result"></div>
-                    <form class="nobottommargin" id="template-contactform" name="template-contactform" action="include/sendemail.php" method="post">
+                    <form class="nobottommargin" id="form">
                         <div class="form-process"></div>
                         <div class="col_half">
-                            <input type="text" id="template-contactform-name" name="template-contactform-name" value="" class="sm-form-control border-form-control required" placeholder="Nombre" />
+                            <input type="text" name="name" class="sm-form-control border-form-control required" placeholder="Nombre" />
                         </div>
                         <div class="col_half col_last">
-                            <input type="email" id="template-contactform-email" name="template-contactform-email" value="" class="required email sm-form-control border-form-control" placeholder="Correo" />
+                            <input type="email" name="email" class="required email sm-form-control border-form-control" placeholder="Correo" />
                         </div>
                         <div class="clear"></div>
                         <div class="col_one_third">
-                            <input type="text" id="template-contactform-phone" name="template-contactform-phone" value="" class="sm-form-control border-form-control" placeholder="Telefono" />
+                            <input type="text" name="phone" class="sm-form-control border-form-control" placeholder="Telefono" />
                         </div>
                         <div class="col_two_third col_last">
-                            <input type="text" id="template-contactform-subject" name="template-contactform-subject" value="" class="required sm-form-control border-form-control" placeholder="Asunto" />
+                            <input type="text" name="company" class="required sm-form-control border-form-control" placeholder="Empresa" />
                         </div>
                         <div class="clear"></div>
                         <div class="col_full">
-                            <textarea class="required sm-form-control border-form-control" id="template-contactform-message" name="template-contactform-message" rows="7" cols="30" placeholder="Tu Mensaje"></textarea>
+                            <textarea class="required sm-form-control border-form-control" name="message" rows="7" cols="30" placeholder="Tu Mensaje"></textarea>
                         </div>
                         <div class="col_full nobottommargin">
                             <button class="button button-large button-color noleftmargin topmargin-sm" style="color:white;" type="submit" id="template-contactform-submit" name="template-contactform-submit" value="submit">Enviar</button>
                         </div>
                         <div class="clear"></div>
-                        <div class="col_full hidden">
-                            <input type="text" id="template-contactform-botcheck" name="template-contactform-botcheck" value="" class="sm-form-control" />
-                        </div>
                     </form>
                 </div>
             </div>

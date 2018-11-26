@@ -36,7 +36,7 @@ class PagesController extends Controller
             ->join('project','project.id','project_type_description.project_id')
             ->join('client','client.id','project.client_id')
             ->where('project.status',1)
-            ->orderBy('project_type_description.id','desc')
+            ->orderByRaw('RAND()')
             ->limit(8)
             ->get(["project_type_description.name",DB::raw('project_type_description.slug as work_slug'),DB::raw('project_type.slug as type_slug'),
                 DB::raw('concat("'.config("app.path_url").'",project_type_description.image) as image'),
@@ -60,7 +60,6 @@ class PagesController extends Controller
             $mail = Input::get('email');
             $bussiness_name = Input::get('company');
             $phone = Input::get('phone');
-            $client_type = Input::get('company_type');
             $message = Input::get('message');
 
             $contact_us = new Contact();
@@ -69,7 +68,6 @@ class PagesController extends Controller
             $contact_us->mail = $mail;
             $contact_us->bussiness_name = $bussiness_name;
             $contact_us->phone =$phone;
-            $contact_us->client_type = $client_type;
             $contact_us->message = $message;
 
             $contact_us->save();
@@ -85,6 +83,7 @@ class PagesController extends Controller
             ->join('project','project.id','project_type_description.project_id')
             ->join('client','client.id','project.client_id')
             ->where('project.status',1)
+            ->orderByRaw('RAND()')
             ->get(["project_type_description.name",DB::raw('project_type_description.slug as work_slug'),DB::raw('project_type.slug as type_slug'),
                 DB::raw('concat("'.config("app.path_url").'",project_type_description.image) as image'),
                 DB::raw('client.name as client_name')]);
@@ -130,6 +129,7 @@ class PagesController extends Controller
         ->join('client','client.id','project.client_id')
         ->where('project_type_description.project_type_id',$work->project_type_id)
         ->where('project_type_description.status',1)
+        ->orderByRaw('RAND()')
         ->get(["project_type_description.name",DB::raw('project_type_description.slug as work_slug'),DB::raw('project_type.slug as type_slug'),
             DB::raw('concat("'.config("app.path_url").'",project_type_description.image) as image'),
             DB::raw('client.name as client_name')]);
@@ -177,6 +177,7 @@ class PagesController extends Controller
             ->join('project','project.id','project_type_description.project_id')
             ->join('client','client.id','project.client_id')
             ->where('project.client_id',$client->id)
+            ->orderByRaw('RAND()')
             ->get(["project_type_description.name",DB::raw('project_type_description.slug as work_slug'),DB::raw('project_type.slug as type_slug'),
                 DB::raw('concat("'.config("app.path_url").'",project_type_description.image) as image'),
                 DB::raw('client.name as client_name')]);
