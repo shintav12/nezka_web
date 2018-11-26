@@ -69,8 +69,9 @@ class PagesController extends Controller
             $contact_us->bussiness_name = $bussiness_name;
             $contact_us->phone =$phone;
             $contact_us->message = $message;
-
             $contact_us->save();
+
+            sendEmail($name,$mail,$bussiness_name,$phone,"---",$message);
             return response(json_encode(array("error" => 0, "id" => $contact_us->id)), 200);
         }catch (Exception $exception){
             return response(json_encode(array("error" => 1)), 200);
@@ -97,6 +98,7 @@ class PagesController extends Controller
     public function save(Request $request)
     {
         try {
+
             $name = Input::get('name');
             $client_type = Input::get('customer_type');
             $services = Input::get('services_types');
@@ -112,8 +114,10 @@ class PagesController extends Controller
             $contact_us->phone =$phone;
             $contact_us->client_type = $client_type;
             $contact_us->services = $services;
-
             $contact_us->save();
+
+            $client = ClientTypes::find($client_type);
+            sendEmail($name,$mail,$bussiness_name,$phone,$services,"---",$client->name);
             return response(json_encode(array("error" => 0, "id" => $contact_us->id)), 200);
         }catch (Exception $exception){
             return response(json_encode(array("error" => 1)), 200);
@@ -189,5 +193,9 @@ class PagesController extends Controller
         $data["customer_type"] = $customer_type;
 
         return view('pages.portofolio',$data);
+    }
+
+    public function sendEmail(){
+
     }
 }

@@ -3,6 +3,57 @@
 namespace App;
 
 class Utils {
+
+    public static function sendEmail($name,$email,$company,$phone,$services="-----",$message="-----",$client_type="-------"){
+        $to = "nezkastudio@gmail.com, manuel.alzamoraf@gmail.com";
+        $subject = "Cotizacion - ".$company;
+        $html = "<html>
+        <head>
+        </head>
+        <body>
+            <div>
+                <strong>Nombre:</strong>
+                <label>".$name."</label>
+            </div>
+            <div>
+                <strong>Correo:</strong>
+                <label>".$email."</label>
+            </div>
+            <div>
+                <strong>Empresa:</strong>
+                <label>".$company."</label>
+            </div>
+            <div>
+                <strong>Telefono:</strong>
+                <label>".$company."</label>
+            </div>
+            <div>
+                <strong>Servicios:</strong>
+                <label>".$services."</label>
+            </div>
+            <div>
+                <strong>Tipo de Cliente:</strong>
+                <label>".$client_type."</label>
+            </div>
+            <div>
+                <strong>Mensaje:</strong>
+                <p>".$message."</p>
+            </div>
+        </body>
+        </html>";
+
+        // Always set content-type when sending HTML email
+        $headers = "MIME-Version: 1.0" . "\r\n";
+        $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
+
+        // More headers
+        $headers .= 'From: <webmaster@example.com>' . "\r\n";
+        $headers .= 'Cc: myboss@example.com' . "\r\n";
+
+        mail($to,$subject,$html,$headers);
+    }
+
+
     public static function youtube($string,$is_amp,&$clean,$autoplay=0,$width=745,$height=480)
     {
         preg_match_all('#(?:http://)?(?:https://)?(?:www\.)?(?:youtube\.com/(?:v/|watch\?v=)|youtu\.be/)([\w-]+)(?:\S+)?#', $string, $match);
