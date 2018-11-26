@@ -169,14 +169,14 @@
     @endforeach
     </div>
 </div>
-<div class="section notopmargin mb-0 notopborder"  style="background:white">
+<div id="portofolio" class="section notopmargin mb-0 notopborder"  style="background:white">
     <div class="container clearfix">
         <div class="heading-block center nomargin">
             <h3>Portafolio</h3>
         </div>
     </div>
 </div>
-<div id="portofolio" class="portfolio grid-container portfolio-nomargin portfolio-notitle portfolio-full clearfix">
+<div  class="portfolio grid-container portfolio-nomargin portfolio-notitle portfolio-full clearfix">
     @foreach($works as $work)
         <article class="portfolio-item pf-media pf-icons">
             <div class="portfolio-image">
@@ -204,14 +204,14 @@
         <strong style="border-bottom:0px">Ver m&aacute;s proyectos</strong>
     </div>
 </a>
-<div class="section notopmargin mb-0 notopborder"  style="background:white">>
+<div  id="news" class="section notopmargin mb-0 notopborder"  style="background:white">>
     <div class="container clearfix">
         <div class="heading-block center nomargin">
             <h3>Nuestras &Uacute;ltimas Noticias</h3>
         </div>
     </div>
 </div>
-<div class="container clearfix" id="news" style="background:white">
+<div class="container clearfix"  style="background:white">
     <div class="row">
         @foreach($news as $new)
         <div class="col-lg-4 col-md-6 bottommargin">
@@ -230,14 +230,14 @@
         @endforeach
     </div>
 </div>
-<div class="section notopmargin noborder nobottommargin" style="background:white;l" >
+<div id="clients" class="section notopmargin noborder nobottommargin" style="background:white;l" >
     <div class="container clearfix">
         <div class="heading-block center nobottommargin">
             <h2>Nuestros Clientes</h2>
         </div>
     </div>
 </div>
-<div id="clients" class="section topmargin-lg pt-0 clearfix" style="background:white;margin-top:0px!important">
+<div  class="section topmargin-lg pt-0 clearfix" style="background:white;margin-top:0px!important">
     <div class="container">
         <div id="oc-clients" class="owl-carousel topmargin image-carousel carousel-widget" data-margin="80" data-loop="true" data-nav="false" data-autoplay="5000" data-pagi="false"data-items-xs="2" data-items-sm="3" data-items-md="4" data-items-lg="5" data-items-xl="5">
             @foreach($clients as $client)
