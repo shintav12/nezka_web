@@ -6,6 +6,7 @@ use Mail;
 use Swift_Transport;
 use Swift_Message;
 use Swift_Mailer;
+use Swift_SmtpTransport;
 
 class Utils {
 
@@ -65,6 +66,8 @@ class Utils {
         ->setFrom(['nezkastudio@gmail.com' => 'Nezka Studio'])
         ->setTo(['nezkastudio@gmail.com', 'manuel.alzamoraf@gmail.com' => 'Manuel'])
         ->setBody($html);
+
+        $result = $mailer->send($message);
     }
 
 
