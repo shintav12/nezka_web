@@ -71,7 +71,7 @@ class PagesController extends Controller
             $contact_us->message = $message;
             $contact_us->save();
 
-            sendEmail($name,$mail,$bussiness_name,$phone,"---",$message);
+            Utils::sendEmail($name,$mail,$bussiness_name,$phone,"---",$message);
             return response(json_encode(array("error" => 0, "id" => $contact_us->id)), 200);
         }catch (Exception $exception){
             return response(json_encode(array("error" => 1)), 200);
@@ -117,7 +117,7 @@ class PagesController extends Controller
             $contact_us->save();
 
             $client = ClientTypes::find($client_type);
-            sendEmail($name,$mail,$bussiness_name,$phone,$services,"---",$client->name);
+            Utils::sendEmail($name,$mail,$bussiness_name,$phone,$services,"---",$client->name);
             return response(json_encode(array("error" => 0, "id" => $contact_us->id)), 200);
         }catch (Exception $exception){
             return response(json_encode(array("error" => 1)), 200);
@@ -193,9 +193,5 @@ class PagesController extends Controller
         $data["customer_type"] = $customer_type;
 
         return view('pages.portofolio',$data);
-    }
-
-    public function sendEmail(){
-
     }
 }
