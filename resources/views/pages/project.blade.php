@@ -1,7 +1,14 @@
 @extends('templates.intern')
 
 @section('styles')   
-
+<style>
+    .portfolio-overlay a.right-icon {
+        left: auto;
+        right: 50%;
+        margin-left: 0;
+        margin-right: -20px;
+    }
+</style>
 @endsection
 
 @section('scripts')
@@ -61,10 +68,15 @@
                     <div class="oc-item">
                         <div class="iportfolio">
                             <div class="portfolio-image">
-                                <a href="{{url('projects/')}}/{{$work->work_slug}}"><img src="{{$rwork->image}}" alt="Open Imagination"></a>
+                                <a href="{{url('projects/')}}/{{$rwork->work_slug}}"><img src="{{$rwork->image}}" alt="Open Imagination"></a>
                                 <div class="portfolio-overlay">
-                                    <a href="{{$rwork->image}}" class="left-icon" data-lightbox="image"><i class="icon-line-plus"></i></a>
-                                    <a href="{{url('projects/')}}/{{$rwork->work_slug}}" class="right-icon"><i class="icon-line-ellipsis"></i></a>
+                                    <a href="{{url('projects/')}}/{{$rwork->work_slug}}" class="right-icon">
+                                    @if($rwork->type_slug == 'animacion' || $rwork->type_slug == 'contenido-digital' || $rwork->type_slug == 'audiovisual')
+                                    <i class="icon-line-play"></i>
+                                    @else
+                                    <i class="icon-line-stack"></i>
+                                    @endif
+                                    </a>
                                 </div>
                             </div>
                             <div class="portfolio-desc">

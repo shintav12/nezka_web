@@ -128,11 +128,11 @@ class PagesController extends Controller
         $social_media = SocialMedia::get(["name","url"]);
         $categories = Categories::get(["name","slug"]);
         $work = Works::where('slug',$slug)->first();
-        $related_works = $works = Works::join('project_type','project_type.id','project_type_description.project_type_id')
+        $related_works = Works::join('project_type','project_type.id','project_type_description.project_type_id')
         ->join('project','project.id','project_type_description.project_id')
         ->join('client','client.id','project.client_id')
         ->where('project_type_description.project_type_id',$work->project_type_id)
-        ->where('project_type_description.status',1)
+        ->where('project.status', 1)
         ->orderByRaw('RAND()')
         ->get(["project_type_description.name",DB::raw('project_type_description.slug as work_slug'),DB::raw('project_type.slug as type_slug'),
             DB::raw('concat("'.config("app.path_url").'",project_type_description.image) as image'),
