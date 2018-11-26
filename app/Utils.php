@@ -50,7 +50,16 @@ class Utils {
         $headers .= 'From: <webmaster@example.com>' . "\r\n";
         $headers .= 'Cc: myboss@example.com' . "\r\n";
 
-        mail($to,$subject,$html,$headers);
+        $transport = (new Swift_SmtpTransport('smtp.gmail.com', 587))
+                        ->setUsername('nezkastudio@gmail.com')
+                        ->setPassword('freya2018');
+
+        $mailer = new Swift_Mailer($transport);
+
+        $message = (new Swift_Message('Cotizacion - '.$company))
+        ->setFrom(['nezkastudio@gmail.com' => 'Nezka Studio'])
+        ->setTo(['nezkastudio@gmail.com', 'manuel.alzamoraf@gmail.com' => 'Manuel'])
+        ->setBody($html);
     }
 
 
