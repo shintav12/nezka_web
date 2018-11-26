@@ -211,7 +211,7 @@
         </div>
     </div>
 </div>
-<div class="container clearfix" style="background:white">
+<div class="container clearfix" id="news" style="background:white">
     <div class="row">
         @foreach($news as $new)
         <div class="col-lg-4 col-md-6 bottommargin">
@@ -246,7 +246,7 @@
         </div>
     </div>
 </div>
-<div class="section mt-0 pt-0" style="background:white;background-image: url('img/1.png');margin:0px;height:550px">
+<div class="section mt-0 pt-0" id="contact" style="background:white;background-image: url('img/1.png');margin:0px;height:550px">
     <div class="container">
         <div id="contact" class="row common-height page-section notoppadding clearfix">
             <div id="show_message" class="col-lg-6 col-padding" style="display:none">

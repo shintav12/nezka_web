@@ -13,7 +13,7 @@
                 <li><a href="#" data-href="#portofolio"><div>Portafolio</div></a></li>
                 <li><a href="#" data-href="#news"><div>Noticias</div></a></li>
                 <li><a href="#" data-href="#clients"><div>Clientes</div></a></li>
-                <li><a href="#" data-href="#contact_us"><div>Contacto</div></a></li>
+                <li><a href="#" data-href="#contact"><div>Contacto</div></a></li>
             </ul>
             </nav>
         </div>
