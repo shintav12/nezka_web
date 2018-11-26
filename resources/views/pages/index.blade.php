@@ -217,10 +217,10 @@
         <div class="col-lg-4 col-md-6 bottommargin">
             <div class="ipost clearfix">
                 <div class="entry-image">
-                    <a href="{{$new->url}}"><img class="image_fade" src="{{$new->image}}" alt="Image"></a>
+                    <a target="blank_" href="{{$new->url}}"><img class="image_fade" src="{{$new->image}}" alt="Image"></a>
                 </div>
                 <div class="entry-title">
-                    <h3><a href="{{$new->url}}">{{$new->title}}</a></h3>
+                    <h3><a target="blank_" href="{{$new->url}}">{{$new->title}}</a></h3>
                 </div>
                 <div class="entry-content" style="margin:0px">
                     <p>{{$new->subtitle}}</p>

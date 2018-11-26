@@ -43,12 +43,12 @@
             </div>
             <div class="col_one_third portfolio-single-content col_last nobottommargin">
                 <div class="fancy-title mb-0">
-                    <h2>Informaci&oacute;n del proyecto:</h2>
+                    <h2>Informaci&oacute;n del proyecto</h2>
                 </div>
                 <div class="line mb-4 mt-2"></div>
                 <p>{{$work->description}}</p>
                 <div class="fancy-title  mb-2">
-                    <h2>Detalle del proyecto:</h2>
+                    <h2>Detalle del proyecto</h2>
                 </div>
                 <p>{{$work->detail}}</p>
                 <div class="line mb-4"></div>
