@@ -21,7 +21,7 @@
                     <i class="icon-linkedin"></i>
                 </a>
             </div>
-            <div class="uppercase ls3" style="color: #333; margin-top: 10px">&copy; Nezkastudio 2018. All Rights Reserved.</div>
+            <div class="uppercase ls3" style="color: grey; margin-top: 10px">&copy; Nezkastudio 2018. All Rights Reserved.</div>
         </div>
     </div>
 </footer>

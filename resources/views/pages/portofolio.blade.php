@@ -1,7 +1,14 @@
 @extends('templates.intern')
 
 @section('styles')   
-
+<style>
+    .portfolio-overlay a.right-icon {
+        left: auto;
+        right: 50%;
+        margin-left: 0;
+        margin-right: -20px;
+    }
+</style>
 @endsection
 
 @section('scripts')
@@ -11,9 +18,6 @@
 <section id="page-title" style="background:white;">
     <div class="container clearfix">
         <h1>Portafolio {{$client_name}}</h1>
-        <div id="portfolio-navigation">
-            <a href="{{url('/portofolio')}}"><i class="icon-plus"></i></a>
-        </div>
     </div>
 </section>
 <section id="content">
@@ -25,9 +29,6 @@
                     <li><a href="#" data-filter=".{{$category->slug}}">{{$category->name}}</a></li>
                 @endforeach
             </ul>
-            <div class="portfolio-shuffle" data-container="#portfolio">
-                <i class="icon-random"></i>
-            </div>
             <div class="clear"></div>
             <div id="portfolio" class="portfolio grid-container clearfix">
                 @foreach($works as $work)
@@ -35,8 +36,13 @@
                         <div class="portfolio-image">
                             <a href="{{url('projects/')}}/{{$work->work_slug}}"><img src="{{$work->image}}" alt="Open Imagination"></a>
                             <div class="portfolio-overlay">
-                                <a href="{{$work->image}}" class="left-icon" data-lightbox="image"><i class="icon-line-plus"></i></a>
-                                <a href="{{url('projects/')}}/{{$work->work_slug}}" class="right-icon"><i class="icon-line-ellipsis"></i></a>
+                                <a href="{{url('projects/')}}/{{$work->work_slug}}" class="right-icon">
+                                    @if($work->type_slug == 'animacion' || $work->type_slug == 'audiovisual')
+                                    <i class="icon-line-play"></i>
+                                    @else
+                                    <i class="icon-line-stack"></i>
+                                    @endif                                    
+                                </a>
                             </div>
                         </div>
                         <div class="portfolio-desc">

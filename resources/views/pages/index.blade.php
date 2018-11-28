@@ -15,40 +15,6 @@
         margin-left: 0;
         margin-right: -20px;
     }
-
-    .border-form-control {
-        height: 42px;
-        padding: 7px 4px;
-        font-size: 17px;
-        letter-spacing: 1px;
-        background-color: transparent !important;
-        border-top: transparent;
-        border-right: transparent;
-        border-left: transparent;
-        border-bottom-width: 1px;
-        border-color: white !important;
-    }
-
-    .border-form-control::-moz-placeholder {
-        font-weight: 300;
-        color: white !important;
-    }
-
-    .border-form-control:-ms-input-placeholder {
-        font-weight: 300;
-        color: white !important;
-    }
-
-    .border-form-control::-webkit-input-placeholder {
-        font-weight: 300;
-        color: white !important;
-    }
-
-    textarea.border-form-control {
-        resize: none;
-        overflow: hidden;
-        word-wrap: break-word;
-    }
 </style>
 @endsection
 
@@ -134,7 +100,7 @@
         <div class="content-wrap pt-0">
             <div class="container clearfix">
                 <div class="divcenter center clearfix" style="max-width: 900px;">
-                    <h2>Nuestros Servicios<span>.</span></h2>
+                    <h2>Nuestros Servicios<span style="font-weight: bolder;font-size: 55px;margin-left: 8px;">.</span></h2>
                 </div>
             </div>
             <div class="clear"></div>
@@ -161,7 +127,7 @@
                 <div class="heading-block nobottomborder mb-3">
                     <h1>¿Por qu&eacute; elegirnos?</h1>
                 </div>
-                <div class="fslider restaurant-reviews" data-pagi="false" data-arrows="true" data-animation="slide">
+                <div class="fslider restaurant-reviews" data-pagi="false" data-arrows="false" data-animation="slide">
                     <div class="flexslider">
                         <div class="slider-wrap">
                             @foreach($sliders as $slider)
@@ -177,10 +143,10 @@
         </div>
     </div>
 </section>
-<div id="quien_eres" class="section nomargin clearfix dark pt-4" style="background: white;" >
+<div id="quien_eres" class="section nomargin clearfix dark pt-4 pb-2" style="background: white;" >
     <div class="container clearfix dark pt-4">
         <div class="heading-block center nobottommargin">
-            <h2 style="color:#00ffdc">¿Qui&eacute;n eres?</h2>
+            <h2 style="color: #444;">¿Qui&eacute;n eres?<span style="font-weight: bolder;font-size: 55px;margin-left: 8px;">.</span></h2>
             <span style="color: #333;">Queremos conocerte mejor, cuentanos m&aacute;s sobre ti</span>
         </div>
     </div>
@@ -203,10 +169,10 @@
     @endforeach
     </div>
 </div>
-<div id="portofolio" class="section notopmargin mb-0 notopborder"  style="background:white">
+<div id="portofolio" class="section notopmargin mb-0 notopborder"  style="background:white;padding-top:15px">
     <div class="container clearfix">
         <div class="heading-block center nomargin">
-            <h3>Portafolio</h3>
+            <h2>Portafolio<span style="font-weight: bolder;font-size: 55px;margin-left: 8px;">.</span></h2>
         </div>
     </div>
 </div>
@@ -217,7 +183,7 @@
                 <a href="{{url('projects/')}}/{{$work->work_slug}}"><img src="{{$work->image}}" alt="Open Imagination"></a>
                 <div class="portfolio-overlay">
                     <a href="{{url('projects/')}}/{{$work->work_slug}}" class="right-icon">
-                    @if($work->type_slug == 'animacion' || $work->type_slug == 'contenido-digital' || $work->type_slug == 'audiovisual')
+                    @if($work->type_slug == 'animacion' || $work->type_slug == 'audiovisual')
                     <i class="icon-line-play"></i>
                     @else
                     <i class="icon-line-stack"></i>
@@ -235,13 +201,13 @@
 <div class="clear"></div>
 <a href="{{url('portofolio/')}}" class="button button-full button-dark center">
     <div class="container clearfix">
-        <strong style="border-bottom:0px">Ver m&aacute;s proyectos</strong>
+        <strong style="border-bottom:0px">Ver m&aacute;s</strong>
     </div>
 </a>
 <div  id="news" class="section notopmargin mb-0 notopborder"  style="background:white">>
     <div class="container clearfix">
         <div class="heading-block center nomargin">
-            <h3>Nuestras &Uacute;ltimas Noticias</h3>
+            <h3>Nuestras &Uacute;ltimas Noticias<span style="font-weight: bolder;font-size: 55px;margin-left: 8px;">.</span></h3>
         </div>
     </div>
 </div>
@@ -264,34 +230,56 @@
         @endforeach
     </div>
 </div>
-<div id="clients" class="section notopmargin noborder nobottommargin" style="background:white;" >
+<div id="clients" class="section notopmargin noborder nobottommargin" style="background:white;padding-bottom: 15px;" >
     <div class="container clearfix">
         <div class="heading-block center nobottommargin">
-            <h2>Nuestros Clientes</h2>
+            <h2>Nuestros Clientes<span style="font-weight: bolder;font-size: 55px;margin-left: 8px;">.</span></h2>
         </div>
     </div>
 </div>
 <div  class="section topmargin-lg pt-0 clearfix" style="background:white;margin-top:0px!important">
-    <div class="container">
-        <div id="oc-clients" class="owl-carousel topmargin image-carousel carousel-widget" data-margin="80" data-loop="true" data-nav="false" data-autoplay="5000" data-pagi="false"data-items-xs="2" data-items-sm="3" data-items-md="4" data-items-lg="5" data-items-xl="5">
+    <div class="">
+        <div id="oc-clients" class="owl-carousel owl-carousel-full topmargin image-carousel carousel-widget" data-margin="150" data-loop="true" data-nav="false" data-autoplay="5000" data-pagi="false"data-items-xs="2" data-items-sm="3" data-items-md="4" data-items-lg="5" data-items-xl="6">
             @foreach($clients as $client)
                 <div class="oc-item"><a href="{{url('clients')}}/{{$client->slug}}"><img src="{{$client->image}}" alt="Clients"></a></div>
             @endforeach    
         </div>
     </div>
 </div>
-<div class="section nomargin nopadding clearfix" style="background-image: url('img/1.png');">
+<div class="section nomargin nopadding clearfix">
     <div class="row common-height clearfix" >
-        <div id="show_message" class="col-md-6 col-xs-12 col-padding" style="display:none">
-            <div>
-                <h3 class="uppercase" style="font-weight: 600;color:white">Gracias por contactarnos</h3>
-                <p style="line-height: 1.8;color:white">Pronto nos estaremos comunicando contigo para atender tu solicitud</p>
+        <div class="col-lg-6 clearfix " style="background-image: url('img/4.jpg');display:flex;align-items:center">
+            <div class="col-padding clearfix">
+                <div style="color:white; font-size:x-large;">
+                    <img src="{{asset('img/estudio1.png')}}" alt="logo" width="50%">    
+                </div>
             </div>
         </div>
-        <div class="col-lg-6 dark">
+        <div class="col-lg-6 dark" >
             <div class="col-padding clearfix">
-                <div class="contact-widget">
-                    <h3 class="uppercase" style="color:white">CONTACTO</h3>
+                <h3 class="uppercase" style="color:#444">CONTACTO</h3>
+                <div class="row topmargin-sm clearfix mb-3" style="font-size: 16px; line-height: 1.7;">
+                    <div class="col-lg-6 pb-4">
+                        <strong class="mt-4 mb-2" style="color:#444">Nuestro aliado</strong>
+                        <div style="padding-top:12px">
+                            <a href="https://www.facebook.com/MORPHaudiovisual/" target="_blank">
+                                <img src="{{asset('img/morph.png')}}" alt="logo" width="50%">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="col-lg-12 px-0" style="color:#444">
+                        <i class="icon-call mr-2"></i>  (+51) 986 652 816
+                        </div>
+                        <div class="col-lg-12 px-0" style="color:#444">
+                            <i class="icon-call mr-2"></i>   (+51) 932 119 264
+                        </div>
+                        <div class="col-lg-12 px-0" style="color:#444">
+                            <i class="icon-email3 mr-2"></i>  nezkastudio@gmail.com
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-widget pt-3">
                     <form class="nobottommargin" id="form">
                         <div class="form-process"></div>
                         <div class="col_half">
@@ -316,25 +304,12 @@
                         </div>
                         <div class="clear"></div>
                     </form>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-6 clearfix">
-            <div class="col-padding clearfix">
-                <div class="col-lg-12" style="color:white">
-                    <i class="icon-call mr-2"></i>  (+51) 986 652 816
-                </div>
-                <div class="col-lg-12" style="color:white">
-                    <i class="icon-call mr-2"></i>   (+51) 932 119 264
-                </div>
-                <div class="col-lg-12" style="color:white">
-                    <i class="icon-email3 mr-2"></i>  nezkastudio@gmail.com
-                </div>
-                <div class="col-lg-12 mt-3">
-                    <h3 class="uppercase mt-4 mb-2" style="color:white">NUESTRO ALIADO</h3>
-                    <a href="https://www.facebook.com/MORPHaudiovisual/" target="_blank">
-                        <img src="{{asset('img/morph.png')}}" alt="logo" width="40%">
-                    </a>
+                    <div id="show_message" class="col-md-6 col-xs-12 col-padding" style="display:none">
+                        <div>
+                            <h3 class="uppercase" style="font-weight: 600;color:#444">Gracias por contactarnos</h3>
+                            <p style="line-height: 1.8;color:#444">Pronto nos estaremos comunicando contigo para atender tu solicitud</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

@@ -69,7 +69,7 @@
                                 <a href="{{url('projects/')}}/{{$rwork->work_slug}}"><img src="{{$rwork->image}}" alt="Open Imagination"></a>
                                 <div class="portfolio-overlay">
                                     <a href="{{url('projects/')}}/{{$rwork->work_slug}}" class="right-icon">
-                                    @if($rwork->type_slug == 'animacion' || $rwork->type_slug == 'contenido-digital' || $rwork->type_slug == 'audiovisual')
+                                    @if($rwork->type_slug == 'animacion' || $rwork->type_slug == 'audiovisual')
                                     <i class="icon-line-play"></i>
                                     @else
                                     <i class="icon-line-stack"></i>

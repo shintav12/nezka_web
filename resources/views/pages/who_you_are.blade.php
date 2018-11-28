@@ -169,7 +169,7 @@
             <div class="container clearfix">
                 <h1 class="mb-3">{{$customer_type->name}}</h1>
                 <h4 class="mb-1">{{$customer_type->description}}</h4>
-                <h4 class="mb-1" style="color:gray">Elige las soluciones que se ajusten a tus necesidades</h4>
+                <h4 class="mb-1" style="color:gray;font-weight:300">Elige las soluciones que se ajusten a tus necesidades</h4>
             </div>
         </section>
         <div class="container clearfix">
@@ -198,7 +198,7 @@
         <section id="page-title" style="background:white;text-align:center;display:none;border-bottom:0px" class="dos">
             <div class="container clearfix">
                 <h1 class="mb-3">Coloca tus datos</h1>
-                <h4 class="mb-1 mx-5" style="color:gray">Estamos casi listos para empezar a realizar tu proyecto, coloca bien tus datos y en breves momentos te haremos llegar a tu correo la propuesta con todos los servicios que has escogido</h4>
+                <h4 class="mb-1 mx-5" style="color:gray;font-weight:300">Estamos casi listos para empezar a realizar tu proyecto, coloca bien tus datos y en breves momentos te haremos llegar a tu correo la propuesta con todos los servicios que has escogido</h4>
             </div>
         </section>
         <div class="container clearfix">
@@ -224,7 +224,7 @@
                         </div>
                         <div class="clear"></div>
                         <div class="col_full center pt-3">
-                            <h4 style=>Has seleccionado las siguientes soluciones</h4>
+                            <h4 style="color:grey">Has seleccionado las siguientes soluciones</h4>
                         </div>
                         <div class="clear"></div>
                         <div id="selecciones" class="col_full center pb-3">
