@@ -4,9 +4,9 @@
 <link rel="stylesheet" href="{{asset('assets/sweet-alert/sweetalert2.min.css')}}" type="text/css" />
 <style>
     .flex-control-nav {
-        top:90px !important;
+        top:110px !important;
         position:absolute !important;
-        left:47% !important;
+        left:45% !important;
 
     }
     .portfolio-overlay a.right-icon {
@@ -14,6 +14,40 @@
         right: 50%;
         margin-left: 0;
         margin-right: -20px;
+    }
+
+    .border-form-control {
+        height: 42px;
+        padding: 7px 4px;
+        font-size: 17px;
+        letter-spacing: 1px;
+        background-color: transparent !important;
+        border-top: transparent;
+        border-right: transparent;
+        border-left: transparent;
+        border-bottom-width: 1px;
+        border-color: white !important;
+    }
+
+    .border-form-control::-moz-placeholder {
+        font-weight: 300;
+        color: white !important;
+    }
+
+    .border-form-control:-ms-input-placeholder {
+        font-weight: 300;
+        color: white !important;
+    }
+
+    .border-form-control::-webkit-input-placeholder {
+        font-weight: 300;
+        color: white !important;
+    }
+
+    textarea.border-form-control {
+        resize: none;
+        overflow: hidden;
+        word-wrap: break-word;
     }
 </style>
 @endsection
@@ -127,7 +161,7 @@
                 <div class="heading-block nobottomborder mb-3">
                     <h1>¿Por qu&eacute; elegirnos?</h1>
                 </div>
-                <div class="fslider restaurant-reviews" data-arrows="false" data-animation="slide">
+                <div class="fslider restaurant-reviews" data-pagi="false" data-arrows="true" data-animation="slide">
                     <div class="flexslider">
                         <div class="slider-wrap">
                             @foreach($sliders as $slider)
@@ -143,25 +177,25 @@
         </div>
     </div>
 </section>
-<div id="quien_eres" class="section nomargin clearfix dark pt-4" style="background: #121212;" >
+<div id="quien_eres" class="section nomargin clearfix dark pt-4" style="background: white;" >
     <div class="container clearfix dark pt-4">
         <div class="heading-block center nobottommargin">
             <h2 style="color:#00ffdc">¿Qui&eacute;n eres?</h2>
-            <span>Queremos conocerte mejor, cuentanos m&aacute;s sobre ti</span>
+            <span style="color: #333;">Queremos conocerte mejor, cuentanos m&aacute;s sobre ti</span>
         </div>
     </div>
     <div class="row common-height clearfix">
     @foreach($client_types as $client)
         @if($client->type == "mains")
-        <div class="col-lg-4 dark" style="background: center center no-repeat; background-size: cover;">
+        <div class="col-lg-4" style="background: center center no-repeat; background-size: cover;">
             <div class="col-padding clearfix">
                 <div class="fbox-icon mb-4">
                     <img style="width:15%" class="img-responsive inline-block" src="{{$client->image}}" alt="Open Imagination">
                 </div>
                 <div class="heading-block noborder" style="margin-bottom: 20px;">
-                    <h4 >{{$client->name}}</h4>
+                    <h4 style="color: #333;">{{$client->name}}</h4>
                 </div>
-                <p>{{$client->description}}</p>
+                <p style="color: #333;">{{$client->description}}</p>
                 <a href="{{url('who_you_are')}}/{{$client->slug}}" class="button button-rounded button-white bgcolor button-light nomargin">Empecemos</a>
             </div>
         </div>
@@ -230,7 +264,7 @@
         @endforeach
     </div>
 </div>
-<div id="clients" class="section notopmargin noborder nobottommargin" style="background:white;l" >
+<div id="clients" class="section notopmargin noborder nobottommargin" style="background:white;" >
     <div class="container clearfix">
         <div class="heading-block center nobottommargin">
             <h2>Nuestros Clientes</h2>
@@ -246,18 +280,18 @@
         </div>
     </div>
 </div>
-<div class="section mt-0 pt-0" id="contact" style="background:white;background-image: url('img/1.png');margin:0px;height:550px">
-    <div class="container">
-        <div id="contact" class="row common-height page-section notoppadding clearfix">
-            <div id="show_message" class="col-lg-6 col-padding" style="display:none">
-                <div>
-                    <h3 class="uppercase" style="font-weight: 600;color:white">Gracias por contactarnos</h3>
-                    <p style="line-height: 1.8;color:white">Pronto nos estaremos comunicando contigo para atender tu solicitud</p>
-                </div>
+<div class="section nomargin nopadding clearfix" style="background-image: url('img/1.png');">
+    <div class="row common-height clearfix" >
+        <div id="show_message" class="col-md-6 col-xs-12 col-padding" style="display:none">
+            <div>
+                <h3 class="uppercase" style="font-weight: 600;color:white">Gracias por contactarnos</h3>
+                <p style="line-height: 1.8;color:white">Pronto nos estaremos comunicando contigo para atender tu solicitud</p>
             </div>
-            <div id="contact2" class="col-lg-6 col-padding">
+        </div>
+        <div class="col-lg-6 dark">
+            <div class="col-padding clearfix">
                 <div class="contact-widget">
-                <h3 class="uppercase" style="color:white">CONTACTO</h3>
+                    <h3 class="uppercase" style="color:white">CONTACTO</h3>
                     <form class="nobottommargin" id="form">
                         <div class="form-process"></div>
                         <div class="col_half">
@@ -278,29 +312,29 @@
                             <textarea class="required sm-form-control border-form-control" name="message" rows="7" cols="30" placeholder="Tu Mensaje"></textarea>
                         </div>
                         <div class="col_full nobottommargin">
-                            <button class="button button-large button-color noleftmargin topmargin-sm" style="color:white;" type="submit" id="template-contactform-submit" name="template-contactform-submit" value="submit">Enviar</button>
+                            <button class="button button-circle button-color noleftmargin topmargin-sm" style="color:white;" type="submit" id="template-contactform-submit" name="template-contactform-submit" value="submit">Enviar</button>
                         </div>
                         <div class="clear"></div>
                     </form>
                 </div>
             </div>
-            <div class="col-lg-6 col-padding">
-                <div class="max-height">
-                    <div class="row topmargin-sm clearfix" style="font-size: 16px; line-height: 1.7;">
-                        <div class="col-lg-12" style="color:white">
-                            <i class="icon-call mr-2"></i>  (+51) 986 652 816
-                            <br>
-                            <i class="icon-call mr-2"></i>   (+51) 932 119 264
-                            <br>
-                            <i class="icon-email3 mr-2"></i>  nezkastudio@gmail.com
-                        </div>
-                        <div class="col-lg-12 mt-3">
-                            <h3 class="uppercase mt-4 mb-2" style="color:white">NUESTRO ALIADO</h3>
-                            <a href="https://www.facebook.com/MORPHaudiovisual/" target="_blank">
-                                <img src="{{asset('img/morph.png')}}" alt="logo" width="40%">
-                            </a>
-                        </div>
-                    </div>
+        </div>
+        <div class="col-lg-6 clearfix">
+            <div class="col-padding clearfix">
+                <div class="col-lg-12" style="color:white">
+                    <i class="icon-call mr-2"></i>  (+51) 986 652 816
+                </div>
+                <div class="col-lg-12" style="color:white">
+                    <i class="icon-call mr-2"></i>   (+51) 932 119 264
+                </div>
+                <div class="col-lg-12" style="color:white">
+                    <i class="icon-email3 mr-2"></i>  nezkastudio@gmail.com
+                </div>
+                <div class="col-lg-12 mt-3">
+                    <h3 class="uppercase mt-4 mb-2" style="color:white">NUESTRO ALIADO</h3>
+                    <a href="https://www.facebook.com/MORPHaudiovisual/" target="_blank">
+                        <img src="{{asset('img/morph.png')}}" alt="logo" width="40%">
+                    </a>
                 </div>
             </div>
         </div>
