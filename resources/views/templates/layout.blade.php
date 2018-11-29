@@ -4,6 +4,7 @@
 	<title>Nezka Studio</title>
 	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="google-site-verification" content="g8gAqMNuJisKZ9bZwECBj82l1awkRpRZVy9H9AEgLwQ" />
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900" rel="stylesheet">
     <link rel="stylesheet" href="{{asset('css/bootstrap.css')}}" type="text/css" />
     <link rel="stylesheet" href="{{asset('style.css')}}" type="text/css" />
@@ -167,5 +168,15 @@
         });
     </script>
     @yield('scripts')
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-130112687-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-130112687-1');
+    </script>
+
 </body>
 </html>
