@@ -4,7 +4,6 @@
     <title>{{$page}}} | Nezka Studio</title>
 	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 	<meta name="author" content="NezkaStudio" />
-    <meta name="google-site-verification" content="g8gAqMNuJisKZ9bZwECBj82l1awkRpRZVy9H9AEgLwQ" />
 	<link href="https://fonts.googleapis.com/css?family=Lato:300,400,400i,700|Raleway:300,400,500,600,700|Crete+Round:400i" rel="stylesheet" type="text/css" />
 	<link rel="stylesheet" href="{{asset('css/bootstrap.css')}}" type="text/css" />
     <link rel="stylesheet" href="{{asset('style.css')}}" type="text/css" />
