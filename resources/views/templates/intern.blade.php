@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html dir="ltr" lang="en-US">
 <head>
-    <title>{{$page}}} | Nezka Studio</title>
+    <title>{{$page}} | Nezka Studio</title>
 	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-	<meta name="author" content="NezkaStudio" />
+	<meta name="author" content="Nezka Studio" />
 	<link href="https://fonts.googleapis.com/css?family=Lato:300,400,400i,700|Raleway:300,400,500,600,700|Crete+Round:400i" rel="stylesheet" type="text/css" />
 	<link rel="stylesheet" href="{{asset('css/bootstrap.css')}}" type="text/css" />
     <link rel="stylesheet" href="{{asset('style.css')}}" type="text/css" />
