@@ -120,29 +120,7 @@
         </div>    
     </div>
 </div>
-<section id="section-testimonials" class="section parallax nobottommargin page-section dark" style="background-image: url('img/pilars.jpg'); padding: 140px 0; background-size: cover"  data-bottom-top="background-position:0px 300px;" data-top-bottom="background-position:0px -300px;">
-    <div class="container clearfix" style="text-align:center">
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="heading-block nobottomborder mb-3">
-                    <h1>¿Por qu&eacute; elegirnos?</h1>
-                </div>
-                <div class="fslider restaurant-reviews" data-pagi="false" data-arrows="false" data-animation="slide">
-                    <div class="flexslider">
-                        <div class="slider-wrap">
-                            @foreach($sliders as $slider)
-                            <div class="slide">
-                                <p class="lead mb-0">"{{$slider->subtitle}}"</p>
-                                <h3 class="mt-0">{{$slider->title}}</h3>
-                            </div>
-                            @endforeach
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+
 <div id="quien_eres" class="section nomargin clearfix dark pt-4 pb-2" style="background: white;" >
     <div class="container clearfix dark pt-4">
         <div class="heading-block center nobottommargin">
@@ -204,32 +182,6 @@
         <strong style="border-bottom:0px">Ver m&aacute;s</strong>
     </div>
 </a>
-<div  id="news" class="section notopmargin mb-0 notopborder"  style="background:white">>
-    <div class="container clearfix">
-        <div class="heading-block center nomargin">
-            <h3>Nuestras &Uacute;ltimas Noticias<span style="font-weight: bolder;font-size: 55px;margin-left: 8px;">.</span></h3>
-        </div>
-    </div>
-</div>
-<div class="container clearfix"  style="background:white">
-    <div class="row">
-        @foreach($news as $new)
-        <div class="col-lg-4 col-md-6 bottommargin">
-            <div class="ipost clearfix">
-                <div class="entry-image">
-                    <a target="blank_" href="{{$new->url}}"><img class="image_fade" src="{{$new->image}}" alt="Image"></a>
-                </div>
-                <div class="entry-title">
-                    <h3><a target="blank_" href="{{$new->url}}">{{$new->title}}</a></h3>
-                </div>
-                <div class="entry-content" style="margin:0px">
-                    <p>{{$new->subtitle}}</p>
-                </div>
-            </div>
-        </div>
-        @endforeach
-    </div>
-</div>
 <div id="clients" class="section notopmargin noborder nobottommargin" style="background:white;padding-bottom: 15px;" >
     <div class="container clearfix">
         <div class="heading-block center nobottommargin">
@@ -238,8 +190,8 @@
     </div>
 </div>
 <div  class="section topmargin-lg pt-0 clearfix" style="background:white;margin-top:0px!important">
-    <div class="">
-        <div id="oc-clients" class="owl-carousel owl-carousel-full topmargin image-carousel carousel-widget" data-margin="150" data-loop="true" data-nav="false" data-autoplay="5000" data-pagi="false"data-items-xs="2" data-items-sm="3" data-items-md="4" data-items-lg="5" data-items-xl="6">
+    <div class="container">
+        <div id="oc-clients-full" class="owl-carousel image-carousel carousel-widget" data-margin="50" data-loop="true" data-nav="false" data-autoplay="5000" data-pagi="false"data-items-xs="2" data-items-sm="3" data-items-md="4" data-items-lg="5" data-items-xl="5">
             @foreach($clients as $client)
                 <div class="oc-item"><a href="{{url('clients')}}/{{$client->slug}}"><img src="{{$client->image}}" alt="Clients"></a></div>
             @endforeach    
